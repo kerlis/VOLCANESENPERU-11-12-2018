@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <SlidingDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/slidingDrawer"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="40dp"
+        android:layout_height="140dip"
+        android:content="@+id/content"
+        android:handle="@+id/handle" >
+    <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:visibility="gone">
+            <RelativeLayout
+                android:id="@+id/handle"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:id="@+id/content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="45dp" >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:id="@+id/opciones1"
+                android:layout_above="@+id/opciones2"
+                android:padding="0dp"
+                android:layout_height="60dp" >
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <!--bloque 5-->
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_column="0"
+                        android:background="@color/blanco"
+                        android:layout_toEndOf="@+id/bloque3"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:gravity="center"
+                        android:paddingRight="1dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:id="@+id/bloque5"
+                        android:paddingTop="0dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            style="@style/cancel_btn_style"
+                            android:paddingTop="11dp"
+                            android:paddingBottom="11dp"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_height="17dp"
+                                android:src="@drawable/ic_warning_black_24dp"/>
+                            <TextView
+                                android:layout_below="@+id/trayectoria_cenizas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="alert"
+                                android:gravity="center_horizontal"
+                                style="@style/opciones_volcan_text"
+                                android:id="@+id/alertacenizas_text">
+                            </TextView>
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <!--bloque 5-->
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <!--bloque 4-->
+                    <RelativeLayout
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:background="@color/blanco"
+                        android:layout_toEndOf="@+id/bloque5"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:gravity="center"
+                        android:paddingRight="1dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:id="@+id/bloque4"
+                        android:paddingTop="0dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            style="@style/cancel_btn_style"
+                            android:paddingTop="11dp"
+                            android:paddingBottom="11dp"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:layout_alignParentTop="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="@string/camara"
+                                style="@style/iconos_opciones_volcan"
+                                android:id="@+id/camara">
+                            </TextView>
+                            <TextView
+                                android:layout_below="@+id/trayectoria_cenizas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                style="@style/opciones_volcan_text"
+                                android:id="@+id/camara_text">
+                            </TextView>
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <!--bloque 4-->
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <!--bloque 1-->
+                    <RelativeLayout
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:background="@color/blanco"
+                        android:layout_toEndOf="@+id/bloque5"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:gravity="center"
+                        android:paddingRight="1dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:id="@+id/bloque1"
+                        android:paddingTop="0dp">
+                        <LinearLayout
+                            style="@style/cancel_btn_style"
+                            android:layout_width="match_parent"
+                            android:id="@+id/bloque1btn"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="11dp"
+                            android:paddingBottom="11dp"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:textAlignment="center"
+                                style="@style/iconos_opciones_volcan"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/mapa"
+                                android:text="@string/planeta">
+                            </TextView>
+                            <TextView
+                                android:layout_below="@+id/mapa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/opciones_volcan_text"
+                                android:textAlignment="center"
+                                android:id="@+id/mapa_text" >
+                            </TextView>
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <!--bloque 1-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:id="@+id/opciones2"
+                android:layout_alignParentBottom="true"
+                android:padding="0dp"
+                android:layout_height="60dp" >
+
+
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:background="@color/blanco"
+                        android:layout_toEndOf="@+id/bloque1"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="1dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:paddingRight="1dp"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:id="@+id/bloque3"
+                        android:paddingTop="0dp">
+
+                        <LinearLayout
+                            android:paddingTop="11dp"
+                            style="@style/cancel_btn_style"
+                            android:paddingBottom="11dp"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_height="17dp"
+                                android:src="@drawable/ic_assignment_black_24dp"/>
+
+                            <TextView
+                                android:layout_below="@+id/trayectoria_cenizas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                style="@style/opciones_volcan_text"
+                                android:id="@+id/trayectoria_cenizas_text2">
+                            </TextView>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <!--bloque 3-->
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <!--bloque 3                        android:background="@drawable/gradient_buton"
+    -->
+                    <RelativeLayout
+                        android:background="@color/blanco"
+                        android:layout_toEndOf="@+id/bloque1"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="1dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:paddingRight="1dp"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:id="@+id/bloque7"
+                        android:paddingTop="0dp">
+
+                        <LinearLayout
+                            android:paddingTop="11dp"
+                            style="@style/cancel_btn_style"
+                            android:paddingBottom="11dp"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:id="@+id/trayec"
+                                android:layout_alignParentRight="true"
+                                android:layout_height="17dp"
+                                android:src="@drawable/ic_input_black_24dp"/>
+                            <TextView
+                                android:layout_below="@+id/trayec"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                style="@style/opciones_volcan_text"
+                                android:id="@+id/trayectoria_cenizas_text3">
+                            </TextView>
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <!--bloque 3-->
+                </LinearLayout>
+                <!--bloque 6-->
+
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:background="@color/blanco"
+                        android:layout_toEndOf="@+id/bloque1"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="1dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:paddingRight="1dp"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:id="@+id/bloque6"
+                        android:paddingTop="0dp">
+                        <LinearLayout
+                            style="@style/cancel_btn_style"
+                            android:paddingTop="11dp"
+                            android:paddingBottom="11dp"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_height="17dp"
+                                android:src="@drawable/pronos"/>
+                            <TextView
+                                android:layout_below="@+id/trayectoria_cenizas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                style="@style/opciones_volcan_text"
+                                android:id="@+id/trayectoria_cenizas_text">
+                            </TextView>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </SlidingDrawer>

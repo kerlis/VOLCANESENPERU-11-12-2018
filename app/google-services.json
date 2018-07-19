@@ -1,0 +1,291 @@
+{
+  "project_info": {
+    "project_number": "72599345738",
+    "firebase_url": "https://volcanperu-9e5e0.firebaseio.com",
+    "project_id": "volcanperu-9e5e0",
+    "storage_bucket": "volcanperu-9e5e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:774fe25c17189b62",
+        "android_client_info": {
+          "package_name": "com.example.erlis.volcanperu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:46637bae59701678",
+        "android_client_info": {
+          "package_name": "com.example.erlisaquinoguerrero.volcanes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:b779e56adbfcd572",
+        "android_client_info": {
+          "package_name": "com.example.erlisaquinoguerrero.volcano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:f8b0fa9e226f0d90",
+        "android_client_info": {
+          "package_name": "com.example.usuario.volcanesperu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:74b338970f245db3",
+        "android_client_info": {
+          "package_name": "peru.volcanes.huaycos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:9a6f4d2af6021168",
+        "android_client_info": {
+          "package_name": "peru.volcanes.sismostop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:d92a0c95f23003b9",
+        "android_client_info": {
+          "package_name": "peru.volcanes.sismostopic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72599345738:android:db8bb64a67a26ad7",
+        "android_client_info": {
+          "package_name": "peru.volcanes.volcanesper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "72599345738-2ne30sepo7eabrtkln68eik2ctfh06es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUSiNu8g0woinmNT5Otv_w35Aepx_m2Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
