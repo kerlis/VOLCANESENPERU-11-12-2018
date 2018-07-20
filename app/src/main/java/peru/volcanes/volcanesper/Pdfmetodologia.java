@@ -50,11 +50,7 @@ public class Pdfmetodologia extends FragmentActivity implements ActivityCompat.O
     private ProgressBar spinner;
     String ShowOrHideWebViewInitialUse = "show";
     @SuppressLint({"WrongViewCast", "SetJavaScriptEnabled"})
-
-
-
     PDFView pdfView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,9 +113,6 @@ public class Pdfmetodologia extends FragmentActivity implements ActivityCompat.O
         });
 
 
-
-
-
         sliderz = (ImageView) findViewById(R.id.sliderz);
         mTitle = mDrawerTitle = getTitle();
         mNavigationDrawerItemTitles= getResources().getStringArray(R.array.navigation_drawer_items_array);
@@ -135,22 +128,12 @@ public class Pdfmetodologia extends FragmentActivity implements ActivityCompat.O
             }
         });
 
-
-
-
-       /// String de = "https://stackoverflow.com/questions/4623508/how-to-set-the-font-style-to-bold-italic-and-underlined-in-an-android-textview";
-
+        /// String de = "https://stackoverflow.com/questions/4623508/how-to-set-the-font-style-to-bold-italic-and-underlined-in-an-android-textview";
         Intent i = this.getIntent();
-
         String valor = i.getExtras().getString("ENLACE");
         String  valor2 = i.getExtras().getString("ENLACE");
-
-
-
         pdfView = (PDFView) findViewById(R.id.pdfView);
         new RetrevePDFStream().execute(valor);
-
-
       //  webView = (WebView)findViewById(R.id.vistaweb);
         spinner = (ProgressBar)findViewById(R.id.progressBar1);
       ////  webView.setWebViewClient(new CustomWebViewClient());
@@ -179,9 +162,6 @@ public class Pdfmetodologia extends FragmentActivity implements ActivityCompat.O
     }
 
 
-
-
-
     class RetrevePDFStream extends AsyncTask<String, Void, InputStream> {
         @Override
         protected InputStream doInBackground(String... strings) {
@@ -202,17 +182,12 @@ public class Pdfmetodologia extends FragmentActivity implements ActivityCompat.O
         protected void onPostExecute(InputStream inputStream) {
             pdfView.fromStream(inputStream).load();
             spinner.setVisibility(View.GONE);
-
         }
-
-
     }
-
 
 
     void setupDrawerToggle(){
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
         mDrawerToggle.syncState();
     }
-
 }

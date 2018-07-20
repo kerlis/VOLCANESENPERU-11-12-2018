@@ -6,7 +6,7 @@
     <string name="my_text">{0} You will need a {1} to complete this assembly</string>
     <string name="text_sub0">1:</string>
     <string name="text_sub1">screwdriver, hammer, and measuring tape</string>
-    <string name="app_name">Volcanes Perú IGP</string>
+    <string name="app_name">Volcanes Perú</string>
     <string name="PRIMERA_TEXT">Sismo con magnitud menor a 4.5</string>
     <string name="SEGUNDA_TEXT">Sismo con magnitud entre 4.5 y 6.0</string>
     <string name="TERCERA_TEXT">Sismo con magnitud mayor a 6.0</string>

@@ -77,7 +77,7 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
     Double magnitude;
     String refe, magni;
     String volcanestado;
-    private static String[] PERMISSIONS = {android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION};
+   // private static String[] PERMISSIONS = {android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION};
     int mWidthScreen;
     int mHeightScreen;
     int tamano;
@@ -160,6 +160,7 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
     }
 
     public void initMaps() {
+        /*
         if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED
                 || ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -171,6 +172,7 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 60000, this);
         }
         //  map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
+        */
     }
 
     public void onMapReady(final GoogleMap map) {
@@ -336,32 +338,7 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
     public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_PERMISSION: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Toast.makeText(getActivity(), "Autorizado", Toast.LENGTH_SHORT).show();
-                    initMaps();
-                } else {
-                   // Toast.makeText(getActivity(), "Permissão negada", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-        }
-    }
 
-    private void requestPermissions() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                android.Manifest.permission.ACCESS_COARSE_LOCATION)
-                || ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                android.Manifest.permission.ACCESS_FINE_LOCATION)) {
-            //  Toast.makeText(getActivity(), "Permissão negada", Toast.LENGTH_SHORT).show();
-        } else {
-            ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, REQUEST_PERMISSION);
-        }
-    }
 
     public GoogleMap.OnCameraMoveListener getCameraChangeListener3() {
         return new GoogleMap.OnCameraMoveListener() {

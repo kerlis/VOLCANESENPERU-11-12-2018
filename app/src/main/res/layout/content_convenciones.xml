@@ -569,10 +569,10 @@
                             android:layout_marginBottom="0dp"
                             android:layout_below="@+id/metodologiatext"/>
                         <TextView android:layout_width="wrap_content"
-                            android:text="Para leerlo haga click AQUÍ"
+                            android:text="Leer más"
                             android:id="@+id/clickaqui"
                             android:textStyle="italic|bold"
-                            android:textColor="@color/negro"
+                            android:textColor="@color/azuligp"
                             android:padding="0dp"
                             android:layout_marginTop="-6dp"
                             android:textSize="15dp"
@@ -2206,7 +2206,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Mapa sismico en 3D"
+                android:text="Mapa sísmico en 3D"
                 style="@style/titulo_glosario" />
 
 
