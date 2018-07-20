@@ -162,7 +162,7 @@
                 style="@style/datosset"
                 android:id="@+id/datoversionnumero"
                 android:layout_toRightOf="@+id/versionnumero_label"
-                android:text="dato2">
+                android:text="1">
             </TextView>
         </RelativeLayout>
     </RelativeLayout>

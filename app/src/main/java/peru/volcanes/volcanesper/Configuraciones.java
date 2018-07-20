@@ -198,7 +198,7 @@ public class Configuraciones extends FragmentActivity implements NavigationView.
         String valor_version_code;
         valor_version_code = String.valueOf(versionCode).toString();
         dato_version_numero = (TextView) findViewById(R.id.datoversionnumero);
-        dato_version_numero.setText(valor_version_code);
+       // dato_version_numero.setText(valor_version_code);
         try {
             FileInputStream fileInputStream_read =  openFileInput("datos_configuracion");
             InputStreamReader inputStreamReader_read =  new InputStreamReader(fileInputStream_read);

@@ -295,7 +295,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_toEndOf="@+id/camara"
                                     android:layout_marginLeft="5dp"
-                                    android:text="Imágenes digitales en tiempo real"
+                                    android:text="Imágenes Digitales en Tiempo Real"
                                     android:layout_height="wrap_content"
                                     style="@style/opciones_volcan_text"
                                     android:id="@+id/camara_text">

@@ -39,6 +39,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Reportesdeactividad extends FragmentActivity {
     SupportMapFragment sMapFragment;
@@ -952,7 +953,10 @@ public class Reportesdeactividad extends FragmentActivity {
     public ArrayList<reporte> retreive() {
         FirebaseDatabase.getInstance();
         mFirebaseDatabase4.keepSynced(true);
-        mFirebaseDatabase4.orderByChild("orden").addChildEventListener(new ChildEventListener() {
+
+        mFirebaseDatabase4.orderByKey().addChildEventListener(new ChildEventListener() {
+
+//        mFirebaseDatabase4.orderByChild("orden").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 reporte objetoalertaceniza = dataSnapshot.getValue(reporte.class);
@@ -961,6 +965,17 @@ public class Reportesdeactividad extends FragmentActivity {
                 //    objetoalertacenizas.add(i, objetoalertacenizas.remove(j));
                 //    Collections.reverse(objetoalertacenizas);
                // }
+
+
+
+                int iSwapCount = objetoalertacenizas.size() - 1;
+                int iPosition = objetoalertacenizas.size()- 1;
+                for (int j = 0; j < iSwapCount; j++)
+                {
+                    Collections.swap(objetoalertacenizas, iPosition, iPosition - 1);
+                    iPosition = iPosition - 1;
+                }
+
                 alertacenizas.setAdapter(adapter3);
 
 
@@ -973,6 +988,17 @@ public class Reportesdeactividad extends FragmentActivity {
                  //   objetoalertacenizas.add(i, objetoalertacenizas.remove(j));
                   //  Collections.reverse(objetoalertacenizas);
                // }
+
+
+
+                int iSwapCount = objetoalertacenizas.size() - 1;
+                int iPosition = objetoalertacenizas.size()- 1;
+                for (int j = 0; j < iSwapCount; j++)
+                {
+                    Collections.swap(objetoalertacenizas, iPosition, iPosition - 1);
+                    iPosition = iPosition - 1;
+                }
+
 
                 alertacenizas.setAdapter(adapter3);
 

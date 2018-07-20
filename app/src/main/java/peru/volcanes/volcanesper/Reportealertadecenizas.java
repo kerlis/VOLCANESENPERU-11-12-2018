@@ -1,5 +1,4 @@
 package peru.volcanes.volcanesper;
-
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -29,7 +28,6 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
-
 import peru.volcanes.volcanesper.m_model.erupciones;
 import peru.volcanes.volcanesper.m_model.reportealertacenizas;
 import peru.volcanes.volcanesper.m_ui.Reportecenizasadapter;
@@ -40,9 +38,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
-
 public class Reportealertadecenizas extends AppCompatActivity {
     SupportMapFragment sMapFragment;
     private GoogleMap map;
@@ -118,10 +114,6 @@ public class Reportealertadecenizas extends AppCompatActivity {
     TextView camara;
     TextView mapa;
     RelativeLayout blocke6a;
-
-
-
-
     String proyecionsenahmi;
     RelativeLayout bloquenombre;
     RelativeLayout bloque62;
@@ -129,7 +121,6 @@ public class Reportealertadecenizas extends AppCompatActivity {
     String proyeccionsenamhiurl;
     RelativeLayout bloque42;
     TextView camara2;
-
     private static final String CHROME_PACKAGE = "com.android.chrome";
     private CustomTabsServiceConnection ctConnection;
     private CustomTabsSession customTabsSession;
@@ -161,16 +152,9 @@ public class Reportealertadecenizas extends AppCompatActivity {
         camaraurls = i.getExtras().getString("CAMARAURL");
         sismogramaurls = i.getExtras().getString("SISMOGRAMA");
         mapasismico = i.getExtras().getString("MAPASISMICO");
-
         proyeccionsenamhiurl = i.getExtras().getString("PROYECCIONSENAHMI");
-
-
         trayectoria_cenizas_text222 = (TextView) findViewById(R.id.trayectoria_cenizas_text222);
         trayectoria_cenizas_text222.setText("Pronóstico de dispersión");
-
-
-
-
 
 
          /*--------VISUALIZACION DE MENU----------*/
