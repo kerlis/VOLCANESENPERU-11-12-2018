@@ -1,4 +1,5 @@
 package peru.volcanes.volcanesper;
+import android.annotation.SuppressLint;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -12,7 +13,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
 import peru.volcanes.volcanesper.m_model.volcanes;
 import peru.volcanes.volcanesper.m_ui.VolcanesAdapter;
 import com.google.firebase.database.ChildEventListener;
@@ -44,6 +48,11 @@ public class FragmentWithTwoImages extends Fragment {
     private Location location;
     RelativeLayout menuright;
     int count = 0;
+
+    private ProgressBar spinner;
+    String ShowOrHideWebViewInitialUse = "show";
+
+    @SuppressLint({"WrongViewCast", "SetJavaScriptEnabled"})
     public static FragmentWithTwoImages newInstance(String title, int resMainImage, int resSecondaryImage) {
         FragmentWithTwoImages fragment = new FragmentWithTwoImages();
         Bundle args = new Bundle();
@@ -66,6 +75,10 @@ public class FragmentWithTwoImages extends Fragment {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         FirebaseDatabase.getInstance();
         losvolcanes = (ListView) view.findViewById(R.id.listado_volcanes);
+
+    //    spinner = (ProgressBar)view.findViewById(R.id.progressBar1);
+
+
         updateStuff();
         return view;
     }
@@ -95,18 +108,31 @@ public class FragmentWithTwoImages extends Fragment {
         FirebaseDatabase.getInstance();
         mFirebaseDatabase3.keepSynced(true);
         mFirebaseDatabase3.orderByChild("orden").addChildEventListener(new ChildEventListener() {
+            int count = 0;
+
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 final Iterable<DataSnapshot> dataSnapshots = dataSnapshot.getChildren();
                 volcanes objetosismo = dataSnapshot.getValue(volcanes.class);
                 objetoalertacenizas.add(objetosismo);
-              // int d = count++;
+                count ++;
+
+                // int d = count++;
                 //if( objetosismo == null ) {
                   //  Toast.makeText(getActivity(), d, Toast.LENGTH_LONG).show();
                 //}
                 //else {
                   //  Toast.makeText(getActivity(), "no se cargaron los datos", Toast.LENGTH_LONG).show();
                 //}
+
+
+                Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
+
+                if(count >= dataSnapshot.getChildrenCount()) {
+
+                    spinner.setVisibility(View.GONE);
+                    //stop progress bar here
+                }
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {

@@ -119,20 +119,8 @@ public class Listadoredessociales extends FragmentActivity implements RecyclerVi
         arrayList2.add(new DataModel("INSTAGRAM ", R.drawable.instagramicon, R.drawable.instagramicon));
         arrayList2.add(new DataModel("LINKEDIN ", R.drawable.linkedinicon, R.drawable.linkedinicon));
 
-        //arrayList.add(new DataModel("NUESTROS PRODUCTOS ", R.drawable.three_d, R.drawable.iconoreloj));
-        //arrayList.add(new DataModel("NOTICIAS", R.drawable.terraria, R.drawable.iconosismo));
-
-        /*
-        arrayList.add(new DataModel("Sismos", R.drawable.battle, "#73000000" ));
-        arrayList.add(new DataModel("Volcanes", R.drawable.beer, "#800D0000"));
-        arrayList.add(new DataModel("ATMOSFERA", R.drawable.ferrari, "#73000000"));
-        arrayList.add(new DataModel("HUAYCOS", R.drawable.jetpack_joyride, "#73000000"));
-        arrayList.add(new DataModel("CLIMA ", R.drawable.three_d, "#73000000"));
- */
-
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, arrayList, this);
         recyclerView.setAdapter(adapter);
-
 
         RecyclerViewAdapter adapter2 = new RecyclerViewAdapter(this, arrayList2, this);
         recyclerView2.setAdapter(adapter2);
@@ -140,12 +128,9 @@ public class Listadoredessociales extends FragmentActivity implements RecyclerVi
         AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 500);
         recyclerView.setLayoutManager(layoutManager);
 
-
         AutoFitGridLayoutManager layoutManager2 = new AutoFitGridLayoutManager(this, 500);
         recyclerView2.setLayoutManager(layoutManager2);
 
-        /*GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(manager);*/
     }
 
     @Override
@@ -207,7 +192,6 @@ public class Listadoredessociales extends FragmentActivity implements RecyclerVi
         }
 
     }
-
 
     void setupDrawerToggle(){
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);

@@ -1571,46 +1571,9 @@
                                 android:adjustViewBounds="true"
                                 android:scaleType="centerCrop"/>
                         </RelativeLayout>
-
                     </RelativeLayout>
-
-                 <!--   <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <RelativeLayout android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:minHeight="50dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginRight="8dp"
-                            android:id="@+id/ccrojo2altafrecuencia"
-                            android:minWidth="55dp">
-                            <ImageView
-                                android:id="@+id/icono33altafrecuencia"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="8dp"
-                                android:layout_centerHorizontal="true"
-                                android:backgroundTint="@color/colorPrimary"
-                                android:background="@color/blanco"
-                                android:padding="0dp" />
-                        </RelativeLayout>
-                        <TextView
-                            android:id="@+id/altafrecuencia"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/ccrojo2altafrecuencia"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="center_vertical"
-                            style="@style/texto_glosario" />
-                    </RelativeLayout>
-                    -->
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -1648,45 +1611,9 @@
                                 android:adjustViewBounds="true"
                                 android:scaleType="centerCrop"/>
                         </RelativeLayout>
-
                     </RelativeLayout>
-
-
-                    <!--  <RelativeLayout android:layout_width="match_parent"
-                          android:layout_height="wrap_content">
-                          <RelativeLayout android:layout_width="50dp"
-                              android:layout_height="50dp"
-                              android:minHeight="50dp"
-                              android:layout_alignParentLeft="true"
-                              android:layout_marginRight="8dp"
-                              android:id="@+id/ccrojo2altalargoperiodo"
-                              android:minWidth="55dp">
-                              <ImageView
-                                  android:id="@+id/icono33altalargoperiodo"
-                                  android:layout_width="40dp"
-                                  android:layout_height="40dp"
-                                  android:layout_centerVertical="true"
-                                  android:layout_marginRight="8dp"
-                                  android:layout_centerHorizontal="true"
-                                  android:backgroundTint="@color/colorPrimary"
-                                  android:background="@color/blanco"
-                                  android:padding="0dp" />
-                          </RelativeLayout>
-                          <TextView
-                              android:id="@+id/largoperiodo"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:layout_toRightOf="@+id/ccrojo2altalargoperiodo"
-                              android:layout_centerVertical="true"
-                              android:layout_gravity="center_vertical"
-                              style="@style/texto_glosario" />
-                      </RelativeLayout>
-                      -->
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1702,43 +1629,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <!--   <RelativeLayout android:layout_width="match_parent"
-                       android:layout_height="wrap_content">
-                    RelativeLayout android:layout_width="50dp"
-                           android:layout_height="50dp"
-                           android:minHeight="50dp"
-                           android:layout_alignParentLeft="true"
-                           android:layout_marginRight="8dp"
-                           android:id="@+id/ccrojo2tornillos"
-                           android:minWidth="55dp">
-                           <ImageView
-                               android:id="@+id/icono33tornillos"
-                               android:layout_width="40dp"
-                               android:layout_height="40dp"
-                               android:layout_centerVertical="true"
-                               android:layout_marginRight="8dp"
-                               android:layout_centerHorizontal="true"
-                               android:backgroundTint="@color/colorPrimary"
-                               android:background="@color/blanco"
-                               android:padding="0dp" />
-                       </RelativeLayout>
-                       <TextView
-                           android:id="@+id/tornillos"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_toRightOf="@+id/ccrojo2tornillos"
-                           android:layout_centerVertical="true"
-                           android:layout_gravity="center_vertical"
-                           style="@style/texto_glosario" />
-
-
-
-
-
-                   </RelativeLayout>  -->
-
-
-
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1759,18 +1649,9 @@
                                 android:adjustViewBounds="true"
                                 android:scaleType="centerCrop"/>
                         </RelativeLayout>
-
                     </RelativeLayout>
-
-
-
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1786,8 +1667,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-
                     <RelativeLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <RelativeLayout android:layout_width="match_parent"
@@ -1806,47 +1685,9 @@
                                 android:adjustViewBounds="true"
                                 android:scaleType="centerCrop"/>
                         </RelativeLayout>
-
                     </RelativeLayout>
-
-
-                   <!-- <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <RelativeLayout android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:minHeight="50dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginRight="8dp"
-                            android:id="@+id/ccrojo2espasmodicos"
-                            android:minWidth="55dp">
-                            <ImageView
-                                android:id="@+id/icono33espasmodicos"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="8dp"
-                                android:layout_centerHorizontal="true"
-                                android:backgroundTint="@color/colorPrimary"
-                                android:background="@color/blanco"
-                                android:padding="0dp" />
-                        </RelativeLayout>
-                        <TextView
-                            android:id="@+id/espasmodicos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/ccrojo2espasmodicos"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="center_vertical"
-                            style="@style/texto_glosario" />
-                    </RelativeLayout>
-                    -->
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1862,8 +1703,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-
                     <RelativeLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <RelativeLayout android:layout_width="match_parent"
@@ -1882,50 +1721,9 @@
                                 android:adjustViewBounds="true"
                                 android:scaleType="centerCrop"/>
                         </RelativeLayout>
-
                     </RelativeLayout>
-
-
-                 <!--   <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <RelativeLayout android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:minHeight="50dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginRight="8dp"
-                            android:id="@+id/ccrojo2armonico"
-                            android:minWidth="55dp">
-                            <ImageView
-                                android:id="@+id/icono33armonico"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="8dp"
-                                android:layout_centerHorizontal="true"
-                                android:backgroundTint="@color/colorPrimary"
-                                android:background="@color/blanco"
-                                android:padding="0dp" />
-                        </RelativeLayout>
-                        <TextView
-                            android:id="@+id/armonico"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/ccrojo2armonico"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="center_vertical"
-                            style="@style/texto_glosario" />
-                    </RelativeLayout>
-                    -->
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
-
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1941,7 +1739,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
                     <RelativeLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
@@ -1958,48 +1755,8 @@
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"/>
                     </RelativeLayout>
-
-                    <!--<RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <RelativeLayout android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:minHeight="50dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginRight="8dp"
-                            android:id="@+id/ccrojo2hibridos"
-                            android:minWidth="55dp">
-                            <ImageView
-                                android:id="@+id/icono33hibridos"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="8dp"
-                                android:layout_centerHorizontal="true"
-                                android:backgroundTint="@color/colorPrimary"
-                                android:background="@color/blanco"
-                                android:padding="0dp" />
-                        </RelativeLayout>
-                        <TextView
-                            android:id="@+id/explosion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/ccrojo2hibridos"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="center_vertical"
-                            style="@style/texto_glosario" />
-                    </RelativeLayout>
-                    -->
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
-
-
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2032,46 +1789,8 @@
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"/>
                     </RelativeLayout>
-
-
-                    <!--  <RelativeLayout android:layout_width="match_parent"
-                           android:layout_height="wrap_content">
-                           <RelativeLayout android:layout_width="50dp"
-                               android:layout_height="50dp"
-                               android:minHeight="50dp"
-                               android:layout_alignParentLeft="true"
-                               android:layout_marginRight="8dp"
-                               android:id="@+id/ccrojo2explosion"
-                               android:minWidth="55dp">
-                               <ImageView
-                                   android:id="@+id/icono33explosion"
-                                   android:layout_width="40dp"
-                                   android:layout_height="40dp"
-                                   android:layout_centerVertical="true"
-                                   android:layout_marginRight="8dp"
-                                   android:layout_centerHorizontal="true"
-                                   android:backgroundTint="@color/colorPrimary"
-                                   android:background="@color/blanco"
-                                   android:padding="0dp" />
-                           </RelativeLayout>
-                           <TextView
-                               android:id="@+id/hibridos"
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_toRightOf="@+id/ccrojo2explosion"
-                               android:layout_centerVertical="true"
-                               android:layout_gravity="center_vertical"
-                               style="@style/texto_glosario" />
-                       </RelativeLayout>-->
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
-
-
             <TextView
                 android:id="@+id/textofumarolas"
                 android:layout_width="match_parent"
@@ -2079,8 +1798,6 @@
                 android:layout_gravity="center_vertical"
                 android:text="Fumarolas"
                 style="@style/titulo_glosario" />
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2096,9 +1813,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-
-
                     <RelativeLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
@@ -2115,43 +1829,8 @@
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"/>
                     </RelativeLayout>
-
-
-                    <!--<RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <RelativeLayout android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:minHeight="50dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginRight="8dp"
-                            android:id="@+id/ccrojo2fumarolas"
-                            android:minWidth="55dp">
-                            <ImageView
-                                android:id="@+id/icono33fumarolas"
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="8dp"
-                                android:layout_centerHorizontal="true"
-                                android:backgroundTint="@color/colorPrimary"
-                                android:background="@color/blanco"
-                                android:padding="0dp" />
-                        </RelativeLayout>
-                        <TextView
-                            android:id="@+id/fumarolas"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toRightOf="@+id/ccrojo2fumarolas"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="center_vertical"
-                            style="@style/texto_glosario" />
-                    </RelativeLayout>
-                    -->
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
             <TextView
                 android:id="@+id/textoglaciar"
                 android:layout_width="match_parent"
@@ -2159,8 +1838,6 @@
                 android:layout_gravity="center_vertical"
                 android:text="Glaciar"
                 style="@style/titulo_glosario" />
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2176,8 +1853,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-
                     <RelativeLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
@@ -2194,13 +1869,8 @@
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"/>
                     </RelativeLayout>
-
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
             <TextView
                 android:id="@+id/textomapasismico"
                 android:layout_width="match_parent"
@@ -2208,8 +1878,6 @@
                 android:layout_gravity="center_vertical"
                 android:text="Mapa sísmico en 3D"
                 style="@style/titulo_glosario" />
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2225,8 +1893,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-
                     <RelativeLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
@@ -2243,17 +1909,8 @@
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"/>
                     </RelativeLayout>
-
-
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
-
-
             <TextView
                 android:id="@+id/textodispersion"
                 android:layout_width="match_parent"
@@ -2261,8 +1918,6 @@
                 android:layout_gravity="center_vertical"
                 android:text="Pronóstico de dispersión de cenizas"
                 style="@style/titulo_glosario" />
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2278,8 +1933,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-
                     <RelativeLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
@@ -2296,17 +1949,8 @@
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"/>
                     </RelativeLayout>
-
-
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
-
-
-
-
             <TextView
                 android:id="@+id/textohorautc"
                 android:layout_width="match_parent"
@@ -2314,8 +1958,6 @@
                 android:layout_gravity="center_vertical"
                 android:text="Hora UTC"
                 style="@style/titulo_glosario" />
-
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2352,14 +1994,8 @@
                     </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>
-
-
-
         </LinearLayout>
-
-
     </ScrollView>
-
 </RelativeLayout>
     <RelativeLayout android:layout_width="230dp"
         android:id="@+id/mDrawerBlock"

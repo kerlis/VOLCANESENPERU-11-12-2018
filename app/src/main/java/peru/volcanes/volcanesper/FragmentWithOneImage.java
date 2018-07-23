@@ -18,6 +18,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +28,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,7 +55,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-
 public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback, LocationListener, ActivityCompat.OnRequestPermissionsResultCallback, GoogleMap.OnInfoWindowClickListener {
     private static final String TAG = FragmentWithOneImage.class.getSimpleName();
     LayoutInflater inflater = null;
@@ -67,9 +68,6 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
     private Location location;
     double longitude = -16.31537405101501;
     double latitude = -71.94828379488575;
-
-
-
     private FirebaseDatabase database;
     private static final int REQUEST_PERMISSION = 1;
     private GoogleMap map;
@@ -111,6 +109,16 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
     //  CameraPosition cameraPosition;
     BitmapDescriptor icon;
     String nombre;
+    private ProgressBar spinner;
+    String ShowOrHideWebViewInitialUse = "show";
+
+
+
+
+    ///private static final String TAG = FragmentWithOneImage.class.getSimpleName();
+
+    private static final int SPINNER_WIDTH = 100;
+    private static final int SPINNER_HEIGHT = 100;
 
     public static FragmentWithOneImage newInstance(String title, int resImage) {
         FragmentWithOneImage fragment = new FragmentWithOneImage();
@@ -135,6 +143,7 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_one_img, container, false);
         TextView tvLabel = (TextView) view.findViewById(R.id.txtMain);
+        spinner = (ProgressBar)view.findViewById(R.id.progressBar1);
         tvLabel.setText(title);
         database = FirebaseDatabase.getInstance();
         sMapFragment = SupportMapFragment.newInstance();
@@ -195,8 +204,6 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
 
       //  map.setOnCameraMoveListener(this);
 
-
-
         try {
             // Customise the styling of the base map using a JSON object defined
             // in a raw resource file.
@@ -220,18 +227,6 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
         map.getUiSettings().setIndoorLevelPickerEnabled(true);
         map.getUiSettings().setTiltGesturesEnabled(true);
         map.getUiSettings().setCompassEnabled(true);
-        // if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-        // TODO: Consider calling
-        //    ActivityCompat#requestPermissions
-        // here to request the missing permissions, and then overriding
-        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-        //                                          int[] grantResults)
-        // to handle the case where the user grants the permission. See the documentation
-        // for ActivityCompat#requestPermissions for more details.
-        //   return;
-        //}
-        // map.setMyLocationEnabled(true);
-        // map.getUiSettings().setMyLocationButtonEnabled(true);
         map.getUiSettings().setMapToolbarEnabled(true);
         //KmlLayer layer = new KmlLayer(map,R.raw.nom);
         satelite.setOnClickListener(new View.OnClickListener() {
@@ -246,15 +241,12 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
                 selectItem2();
             }
         });
-
-
         localizacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 7));
             }
         });
-
 
         KmlLayer layer = null;
         try {
@@ -271,57 +263,14 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         }
-
         // map.setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
         map.setPadding(0, 100, 0, 110);
 
        loadMarker();
 
-/*
-        map.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
-            @Override
-            public void onCameraMove () {
-                cameraPosition = map.getCameraPosition();
-                if (cameraPosition.zoom <= 6.0) {
-                    map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-                    // icon =  BitmapDescriptorFactory.fromBitmap(createStoreMarker("-" + nombre + "-"));
-                    zoomex = String.valueOf(cameraPosition.zoom);
-                    ponern(zoomex);
-                    loadMarker("2");
-                    //loadMarker3("1");
-
-                } else {
-                    loadMarker("1");
-                   // loadMarker3("2");
-
-                    zoomex = String.valueOf(cameraPosition.zoom);
-                    ponern(zoomex);
-
-
-                    map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                    //zoomex = String.valueOf(cameraPosition.zoom);
-                    //ponern(zoomex);
-                }
-                // zoomex = String.valueOf(cameraPosition.zoom);
-                //ponern(zoomex);
-            }
-        });
-        */
-
     }
 
 
-
-
-
-    /*
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            getMenuInflater().inflate(R.menu.main, menu);
-            return true;
-        }
-    */
     @Override
     public void onLocationChanged(Location arg0) {
     }
@@ -342,119 +291,20 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
 
     public GoogleMap.OnCameraMoveListener getCameraChangeListener3() {
         return new GoogleMap.OnCameraMoveListener() {
-
-
             @Override
             public void onCameraMove() {
                 CameraPosition cameraPosition = map.getCameraPosition();
                 if (cameraPosition.zoom > 6.0) {
-
-                    // final View markerLayout = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-                    // TextView markerRating5;
-                    // markerRating5 = (TextView) markerLayout.findViewById(R.id.marker_text);
-                    // markerRating5.setText("q");
                     map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                    // markerRating5.setText(datox);
-
                 } else {
-
-                    //final View markerLayout = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-                    //TextView markerRating5;
-                    //markerRating5 = (TextView) markerLayout.findViewById(R.id.marker_text);
-
-                    //markerRating5.setText("");
-
                     map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 }
             }
-
-            /*
-            @Override
-            public void onCameraChange(CameraPosition position)
-            {
-                Log.d("Zoom", "Zoom: " + position.zoom);
-
-                if(previousZoomLevel != position.zoom)
-                {
-                    isZooming = true;
-                }
-
-                previousZoomLevel = position.zoom;
-            }
-            */
         };
     }
 
 
-    public void zoomer() {
-       map.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener()
-    {
-        @Override
-        public void onCameraMove () {
-        CameraPosition cameraPosition = map.getCameraPosition();
-        if (cameraPosition.zoom > 6.0) {
-           // Toast.makeText(getActivity(), "Autorizado", Toast.LENGTH_SHORT).show();
-
-            map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-        } else {
-
-            map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        }
-
-       // ponerx(String.valueOf(cameraPosition.zoom));
-    }
-    });
-
-}
-
-
-
-
-
-
-
-
-
-  //  public void loadMarker(String numero) {
-
         public void loadMarker() {
-
-      //  Double val = Double.parseDouble(numero);
-        //    float zoom = map.getCameraPosition().zoom;
-        //    Toast.makeText(getActivity(),   String.valueOf(zoom),Toast.LENGTH_SHORT).show();
-
-
-        /*
-        map.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
-            @Override
-            public void onCameraMove () {
-                cameraPosition = map.getCameraPosition();
-                if (cameraPosition.zoom > 6.0) {
-                    map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-                   // icon =  BitmapDescriptorFactory.fromBitmap(createStoreMarker("-" + nombre + "-"));
-                    zoomex = String.valueOf(cameraPosition.zoom);
-                    ponern(zoomex);
-
-                } else {
-
-                    zoomex = String.valueOf(cameraPosition.zoom);
-                    ponern(zoomex);
-
-
-                    map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                    //zoomex = String.valueOf(cameraPosition.zoom);
-                    //ponern(zoomex);
-                }
-               // zoomex = String.valueOf(cameraPosition.zoom);
-                //ponern(zoomex);
-            }
-        });
-        */
-
-
-
         FirebaseDatabase.getInstance();
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         mFirebaseDatabase = database.getReference("actividadvolcanica").child("volcanes");
@@ -464,14 +314,19 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String outputDate = simpleDateFormat.format(calendar.getTime());
 
-        mFirebaseDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
+
+            mFirebaseDatabase.addValueEventListener(new ValueEventListener() {
+                int count = 0;
+
+                @Override
             public void onDataChange(final DataSnapshot dataSnapshot) {
+
                 final Iterable<DataSnapshot> dataSnapshots = dataSnapshot.getChildren();
                 //  map.clear();
                 for (final DataSnapshot dataSnapshot1 : dataSnapshots) {
                     final volcanes local = dataSnapshot1.getValue(volcanes.class);
                     final Double lati, longi;
+                    count ++;
                     refe = local.getAltura();
                     magnitud3 = local.getEstado();
                     magni = magnitud3;
@@ -522,14 +377,9 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
 
                     }
 
-
                     //.icon(BitmapDescriptorFactory.fromBitmap(createStoreMarker()));
-
-
                     // map.addMarker(new MarkerOptions().position(new LatLng(lati, longi)).title(local.getNombre() + " "+"Profundidad : "+local.getNombre()+"  >>>").snippet(local.getCodigo()+","+local.getEstado()+","+local.getActividad_reciente()+","+local.getAltura()+","+local.getTipo()+","+local.getNombre()+","+local.getNombre()).icon(icon).anchor(0.5f, 0.5f)).showInfoWindow();
-
                     map.addMarker(new MarkerOptions().position(new LatLng(lati, longi)).title(local.getNombre()).snippet(local.getCodigo() + "," + local.getEstado() + "," + local.getActividadreciente() + "," + local.getAltura() + "," + local.getTipo() + "," + local.getNombre() + "," + local.getNombre() + "," + local.getRegion()).icon(icon).anchor(0.5f, 0.5f));
-
                     map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
                         @Override
                         public View getInfoWindow(Marker marker) {
@@ -645,6 +495,14 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
                         }
                     });
                 }
+
+                Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
+
+                if(count >= dataSnapshot.getChildrenCount()) {
+
+                    spinner.setVisibility(View.GONE);
+                    //stop progress bar here
+                }
             }
 
             @Override
@@ -652,58 +510,6 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
             }
         });
     }
-
-
-
-
-    public void ponern(String val){
-        Toast.makeText(getActivity(), val, Toast.LENGTH_SHORT).show();
-
-        Float valo =  Float.parseFloat(val);
-
-
-        /*
-        View markerLayoutx = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-        TextView markerRatingx = (TextView) markerLayoutx.findViewById(R.id.marker_text);
-*/
-
-
-
-
-        View view2;
-        LayoutInflater inflater = (LayoutInflater)   getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view2 = inflater.inflate(R.layout.marcador, null);
-
-        TextView item = (TextView) view2.findViewById(R.id.marker_text);
-
-
-
-
-
-        if(valo > 6.0) {
-
-    //     markerRating.setText("");
-
-
-            item.setVisibility(view2.GONE);
-            item.setTextAppearance(getContext(), R.style.textonulo);
-
-        }
-else{
-            item.setVisibility(view2.GONE);
-
-}
-        //markerRating.setVisibility().setText("");
-
-        // zoomex2 = valor;
-    }
-
-
-
-
-
-
-
 
     public void openTab(View view) {
         String url = "https://www.danielme.com";
@@ -725,34 +531,18 @@ else{
 
         if (mmagnitud <= 1) {
             markerImage.setImageResource(R.drawable.volcano_verde);
-
-            //icon = BitmapDescriptorFactory.fromResource(R.drawable.verde_volcanes);
         }
         else if (mmagnitud > 1 && mmagnitud == 2) {
             markerImage.setImageResource(R.drawable.volcano_amarillo);
-
-            //icon = BitmapDescriptorFactory.fromResource(R.drawable.amarillo_volcanes);
         }
         else if (mmagnitud > 2 && mmagnitud == 3) {
             markerImage.setImageResource(R.drawable.volcano_naranja);
-
-            //icon = BitmapDescriptorFactory.fromResource(R.drawable.orange_volcanes);
-
         }
         else if (mmagnitud > 3 && mmagnitud == 4) {
             markerImage.setImageResource(R.drawable.volcano_rojo);
-
-            //icon = BitmapDescriptorFactory.fromResource(R.drawable.red_black_volcanes);
-
         }
         else {
-            //icon = BitmapDescriptorFactory.fromResource(R.drawable.orange_volcanes);
-
         }
-
-
-
-
 
         markerLayout.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
         markerLayout.layout(0, 0, markerLayout.getMeasuredWidth(), markerLayout.getMeasuredHeight());
@@ -762,188 +552,6 @@ else{
         markerLayout.draw(canvas);
         return bitmap;
     }
-
-
-
-    private Bitmap createStoreMarker2(String dato) {
-        final View markerLayout = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-
-        markerRating = (TextView) markerLayout.findViewById(R.id.marker_text);
-        markerRating.setText("555555555555555555555555555555");
-
-        datox = dato;
-
-
-
-        ImageView markerImage = (ImageView) markerLayout.findViewById(R.id.marker_image);
-        markerImage.setImageResource(R.drawable.volcan_amarillo_sm);
-
-        markerLayout.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-        markerLayout.layout(0, 0, markerLayout.getMeasuredWidth(), markerLayout.getMeasuredHeight());
-
-        final Bitmap bitmap = Bitmap.createBitmap(markerLayout.getMeasuredWidth(), markerLayout.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        markerLayout.draw(canvas);
-        return bitmap;
-    }
-
-
-
-      //  map.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
-
-/*
-     public void onCameraChange(CameraPosition cameraPosition) {
-       float mZoom = cameraPosition.zoom;
-        Log.d("Zoom", String.valueOf(cameraPosition.zoom));
-
-        if (cameraPosition.zoom > MAX_ZOOM_LEVEL) {
-            map.animateCamera(CameraUpdateFactory.zoomTo(MAX_ZOOM_LEVEL));
-        }
-
-         if(cameraPosition.zoom > 6.0) {
-
-             map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-         } else {
-
-
-             map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-         }
-
-
-    }
-    */
-
-
-    public GoogleMap.OnCameraMoveListener getCameraChangeListener2()
-    {
-        return new GoogleMap.OnCameraMoveListener()
-        {
-
-            @Override
-            public void onCameraMove() {
-                CameraPosition cameraPosition = map.getCameraPosition();
-                if(cameraPosition.zoom > 6.0) {
-                //    Toast.makeText(getActivity(), "Autorizado", Toast.LENGTH_SHORT).show();
-
-                    map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-                } else {
-
-                    map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                }
-            }
-        };
-    }
-
-
-    public void ponerx(String valor ){
-      //  Toast.makeText(getActivity(), valor, Toast.LENGTH_SHORT).show();
-/*
-        final View markerLayout2 = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-       TextView markerRating2 = (TextView) markerLayout2.findViewById(R.id.marker_text);
-
-         if (markerRating2.getVisibility()==View.VISIBLE){
-            markerRating2.setVisibility(View.GONE);
-        }
-        else{
-            markerRating2.setVisibility(View.VISIBLE);
-        }
-        */
-
-    }
-
-
-
-/*
-    public GoogleMap.OnCameraChangeListener getCameraChangeListener()
-    {
-        return new GoogleMap.OnCameraChangeListener()
-        {
-            @Override
-            public void onCameraChange(CameraPosition position)
-            {
-
-                    //Log.d("Zoom", "Zoom: " + position.zoom);
-
-                    //if(previousZoomLevel != position.zoom)
-                    //{
-                    //    isZooming = true;
-                  //  }
-
-                //    previousZoomLevel = position.zoom;
-
-
-                float zoom = map.getCameraPosition().zoom;
-
-                //              Double zoom2 = Double.parseDouble(String.valueOf(zoom));
-
-                poner(zoom);
-
-            }
-        };
-    }
-*/
-
-
-
-
-
-    public void poner(){
-
-   // Toast.makeText(getActivity(),  "aqui",Toast.LENGTH_SHORT).show();
-
-
-        final View markerLayout = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-
-        // getCameraChangeListener(dato);
-
-        markerRating = (TextView) markerLayout.findViewById(R.id.marker_text);
-      // markerRating.setText("-");
-
-        markerRating.setVisibility(View.INVISIBLE);
-            //markerRating.setVisibility(markerLayout.GONE);
-
-
-       // markerRating.setText("edwwdw");
-
-
-    }
-
-
-/*
-    public GoogleMap.OnCameraChangeListener getCameraChangeListener(final String dat)  {
-        return new GoogleMap.OnCameraChangeListener()
-        {
-            @Override
-            public void onCameraChange(CameraPosition position)
-            {
-                Log.d("Zoom", "Zoom: " + position.zoom);
-
-                final View markerLayout = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-
-
-                markerRating = (TextView) markerLayout.findViewById(R.id.marker_text);
-                // markerRating.setText(dato);
-
-
-
-                if(position.zoom < 5.0)
-                {
-                    markerRating.setText("a");
-                    //isZooming = true;
-                }
-                else{
-                    markerRating.setText("b");
-
-                }
-
-                // previousZoomLevel = position.zoom;
-            }
-        };
-    }
-*/
-
 
 
     @Override
@@ -963,31 +571,7 @@ else{
       //  Toast.makeText(getActivity(), "Info window clicked : "+codigosnip,Toast.LENGTH_SHORT).show();
     }
 
-    /*
-    @Override
-    public void onCameraMove() {
-        cameraPosition = map.getCameraPosition();
-        if (cameraPosition.zoom > 6.0) {
-            //Toast.makeText(getActivity(), "Autorizado", Toast.LENGTH_SHORT).show();
 
-            map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-        } else {
-
-            map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-            zoomex = String.valueOf(cameraPosition.zoom);
-            //ponerx(String.valueOf(cameraPosition.zoom));
-            // Toast.makeText(getActivity(), zoomex, Toast.LENGTH_SHORT).show();
-            ponern(zoomex);
-        }
-
-        zoomex = String.valueOf(cameraPosition.zoom);
-        //ponerx(String.valueOf(cameraPosition.zoom));
-        // Toast.makeText(getActivity(), zoomex, Toast.LENGTH_SHORT).show();
-        ponern(zoomex);
-
-    }
-    */
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
@@ -1023,44 +607,12 @@ else{
     }
 
     private void selectItem1(){
-        // map.setMapType(map.MAP_TYPE_SATELLITE);
       map.setMapType(map.MAP_TYPE_HYBRID);
-
-      //  MapStyleOptions style = MapStyleOptions.loadRawResourceStyle(
-      //          getActivity(), R.raw.style_json);
-      //   map.setMapStyle(style);
-
-
-      //  estilo1();
-       // map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
-        // map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
     }
-
-
-    private void estilo1(){
-      //  map.setMapType(map.MAP_TYPE_HYBRID);
-       // boolean b = map.setMapStyle(MapStyleOptions.loadRawResourceStyle(this.getContext(), R.raw.style_json), map.MAP_TYPE_HYBRID);
-        // map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
-        map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
-    }
-
 
      private void selectItem2(){
-      // map.setMapType(map.MAP_TYPE_TERRAIN);
          map.setMapType(map.MAP_TYPE_NORMAL);
-
-         //   MapStyleOptions style = MapStyleOptions.loadRawResourceStyle(
-   //              getActivity(), R.raw.style_json);
-   //   map.setMapStyle(style);
-      //  estilo2();
-      //  map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
-
-        //map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
     }
 
-    private void estilo2(){
-      //  map.setMapType(map.MAP_TYPE_HYBRID);
-        map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
-        // map.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity().getApplication(), R.raw.style_json));
-    }
+
 }

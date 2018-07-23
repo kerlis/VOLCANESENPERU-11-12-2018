@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 public class Contenedorredsocial extends FragmentActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
     RelativeLayout informacion;
     RelativeLayout ajustes;
@@ -104,7 +103,6 @@ public class Contenedorredsocial extends FragmentActivity implements ActivityCom
                 startActivity(intent);
             }
         });
-
 
         blocke9 = (RelativeLayout) findViewById(R.id.blocke9);
         blocke9.setOnClickListener(new View.OnClickListener(){

@@ -887,30 +887,6 @@ public class dispersionviewer extends FragmentActivity implements NavigationView
         dispersionviewer.this.startActivity(i);
     }
 
-
-/*
-    class RetrevePDFStream extends AsyncTask<String, Void, InputStream> {
-        @Override
-        protected InputStream doInBackground(String... strings) {
-            InputStream  inputStream = null;
-            try{
-                URL url = new URL(strings[0]);
-                HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-                if (urlConnection.getResponseCode() == 200){
-                    inputStream =  new BufferedInputStream(urlConnection.getInputStream());
-                }
-            }
-            catch(IOException e){
-                return null;
-            }
-            return  inputStream;
-        }
-        @Override
-        protected void onPostExecute(InputStream inputStream) {
-            pdfView.fromStream(inputStream).load();
-        }
-    }
-    */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;

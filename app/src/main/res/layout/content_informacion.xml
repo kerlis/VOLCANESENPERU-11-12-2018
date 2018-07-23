@@ -29,8 +29,6 @@
         </RelativeLayout>
     </RelativeLayout>
 
-
-
         <RelativeLayout
             android:layout_below="@+id/encabezado2"
             android:layout_width="match_parent"
@@ -54,9 +52,6 @@
                     android:id="@+id/titulo_volcan_label"
                     style="@style/titulo_layer_text" >
                 </TextView>
-
-               <!-- android:text="Información APP"-->
-
 
             </RelativeLayout>
 
@@ -96,18 +91,6 @@
             style="@style/informacion_texto">
         </TextView>
 
-<!--
-        <TextView
-            android:layout_below="@+id/parrafo2"
-            android:id="@+id/parrafo31"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tercer_parrafo_info"
-            style="@style/informacion_texto">
-        </TextView>
-
--->
-
         <TextView
             android:layout_below="@+id/parrafo2"
             android:id="@+id/parrafo3"
@@ -117,9 +100,6 @@
 
             android:text="Caracteristicas">
         </TextView>
-
-
-
 
         <TextView
             android:layout_below="@+id/parrafo3"
@@ -205,11 +185,6 @@
             android:text="@string/caracteristicas_10"
             style="@style/informacion_texto">
         </TextView>
-
-
-
-
-
         <TextView android:id="@+id/caracteristicas9"
             style="@style/informacion_texto"
             android:layout_width="match_parent"
@@ -217,15 +192,9 @@
             android:layout_below="@+id/caracteristicas10"
             android:text="@string/caracteristicas_9"
             android:textStyle="bold"/>
-
-
     </RelativeLayout>
-
-
 </ScrollView>
 </RelativeLayout>
-
-
 <RelativeLayout android:layout_width="230dp"
 android:id="@+id/mDrawerBlock"
 android:layout_gravity="start"
@@ -237,6 +206,4 @@ android:layout_height="match_parent">
     android:id="@+id/ty"
     layout="@layout/list" />
 </RelativeLayout>
-
-
 </android.support.v4.widget.DrawerLayout>

@@ -1,5 +1,4 @@
 package peru.volcanes.volcanesper;
-
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +16,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 public class Alertareporteactividad extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     TextView pueblos;
     TextView volcan;

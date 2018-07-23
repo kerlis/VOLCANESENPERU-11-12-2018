@@ -1028,27 +1028,27 @@ public class sismosengeneralgoogle extends FragmentActivity implements OnMapRead
                     final Double magnitude = Double.parseDouble(magnitud2);
                     int height = 100;
                     int width = 100;
-                    BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.rojo8);
+                    BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.volcan_amarillo_sm);
                     Bitmap b=bitmapdraw.getBitmap();
                     Bitmap.createScaledBitmap(b, width, height, false);
                     final BitmapDescriptor icon;
                     if (magnitude > 0.0 && magnitude <= 2.5){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.circle1);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
                     else if (magnitude > 2.5 && magnitude <= 3.0){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.circle2);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
                     else if (magnitude > 3.0 && magnitude <= 3.5){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.circle3);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
                     else if (magnitude > 3.0 && magnitude <= 3.5){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.circle3);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
                     else if (magnitude > 3.5 && magnitude <= 3.6){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.circle3);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
                     else {
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.circle4);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
                     map.addMarker(new MarkerOptions().position(new LatLng(lati, longi)).title(local.getMagnitud() + " "+"Profundidad : "+local.getProfundidad()+"  >>>").snippet("Fecha : "+local.getFecha()+"\n  Hora"+local.getHora()).icon(icon).anchor(0.5f, 0.5f));
                     map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {

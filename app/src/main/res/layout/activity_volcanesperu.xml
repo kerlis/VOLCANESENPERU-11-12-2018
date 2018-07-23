@@ -343,7 +343,7 @@
                                     <ImageView
                                         style="@style/alertaicono"
                                         android:id="@+id/alertaroja"
-                                        android:src="@drawable/red_black_volcanes">
+                                        android:src="@drawable/volcan_amarillo_sm">
                                     </ImageView>
                                     <TextView
                                         android:layout_below="@+id/alertaroja"

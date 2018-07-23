@@ -1654,19 +1654,19 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
 
                     if (magnitude < 4.5){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.rojo8);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
 
                     else if (magnitude >= 4.5 && magnitude <= 6.0){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.rojo7);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
 
                     else if (magnitude > 6){
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.rojo6);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
 
                     else {
-                        icon = BitmapDescriptorFactory.fromResource(R.drawable.rojo6);
+                        icon = BitmapDescriptorFactory.fromResource(R.drawable.volcan_amarillo_sm);
                     }
 
 

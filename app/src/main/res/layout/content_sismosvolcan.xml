@@ -99,20 +99,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="0dp">
-           <!-- <FrameLayout
-                android:id="@+id/container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">-->
-
-                <!--<WebView  xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="match_parent"
-                     android:backgroundTint="@color/colorPrimary"
-                    android:id="@+id/activity_main_webview"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentStart="true" >
-                    -->
-
                     <im.delight.android.webview.AdvancedWebView
                         android:id="@+id/webview"
                         android:backgroundTint="@color/colorPrimary"
@@ -120,10 +106,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 
-
-
-              <!--  </WebView>-->
-            <!--</FrameLayout>-->
         </RelativeLayout>
     </RelativeLayout>
     <RelativeLayout android:layout_width="match_parent"

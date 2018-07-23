@@ -14,37 +14,20 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 public class Alertadatoslahar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-    TextView pueblos;
     TextView volcan;
     TextView tipodeevento;
-    TextView direccion;
-    TextView radio;
     TextView fecha;
     TextView hora;
     TextView observacicones;
-    TextView recomendaciones;
     TextView simulacro;
-    String pueblos_dat;
     String volcan_dat;
     String tipodeevento_dat;
-    String direccion_dat;
-    String radio_dat;
     String fecha_dat;
     String hora_dat;
     String observacicones_dat;
-    String recomendaciones_dat;
     String simulacro_dat;
     String horautc_dat;
     String nobrevolcan;
-
-    String fin_dato;
-    String inicio_dato;
-    String tiempo_dato;
-    String volcan_dato;
-    String codigo_dato;
-    String estado_dato;
-    String itemcodigo_dato;
-
     String tipodenotificacion_dat;
     private String[] mNavigationDrawerItemTitles;
     private DrawerLayout mDrawerLayout;
@@ -62,15 +45,11 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
     RelativeLayout blocke6a;
     TextView compartir;
     RelativeLayout compartirfile;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.datosalertalahar);
-
         compartirfile= (RelativeLayout) findViewById(R.id.b6);
-
-
         blocke1a = (RelativeLayout) findViewById(R.id.blocke1);
         blocke2a = (RelativeLayout) findViewById(R.id.blocke2);
         blocke4a = (RelativeLayout) findViewById(R.id.blocke4);
@@ -106,7 +85,6 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
             }
         });
 
-
         blocke9 = (RelativeLayout) findViewById(R.id.blocke9);
 
         blocke9.setOnClickListener(new View.OnClickListener(){
@@ -135,7 +113,6 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
         observacicones = (TextView) findViewById(R.id.observacicones);
         simulacro = (TextView) findViewById(R.id.simulacro);
         Intent i=this.getIntent();
-
         tipodenotificacion_dat = i.getExtras().getString("TIPODENOTIFICACION");
         tipodeevento_dat = i.getExtras().getString("TIPODEEVENTO");
         fecha_dat = i.getExtras().getString("FECHA");
@@ -144,14 +121,9 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
         volcan_dat = i.getExtras().getString("VOLCAN");
         simulacro_dat = i.getExtras().getString("SIMULACRO");
         horautc_dat = i.getExtras().getString("HORAUTC");
-
-
         compartir = (TextView) findViewById(R.id.compartir);
-
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         compartir.setTypeface(fontAwesomeFont);
-
-
         String hora_subs = hora_dat.substring(0, hora_dat.length() - 1);
         String hora_subs2 = hora_subs.substring(1);
         String tipodeevento_subs = tipodeevento_dat.substring(0, tipodeevento_dat.length() - 1);
@@ -310,9 +282,7 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
                 startActivity(Intent.createChooser(sharingIntent, "Share using"));
             }
         });
-
     }
-
     void setupDrawerToggle(){
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
         mDrawerToggle.syncState();
@@ -321,5 +291,4 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }
-
 }

@@ -10,6 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.erlis.volcanperu.MainActivity">
+
     <TextView
         android:id="@+id/txtMain"
         android:layout_width="match_parent"
@@ -19,10 +20,13 @@
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/contenedor"
         android:layout_below="@id/encabezado">
+
         <FrameLayout
             android:id="@+id/map"
             xmlns:tools="http://schemas.android.com/tools"
@@ -32,6 +36,7 @@
             android:layout_alignParentTop="true"
             tools:context="com.example.erlis.volcanperu.pagedivisor"
             android:layout_alignParentStart="true">
+
         </FrameLayout>
         <Button
             android:layout_width="80dp"
@@ -67,6 +72,15 @@
             android:layout_height="30dp"
             android:background="@color/transparente">
         </Button>
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true" />
+
         <RelativeLayout android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true">

@@ -1,5 +1,4 @@
 package peru.volcanes.volcanesper;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -19,7 +18,6 @@ import android.widget.RelativeLayout;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import peru.volcanes.volcanesper.m_model.alertacenizas;
 import peru.volcanes.volcanesper.m_model.erupciones;
 import peru.volcanes.volcanesper.m_model.sismos;
@@ -141,25 +139,13 @@ public class Alertascenizas extends FragmentActivity {
         camaraurls = i.getExtras().getString("CAMARAURL");
         sismogramaurls = i.getExtras().getString("SISMOGRAMA");
         mapasismico = i.getExtras().getString("MAPASISMICO");
-
         alertacenizas_text = (TextView) findViewById(R.id.alertacenizas_text);
         camara_text = (TextView) findViewById(R.id.camara_text);
         mapa_text = (TextView) findViewById(R.id.mapa_text);
         trayectoria_cenizas_text = (TextView) findViewById(R.id.trayectoria_cenizas_text);
         trayectoria_cenizas_text2 = (TextView) findViewById(R.id.trayectoria_cenizas_text2);
         trayectoria_cenizas_text3 = (TextView) findViewById(R.id.trayectoria_cenizas_text3);
-
         Toast.makeText(Alertascenizas.this, codigo_text, Toast.LENGTH_LONG).show();
-
-        /*
-        alertacenizas_text.setText(" Alerta de Cenizas ");
-        camara_text.setText(" Cámara en tiempo real ");
-        mapa_text.setText(" Mapa sísmico ");
-        trayectoria_cenizas_text.setText(" Pronóstico de dispersión ");
-        trayectoria_cenizas_text2.setText(" Reportes actividad ");
-        trayectoria_cenizas_text3.setText(" Sismogramas tiempo real ");
-*/
-
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         bloque1 = (RelativeLayout) findViewById(R.id.bloque1);
         blocke3a = (RelativeLayout) findViewById(R.id.bloque3);
@@ -200,14 +186,11 @@ public class Alertascenizas extends FragmentActivity {
             }
         });
 
-
         slidingDrawer = (SlidingDrawer) findViewById(R.id.slidingDrawer);
         slidingDrawer.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener() {
             @Override
             public void onDrawerOpened()
             {
-                // slideButton.setBackgroundResource(R.drawable.down_arrow_icon);
-                //  slidingDrawer.setBackgroundResource(R.drawable.amarillo_volcanes);
             }
         });
 
@@ -216,7 +199,6 @@ public class Alertascenizas extends FragmentActivity {
             @Override
             public void onDrawerClosed()
             {
-                //  slideButton.setBackgroundResource(R.drawable.upwar_arrow_icon);
                 slidingDrawer.setBackgroundColor(Color.TRANSPARENT);
             }
         });
@@ -279,8 +261,6 @@ public class Alertascenizas extends FragmentActivity {
                 finish();
             }
         });
-
-
 
         sliderz = (ImageView) findViewById(R.id.sliderz);
         mTitle = mDrawerTitle = getTitle();

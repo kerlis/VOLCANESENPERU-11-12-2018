@@ -27,9 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
 import retrofit2.http.Url;
-
 public class Pdfmetodologia extends FragmentActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
     TextView titulo_trayectorias;
     RelativeLayout blocke1a;

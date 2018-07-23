@@ -385,7 +385,6 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         mimageView32.setImageResource(R.drawable.armonico);
     }
 
-
     private void openmap(String...details)
     {
         Intent i=new Intent(Convenciones.this,Pdfmetodologia.class);

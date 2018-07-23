@@ -148,7 +148,7 @@ public class pagedivisor extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 vpPager.setCurrentItem(1, true);
-                FragmentWithOneImage.newInstance("", R.drawable.android_1);
+                FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
                 cell1border.setBackgroundColor(getResources().getColor(R.color.igp));
                 cell2border.setBackgroundColor(getResources().getColor(R.color.celesteigp));
             }
@@ -160,7 +160,7 @@ public class pagedivisor extends AppCompatActivity {
                 vpPager.setCurrentItem(0, true);
                 cell2border.setBackgroundColor(getResources().getColor(R.color.igp));
                 cell1border.setBackgroundColor(getResources().getColor(R.color.celesteigp));
-                FragmentWithTwoImages.newInstance("", R.drawable.android_3, R.drawable.android_4);
+                FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
             }
         });
 
@@ -268,9 +268,13 @@ public class pagedivisor extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 1:
-                   return FragmentWithTwoImages.newInstance("", R.drawable.android_3, R.drawable.android_4);
+                    return FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
+
+                //return FragmentWithTwoImages.newInstance("", R.drawable.android_3, R.drawable.android_4);
                 case 0:
-                   return FragmentWithOneImage.newInstance("", R.drawable.android_1);
+                    return FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
+
+                    //return FragmentWithOneImage.newInstance("", R.drawable.android_1);
                 default:
                     return null;
             }

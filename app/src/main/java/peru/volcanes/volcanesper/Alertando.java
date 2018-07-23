@@ -35,7 +35,6 @@ public class Alertando extends AppCompatActivity implements NavigationView.OnNav
     String recomendaciones_dat;
     String simulacro_dat;
     String horautc_dat;
-
     String nobrevolcan;
     String fin_dato;
     String inicio_dato;
@@ -45,7 +44,6 @@ public class Alertando extends AppCompatActivity implements NavigationView.OnNav
     String estado_dato;
     String itemcodigo_dato;
     String tipodenotificacion_dat;
-
     private String[] mNavigationDrawerItemTitles;
     private DrawerLayout mDrawerLayout;
     Toolbar toolbar;
@@ -66,11 +64,8 @@ public class Alertando extends AppCompatActivity implements NavigationView.OnNav
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.datosalertadecenizas);
-
         compartirfile= (RelativeLayout) findViewById(R.id.b6);
-
         compartir = (TextView) findViewById(R.id.compartir);
-
         blocke1a = (RelativeLayout) findViewById(R.id.blocke1);
         blocke2a = (RelativeLayout) findViewById(R.id.blocke2);
         blocke4a = (RelativeLayout) findViewById(R.id.blocke4);
@@ -144,14 +139,11 @@ public class Alertando extends AppCompatActivity implements NavigationView.OnNav
         tipodeevento_dat = i.getExtras().getString("TIPODEEVENTO");
         direccion_dat = i.getExtras().getString("DIRECCION");
         radio_dat = i.getExtras().getString("RADIO");
-
         fecha_dat = i.getExtras().getString("FECHA");
-
         hora_dat = i.getExtras().getString("HORA");
         recomendaciones_dat = i.getExtras().getString("RECOMENDACIONES");
         observacicones_dat = i.getExtras().getString("OBSERVACIONES");
         simulacro_dat = i.getExtras().getString("SIMULACRO");
-
         horautc_dat = i.getExtras().getString("HORAUTC");
         String hora_subs = hora_dat.substring(0, hora_dat.length() - 1);
         String hora_subs2 = hora_subs.substring(1);
@@ -260,17 +252,11 @@ public class Alertando extends AppCompatActivity implements NavigationView.OnNav
 
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         compartir.setTypeface(fontAwesomeFont);
-
-
         String substraccionpueblos= pueblos_subs.substring(1);
         pueblos.setText("Pueblos: " + substraccionpueblos);
-
-
         tipodeevento.setText("Tipo de Evento: " + tipodeevento_subs2);
         direccion.setText("Dirección: " + direccion_subs2);
         radio.setText("Radio de Dispersión: " + "mayor a " + radio_subs2 + " km");
-
-
         String asubstring = fecha_subs2.substring(0, 10);
         fecha.setText("Fecha: " + asubstring);
 
@@ -317,10 +303,6 @@ public class Alertando extends AppCompatActivity implements NavigationView.OnNav
                 String radio_subs = radio_dat.substring(0, radio_dat.length() - 1);
                 String radio_subs2 = radio_subs.substring(1);
 
-                //String urlpdf = reporteactividad_dat.substring(1);
-                //String tipodeevento_subs = tipodeevento_dat.substring(0, tipodeevento_dat.length() - 1);
-                //String tipodeevento_subs2 = tipodeevento_subs.substring(1);
-
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 String direccion_subs = direccion_dat.substring(0, direccion_dat.length() - 1);
@@ -355,7 +337,6 @@ public class Alertando extends AppCompatActivity implements NavigationView.OnNav
             }
         });
     }
-
     void setupDrawerToggle(){
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
         mDrawerToggle.syncState();

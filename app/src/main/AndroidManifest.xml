@@ -178,10 +178,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Alertadecenizasdatos"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Contenedorredsocial"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />

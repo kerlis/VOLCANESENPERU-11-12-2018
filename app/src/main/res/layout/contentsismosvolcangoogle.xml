@@ -171,7 +171,7 @@ android:layout_height="match_parent">
                         android:id="@+id/superficiales"
                         style="@style/textoprofundidades"/>
                     <ImageView
-                        android:src="@drawable/puntorojo"
+                        android:src="@drawable/volcan_amarillo_sm"
                         android:id="@+id/puntorojoprof"
                         style="@style/imagenespuntosprofundidad1"
                         android:elevation="5dp" />
@@ -187,7 +187,7 @@ android:layout_height="match_parent">
                         android:id="@+id/intermedios"
                         style="@style/textoprofundidades"/>
                     <ImageView
-                        android:src="@drawable/puntorojo"
+                        android:src="@drawable/volcan_amarillo_sm"
                         android:id="@+id/puntoverdeprof"
                         style="@style/imagenespuntosprofundidad2"
                         android:elevation="5dp" />
@@ -204,7 +204,7 @@ android:layout_height="match_parent">
                         style="@style/textoprofundidades"/>
 
                     <ImageView
-                        android:src="@drawable/puntorojo"
+                        android:src="@drawable/volcan_amarillo_sm"
                         android:id="@+id/puntoazulprof"
                         style="@style/imagenespuntosprofundidad3"
                         android:elevation="5dp" />
@@ -220,7 +220,7 @@ android:layout_height="match_parent">
                         android:id="@+id/ultimosismo"
                         style="@style/textoprofundidades"/>
                     <ImageView
-                        android:src="@drawable/puntorojo"
+                        android:src="@drawable/volcan_amarillo_sm"
                         android:id="@+id/puntoamarilloultimosismo"
                         style="@style/imagenespuntosprofundidad4"
                         android:elevation="5dp"

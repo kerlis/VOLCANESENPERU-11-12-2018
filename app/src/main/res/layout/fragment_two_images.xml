@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/txtMain"
         android:layout_width="match_parent"
@@ -17,11 +19,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true" />
+
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/plomo_clarito2"
         android:id="@+id/leyendacontainer">
-
         <RelativeLayout android:layout_width="match_parent"
             android:layout_toStartOf="@+id/bloque2"
             android:layout_centerVertical="true"
@@ -37,9 +47,7 @@
                 android:textSize="11dp"
                 android:textColor="@color/igp"
                 android:text="Volcán">
-
             </TextView>
-
             <RelativeLayout android:layout_width="3dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="2dp"
@@ -47,7 +55,6 @@
                 android:background="@color/blancos"
                 android:layout_height="match_parent">
             </RelativeLayout>
-
         </RelativeLayout>
 
         <RelativeLayout android:layout_width="100dp"
@@ -67,28 +74,18 @@
                 android:textColor="@color/igp"
                 android:text="Nivel de Riesgo Relativo">
             </TextView>
-
         </RelativeLayout>
-<!--
-    <TextView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/leyenda"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/igp"
-        android:text="Volcanes de acuerdo a nivel de riesgo volcánico">
-        </TextView>
--->
     </RelativeLayout>
 
 
-
         <ListView
-            android:layout_below="@+id/leyendacontainer"
+            android:id="@+id/listado_volcanes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-             android:id="@+id/listado_volcanes">
-        </ListView>
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"></ListView>
+
+
+</RelativeLayout>
+
 </RelativeLayout>

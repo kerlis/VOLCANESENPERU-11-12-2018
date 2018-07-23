@@ -8,11 +8,8 @@
     android:background="@color/blanco"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     fab:context="com.example.usuario.volcanesperu.Contenedorredsocial">
-
-
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <RelativeLayout android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/encabezado2">
@@ -26,7 +23,6 @@
                     layout="@layout/encabezado"/>
             </RelativeLayout>
         </RelativeLayout>
-
         <TextView
             android:text="Redes Sociales"
             android:layout_width="match_parent"
@@ -34,29 +30,20 @@
             android:layout_below="@+id/encabezado2"
             android:id="@+id/texto"
             style="@style/titulolistadosismos" />
-
-
-
         <WebView
             android:layout_below="@+id/texto"
             android:layout_width="match_parent"
             android:id="@+id/contenedor"
             android:layout_height="match_parent"  >
         </WebView>
-
-
-
         <ProgressBar
             android:id="@+id/progressBar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_centerInParent="true"
-            />
-
+            android:layout_centerInParent="true" />
     </RelativeLayout>
-
     <RelativeLayout android:layout_width="230dp"
         android:id="@+id/mDrawerBlock"
         android:layout_gravity="start"
@@ -64,18 +51,12 @@
         android:choiceMode="singleChoice"
         android:divider="@android:color/darker_gray"
         android:layout_height="match_parent">
-
         <include
             android:id="@+id/ty"
             layout="@layout/list"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true" />
     </RelativeLayout>
-
-
-
-
-
 </android.support.v4.widget.DrawerLayout>
 
 

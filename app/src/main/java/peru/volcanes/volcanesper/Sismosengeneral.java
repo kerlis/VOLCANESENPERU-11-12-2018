@@ -24,8 +24,11 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
-import im.delight.android.webview.AdvancedWebView;
-public class Sismosengeneral extends Activity implements AdvancedWebView.Listener {
+//import im.delight.android.webview.AdvancedWebView;
+
+//public class Sismosengeneral extends Activity implements AdvancedWebView.Listener {
+
+public class Sismosengeneral extends Activity  {
     String urlcamara;
     String nombre;
     String estadovolcan;
@@ -79,7 +82,7 @@ public class Sismosengeneral extends Activity implements AdvancedWebView.Listene
     TextView camara;
     TextView mapa;
     RelativeLayout blocke6a;
-    private AdvancedWebView mWebView;
+    //private AdvancedWebView mWebView;
     public static ProgressDialog progreso ;
     String proyecionsenahmi;
     RelativeLayout bloquenombre;
@@ -607,9 +610,9 @@ public class Sismosengeneral extends Activity implements AdvancedWebView.Listene
         //  webView=(WebView)findViewById(R.id.webView);
 
 
-        mWebView = (AdvancedWebView) findViewById(R.id.webview);
-        mWebView.setListener(this, this);
-        mWebView.loadUrl(mapasismico);
+      //  mWebView = (AdvancedWebView) findViewById(R.id.webview);
+       // mWebView.setListener(this, this);
+       // mWebView.loadUrl(mapasismico);
 
 
         //webView.getSettings().setBuiltInZoomControls(true);
@@ -714,30 +717,7 @@ public class Sismosengeneral extends Activity implements AdvancedWebView.Listene
         }
     }
 
-    @Override
-    public void onPageStarted(String url, Bitmap favicon) {
 
-    }
-
-    @Override
-    public void onPageFinished(String url) {
-
-    }
-
-    @Override
-    public void onPageError(int errorCode, String description, String failingUrl) {
-
-    }
-
-    @Override
-    public void onDownloadRequested(String url, String suggestedFilename, String mimeType, long contentLength, String contentDisposition, String userAgent) {
-
-    }
-
-    @Override
-    public void onExternalPageRequest(String url) {
-
-    }
 
 
     private class MyBrowser extends WebViewClient {

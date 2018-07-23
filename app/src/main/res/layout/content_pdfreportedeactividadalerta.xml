@@ -76,61 +76,6 @@
 
         </RelativeLayout>
     </RelativeLayout>
-
-    <!--
-    <RelativeLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="0dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_height="wrap_content">
-            <include
-                android:id="@+id/ty255"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                layout="@layout/optionsvolcan"/>
-        </RelativeLayout>
-    </RelativeLayout>
-
-    -->
-
-  <!--
-    <RelativeLayout
-        android:layout_height="47dp"
-        android:id="@+id/opt1"
-        android:padding="0dp"
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:orientation="horizontal">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:background="@drawable/gradient_buton"
-            android:id="@+id/options"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_height="47dp">
-            <TextView android:layout_width="36dp"
-                android:layout_height="match_parent"
-                android:textSize="17dp"
-                android:textAlignment="center"
-                android:gravity="center_vertical"
-                android:layout_marginRight="15dp"
-                android:layout_centerVertical="true"
-                android:textStyle="bold"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/iconoslidebackground"
-                android:text="@string/toup"
-                android:textColor="@color/igp"
-                android:id="@+id/openslide"/>
-        </RelativeLayout>
-    </RelativeLayout>
-
-    -->
-
     <RelativeLayout android:layout_width="230dp"
         android:id="@+id/mDrawerBlock"
         android:layout_gravity="start"
