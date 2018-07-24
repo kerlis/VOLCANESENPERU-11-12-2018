@@ -48,7 +48,7 @@ public class FragmentWithTwoImages extends Fragment {
     private Location location;
     RelativeLayout menuright;
     int count = 0;
-
+    VolcanesAdapter adapter5;
     private ProgressBar spinner;
     String ShowOrHideWebViewInitialUse = "show";
 
@@ -112,10 +112,11 @@ public class FragmentWithTwoImages extends Fragment {
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                final Iterable<DataSnapshot> dataSnapshots = dataSnapshot.getChildren();
+              ///  final Iterable<DataSnapshot> dataSnapshots = dataSnapshot.getChildren();
                 volcanes objetosismo = dataSnapshot.getValue(volcanes.class);
                 objetoalertacenizas.add(objetosismo);
-                count ++;
+                losvolcanes.setAdapter(adapter5);
+                //count ++;
 
                 // int d = count++;
                 //if( objetosismo == null ) {
@@ -126,19 +127,20 @@ public class FragmentWithTwoImages extends Fragment {
                 //}
 
 
-                Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
+             // Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
 
-                if(count >= dataSnapshot.getChildrenCount()) {
-
-                    spinner.setVisibility(View.GONE);
+             //   if(count >= dataSnapshot.getChildrenCount()) {
+//   spinner.setVisibility(View.GONE);
                     //stop progress bar here
-                }
+              //  }
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 volcanes objetosismo = dataSnapshot.getValue(volcanes.class);
                 objetoalertacenizas.add(objetosismo);
-             //   int d = count++;
+                losvolcanes.setAdapter(adapter5);
+
+                //   int d = count++;
                // if( objetosismo == null ) {
                 //    Toast.makeText(getActivity(), d, Toast.LENGTH_LONG).show();
                 //}
@@ -157,7 +159,7 @@ public class FragmentWithTwoImages extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        //mFirebaseDatabase.keepSynced(true);
+        mFirebaseDatabase3.keepSynced(true);
         return objetoalertacenizas;
     }
 }

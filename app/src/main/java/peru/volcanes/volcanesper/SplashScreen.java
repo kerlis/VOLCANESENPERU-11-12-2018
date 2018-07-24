@@ -15,15 +15,6 @@ public class SplashScreen extends Activity {
     TextView lema;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-      //  FirebaseApp.initializeApp(this);
-        /*FirebaseDatabase.getInstance();
-        Firebase.getDefaultConfig().setPersistenceEnabled(true);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        mFirebaseDatabase = database.getReference("actividadvolcanica");
-        mFirebaseDatabase3 = database.getReference("actividadvolcanica").child("volcanes");
-        mFirebaseDatabase.keepSynced(true);
-        mFirebaseDatabase3.keepSynced(true);*/
       if(database == null) {
             database = FirebaseDatabase.getInstance();
             Firebase.getDefaultConfig().setPersistenceEnabled(true);
@@ -46,7 +37,6 @@ public class SplashScreen extends Activity {
                 }finally{
                   Intent intent7 = new Intent(SplashScreen.this,pagedivisor.class);
                     //  Intent intent7 = new Intent(SplashScreen.this,Alertando.class);
-
                     startActivity(intent7);
                 }
             }

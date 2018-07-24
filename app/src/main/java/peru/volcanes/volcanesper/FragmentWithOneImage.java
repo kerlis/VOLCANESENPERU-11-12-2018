@@ -496,7 +496,7 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
                     });
                 }
 
-                Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
 
                 if(count >= dataSnapshot.getChildrenCount()) {
 

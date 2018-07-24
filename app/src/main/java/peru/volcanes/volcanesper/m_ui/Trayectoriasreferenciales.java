@@ -48,7 +48,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import peru.volcanes.volcanesper.R;
-import peru.volcanes.volcanesper.dispersionviewer;
 import peru.volcanes.volcanesper.m_model.dispersion;
 
 import java.util.ArrayList;
@@ -145,12 +144,12 @@ public class Trayectoriasreferenciales extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 String shareBody = "Reporte de actividad volcanica " + s.getHorasreporte();
                 String shareSub = s.getEnlaceurl();
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareBody);
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareSub);
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, shareBody);
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareSub);
                 c.startActivity(Intent.createChooser(sharingIntent, "Share using"));
             }
         });
@@ -170,7 +169,7 @@ public class Trayectoriasreferenciales extends BaseAdapter {
         return convertView;
     }
     private void veralerta(String...details) {
-        Intent i=new Intent(c,dispersionviewer.class);
+        Intent i=new Intent(c,dispersion.class);
         i.putExtra("FECHA",details[0]);
         i.putExtra("NOMBRE",details[1]);
         i.putExtra("PDFURL",details[2]);

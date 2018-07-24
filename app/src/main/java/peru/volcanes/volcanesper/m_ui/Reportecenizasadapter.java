@@ -12,13 +12,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import peru.volcanes.volcanesper.Pdfvieweralertas;
 import peru.volcanes.volcanesper.R;
 import peru.volcanes.volcanesper.m_model.reportealertacenizas;
-
 import java.util.ArrayList;
-
 public class Reportecenizasadapter extends BaseAdapter {
     TextView fecha_hora;
     TextView evento;

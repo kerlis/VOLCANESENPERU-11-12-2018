@@ -22,7 +22,6 @@ public class Contenedorredsocial extends FragmentActivity implements ActivityCom
     RelativeLayout ajustes;
     RelativeLayout compartir;
     RelativeLayout convenciones;
-    TextView titulovolcanlabel;
     Button mk;
     WebView webView;
     String valor;
@@ -35,7 +34,6 @@ public class Contenedorredsocial extends FragmentActivity implements ActivityCom
     android.support.v7.app.ActionBarDrawerToggle mDrawerToggle;
     private RelativeLayout mDrawerBlock;
     Toolbar toolbar;
-
     RelativeLayout blocke1a;
     RelativeLayout blocke2a;
     RelativeLayout blocke3a;
@@ -108,7 +106,7 @@ public class Contenedorredsocial extends FragmentActivity implements ActivityCom
         blocke9.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {
-                Intent intent = new Intent(Contenedorredsocial.this,Contenedorredsocial.class);
+                Intent intent = new Intent(Contenedorredsocial.this,Listadoredessociales.class);
                 startActivity(intent);
             }
         });

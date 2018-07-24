@@ -328,7 +328,7 @@
                     android:padding="0dp" >
                     <RelativeLayout
                         android:layout_width="50dp"
-                        android:background="@drawable/fondoiconoreportes2"
+                        android:background="@drawable/volcan_amarillo_sm"
                         android:id="@+id/b6"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"

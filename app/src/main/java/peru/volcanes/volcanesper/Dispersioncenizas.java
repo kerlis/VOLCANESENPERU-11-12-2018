@@ -20,6 +20,7 @@ import android.widget.TextView;
 import peru.volcanes.volcanesper.m_model.dispersion;
 import peru.volcanes.volcanesper.m_model.erupciones;
 import peru.volcanes.volcanesper.m_ui.Trayectoriasreferenciales;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.firebase.database.ChildEventListener;
@@ -60,8 +61,8 @@ public class Dispersioncenizas extends FragmentActivity {
     android.support.v7.app.ActionBarDrawerToggle mDrawerToggle;
     ImageView sliderz;
     ArrayList<peru.volcanes.volcanesper.m_model.sismos> objetosismos = new ArrayList<peru.volcanes.volcanesper.m_model.sismos>();
-    ArrayList<peru.volcanes.volcanesper.m_model.erupciones> objetoerupciones = new ArrayList<erupciones>();
-    ArrayList<peru.volcanes.volcanesper.m_model.dispersion> objetoalertacenizas = new ArrayList<dispersion>();
+    ArrayList<erupciones> objetoerupciones = new ArrayList<erupciones>();
+    ArrayList<dispersion> objetoalertacenizas = new ArrayList<dispersion>();
     Button mk, mk2;
     TextView time;
     TextView text_volcan;
@@ -110,7 +111,7 @@ public class Dispersioncenizas extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayList<peru.volcanes.volcanesper.m_model.dispersion> objetoalertacenizas = new ArrayList<dispersion>();
+        ArrayList<dispersion> objetoalertacenizas = new ArrayList<dispersion>();
         setContentView(R.layout.activity_reportedispersion);
         database = FirebaseDatabase.getInstance();
         Intent i = this.getIntent();

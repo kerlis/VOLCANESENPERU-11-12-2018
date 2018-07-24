@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/blanco"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    fab:context="com.example.usuario.volcanesperu.Contenedorredsocial">
+    fab:context="peru.volcanes.volcanesper.Contenedorredsocial">
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout android:layout_width="match_parent"

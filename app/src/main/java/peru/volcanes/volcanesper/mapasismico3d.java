@@ -387,17 +387,6 @@ public class mapasismico3d extends Activity {
             mapasismic_menu.setVisibility(View.VISIBLE);
         }
 
-     /*--------VISUALIZACION DE MENU----------*/
-
-     /*
-        alertacenizas_text.setText(" Alerta de Cenizas ");
-        camara_text.setText(" Cámara en tiempo real ");
-        mapa_text.setText(" Mapa sísmico ");
-        trayectoria_cenizas_text.setText(" Pronóstico de dispersión ");
-        trayectoria_cenizas_text2.setText(" Reportes actividad ");
-        trayectoria_cenizas_text3.setText(" Sismogramas tiempo real ");
-*/
-
         bloque5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -43,7 +43,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 public class volcanmenu extends AppCompatActivity {
-   // private static final String URL = "http://arteypixel.com/ticsanisismicidad/2.html";
     private static final String CHROME_PACKAGE = "com.android.chrome";
     private CustomTabsServiceConnection ctConnection;
     private CustomTabsSession customTabsSession;

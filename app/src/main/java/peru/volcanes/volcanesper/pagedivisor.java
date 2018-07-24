@@ -1,5 +1,4 @@
 package peru.volcanes.volcanesper;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -21,14 +20,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 public class pagedivisor extends AppCompatActivity {
-
     RelativeLayout titulopantalla_detalles;
     SupportMapFragment sMapFragment;
     Button mk;
@@ -60,17 +56,13 @@ public class pagedivisor extends AppCompatActivity {
     RelativeLayout cell1;
     RelativeLayout cell2;
     Context mContext;
-
     RelativeLayout cell1border;
     RelativeLayout cell2border;
-
     private DatabaseReference mFirebaseDatabase;
     private DatabaseReference mFirebaseDatabasex;
     private DatabaseReference mFirebaseDatabase4;
     private FirebaseDatabase mFirebaseInstance;
     RelativeLayout blocke6a;
-
-
     private static Context context;
     FragmentPagerAdapter adapterViewPager;
     @Override

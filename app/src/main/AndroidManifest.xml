@@ -32,6 +32,9 @@
         android:theme="@style/AppTheme"
         android:largeHeap="true"
         android:hardwareAccelerated="false"
+
+
+
         tools:replace="android:supportsRtl">
         <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
@@ -70,11 +73,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ultimosvolcanes"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Reportesdeactividad"
             android:label="@string/app_name"
             android:largeHeap="true"
@@ -99,19 +97,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Dispersioncenizas"
-            android:label="@string/app_name"
-            android:largeHeap="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Detalles"
-            android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".dispersionviewer"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -137,11 +123,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Detallesvolcan"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Sismogramas"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -161,18 +142,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Alertascenizas"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Veralertacenizas"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".Convenciones"
             android:label="@string/app_name"
