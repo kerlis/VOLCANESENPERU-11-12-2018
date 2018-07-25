@@ -212,7 +212,21 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_height="47dp"></RelativeLayout>
+            android:layout_height="47dp">
+            <TextView android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:textSize="17dp"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/iconoslidebackground"
+                android:text="@string/toup"
+                android:textColor="@color/igp"
+                android:id="@+id/openslide"/>
+        </RelativeLayout>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="230dp"
@@ -223,20 +237,7 @@
         android:divider="@android:color/darker_gray"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/openslide"
-            android:layout_width="36dp"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/iconoslidebackground"
-            android:gravity="center_vertical"
-            android:text="@string/toup"
-            android:textAlignment="center"
-            android:textColor="@color/igp"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+
 
         <include
             android:id="@+id/ty"

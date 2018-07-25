@@ -205,19 +205,19 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         descripcion3.setText(Html.fromHtml("<b align=right> Alerta naranja: </b> el volcán registra una variación significativa en su actividad eruptiva (explosiones frecuentes, posibles lahares). Seguir las recomendaciones de las autoridades y mantenerse alejado del volcán."));
 
         descripcion34 = (TextView) findViewById(R.id.descripcion34);
-        descripcion34.setText(Html.fromHtml("<b align=right> Alerta roja: </b> el volcán está en plena erupción, expulsando grandes volúmenes de productos volcánicos (ceniza, bloques balísticos, flujos piroclásticos y lahares). Posible evacuación."));
+        descripcion34.setText(Html.fromHtml("<b align=right> Alerta roja: </b> el volcán está en plena erupción y expulsando grandes volúmenes de productos volcánicos (ceniza, bloques balísticos, flujos piroclásticos y lahares). Posible evacuación."));
 
         descripcion34muyalto = (TextView) findViewById(R.id.descripcion34muyalto);
-        descripcion34muyalto.setText(Html.fromHtml("<b align=right> Muy alto: </b> Después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Sabancaya, Misti, Ubinas y Coropuna representan un alto riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 240.0 a190.8."));
+        descripcion34muyalto.setText(Html.fromHtml("<b align=right> Muy alto: </b> después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Sabancaya, Misti, Ubinas y Coropuna representan un alto riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 240.0 a190.8."));
 
         descripcion34alto = (TextView) findViewById(R.id.descripcion34alto);
-        descripcion34alto.setText(Html.fromHtml("<b align=right> Alto: </b> Después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Yucamane, Tutupaca, Huaynaputina, Ticsani y Chachani representan un alto riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 162.6 a121.6."));
+        descripcion34alto.setText(Html.fromHtml("<b align=right> Alto: </b> después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Yucamane, Tutupaca, Huaynaputina, Ticsani y Chachani representan un alto riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 162.6 a121.6."));
 
         descripcion34moderado = (TextView) findViewById(R.id.descripcion34moderado);
-        descripcion34moderado.setText(Html.fromHtml("<b align=right> Moderado: </b> Después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Sara Sara, Casiri y Quimsachata representan un moderado riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 67.5 a 42.8."));
+        descripcion34moderado.setText(Html.fromHtml("<b align=right> Moderado: </b> después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Sara Sara, Casiri y Quimsachata representan un moderado riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 67.5 a 42.8."));
 
         descripcion34bajo = (TextView) findViewById(R.id.descripcion34bajo);
-        descripcion34bajo.setText(Html.fromHtml("<b align=right> Bajo: </b> Después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Cerro Purupuruni, Andahua, Huambo y Cerro Auquihuato representan un bajo riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 27.3 a 10.5."));
+        descripcion34bajo.setText(Html.fromHtml("<b align=right> Bajo: </b> después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Cerro Purupuruni, Andahua, Huambo y Cerro Auquihuato representan un bajo riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 27.3 a 10.5."));
 
         descripcion34alertacenizas = (TextView) findViewById(R.id.descripcion34alertacenizas);
         descripcion34alertacenizas.setText(Html.fromHtml("<b align=right> Alerta de cenizas: </b> comunicado que advierte la ocurrencia de un evento explosivo o emisiones de ceniza en el volcán, además de señalar la dirección de dispersión de este material y las posibles áreas afectadas por dicho fenómeno."));
@@ -232,7 +232,7 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         descripcion34volcanescudo.setText(Html.fromHtml("<b align=right> Volcanes escudo: </b> se forman por la emisión de lavas muy fluidas y se caracterizan por tener un cráter de gran diámetro y un cono de pendiente suave. Ej: volcán Kilauea en Hawái."));
 
         descripcion34volcanconoescoria = (TextView) findViewById(R.id.descripcion34volcanconoescoria);
-        descripcion34volcanconoescoria.setText(Html.fromHtml("<b align=right> Conos de escoria: </b> Conos de escoria: estos volcanes están formados por material piroclástico que suele producir erupciones explosivas moderadas. Tienen laderas empinadas, son pequeños y, por lo general, permanecen activos por poco tiempo. Ej: valle de Andahua."));
+        descripcion34volcanconoescoria.setText(Html.fromHtml("<b align=right> Conos de escoria: </b> conos de escoria: estos volcanes están formados por material piroclástico que suele producir erupciones explosivas moderadas. Tienen laderas empinadas, son pequeños y, por lo general, permanecen activos por poco tiempo. Ej: valle de Andahua."));
 
         descripcion34volcanestratovolcan = (TextView) findViewById(R.id.descripcion34volcanestratovolcan);
         descripcion34volcanestratovolcan.setText(Html.fromHtml("<b align=right> Estratovolcán: </b> tienen un cono bien desarrollado constituido por la acumulación de lava y productos piroclásticos alrededor del cráter. Se forman por la repetición de numerosas erupciones. Ej: volcán Misti."));

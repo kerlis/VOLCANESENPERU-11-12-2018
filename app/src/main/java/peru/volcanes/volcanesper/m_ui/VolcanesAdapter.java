@@ -1,5 +1,4 @@
 package peru.volcanes.volcanesper.m_ui;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,14 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import peru.volcanes.volcanesper.R;
 import peru.volcanes.volcanesper.m_model.volcanes;
 import peru.volcanes.volcanesper.volcanmenu;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
-
 public class VolcanesAdapter extends BaseAdapter {
     String estadovolcan;
     String estadodelvolcan;
@@ -101,9 +97,6 @@ public class VolcanesAdapter extends BaseAdapter {
        //  titulo.setBackgroundColor(Color.parseColor("#db2828"));
         }
 
-
-
-
         //evaluar dato magnitud
         riesgo = s.getRiesgo();
         double h;
@@ -112,8 +105,6 @@ public class VolcanesAdapter extends BaseAdapter {
         } catch (NumberFormatException e) {
             h = 0;
         }
-
-
 
         if (h == 0){
             riesgo2 = "0";
@@ -124,9 +115,6 @@ public class VolcanesAdapter extends BaseAdapter {
             riesgo2 = s.getRiesgo();
            // asignacion.setText(s.getRiesgo());
         }
-
-
-
 
         Double val = Double.parseDouble(riesgo2);
         if (val == 4){
@@ -146,10 +134,6 @@ public class VolcanesAdapter extends BaseAdapter {
             asignacion.setText("Bajo");
             asignacion.setBackgroundResource(R.drawable.circuloverdes);
         }
-
-
-
-
 
         tipo =  (TextView) convertView.findViewById(R.id.tipo);
         fotoimagen = (ImageView) convertView.findViewById(R.id.foto);

@@ -260,11 +260,14 @@ public class pagedivisor extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 1:
-                    return FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
+                return FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
 
                 //return FragmentWithTwoImages.newInstance("", R.drawable.android_3, R.drawable.android_4);
                 case 0:
-                    return FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
+
+                    return FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
+
+
 
                     //return FragmentWithOneImage.newInstance("", R.drawable.android_1);
                 default:

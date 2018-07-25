@@ -69,11 +69,24 @@ public class Configuraciones extends FragmentActivity implements NavigationView.
     private RelativeLayout mDrawerBlock;
 
     ImageView sliderz;
+    TextView igpdireccion,ovsdireccion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_configuraciones);
+
+        igpdireccion = (TextView) findViewById(R.id.igpdireccion);
+        ovsdireccion = (TextView) findViewById(R.id.ovsdireccion);
+
+
+        igpdireccion.setText("igp.gob.pe\n" +
+                             "Calle Badajoz N° 169 Urb. Mayorazgo IV Etapa, Ate, Lima 15012 - Perú\n" +
+                             "+51 1 3172300");
+
+        ovsdireccion.setText("ovs.igp.gob.pe\n" +
+                             "Urb. La Marina B-19, Cayma, Arequipa 04017 - Perú\n" +
+                             "+51 54 251373");
 
         notificar = (RadioButton) findViewById(R.id.notificar);
         nonotificar = (RadioButton) findViewById(R.id.nonotificar);
@@ -197,7 +210,7 @@ public class Configuraciones extends FragmentActivity implements NavigationView.
         String versionName = BuildConfig.VERSION_NAME;
         String valor_version_code;
         valor_version_code = String.valueOf(versionCode).toString();
-        dato_version_numero = (TextView) findViewById(R.id.datoversionnumero);
+      //  dato_version_numero = (TextView) findViewById(R.id.datoversionnumero);
        // dato_version_numero.setText(valor_version_code);
         try {
             FileInputStream fileInputStream_read =  openFileInput("datos_configuracion");

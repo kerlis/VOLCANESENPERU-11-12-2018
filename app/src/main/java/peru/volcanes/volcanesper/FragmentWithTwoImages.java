@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import peru.volcanes.volcanesper.m_model.volcanes;
 import peru.volcanes.volcanesper.m_ui.VolcanesAdapter;
@@ -25,8 +24,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
+import java.util.Collections;
+
 public class FragmentWithTwoImages extends Fragment {
-    ArrayList<volcanes> objetoalertacenizas = new ArrayList<volcanes>();
+    //ArrayList<volcanes> objetoalertacenizas = new ArrayList<volcanes>();
+    ArrayList<peru.volcanes.volcanesper.m_model.volcanes> objetoalertacenizas = new ArrayList<volcanes>();
+
+
     private DatabaseReference mFirebaseDatabase3;
     VolcanesAdapter adapter3;
     private static final int REQUEST_PERMISSION = 1;
@@ -104,51 +108,95 @@ public class FragmentWithTwoImages extends Fragment {
         }
     }
 
+
+
+/*
     public ArrayList<volcanes> retreive() {
         FirebaseDatabase.getInstance();
         mFirebaseDatabase3.keepSynced(true);
         mFirebaseDatabase3.orderByChild("orden").addChildEventListener(new ChildEventListener() {
-            int count = 0;
+         //  int count = 0;
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-              ///  final Iterable<DataSnapshot> dataSnapshots = dataSnapshot.getChildren();
+                final Iterable<DataSnapshot> dataSnapshots = dataSnapshot.getChildren();
                 volcanes objetosismo = dataSnapshot.getValue(volcanes.class);
                 objetoalertacenizas.add(objetosismo);
-                losvolcanes.setAdapter(adapter5);
-                //count ++;
-
-                // int d = count++;
-                //if( objetosismo == null ) {
-                  //  Toast.makeText(getActivity(), d, Toast.LENGTH_LONG).show();
-                //}
-                //else {
-                  //  Toast.makeText(getActivity(), "no se cargaron los datos", Toast.LENGTH_LONG).show();
-                //}
-
-
-             // Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
-
-             //   if(count >= dataSnapshot.getChildrenCount()) {
-//   spinner.setVisibility(View.GONE);
-                    //stop progress bar here
-              //  }
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 volcanes objetosismo = dataSnapshot.getValue(volcanes.class);
                 objetoalertacenizas.add(objetosismo);
-                losvolcanes.setAdapter(adapter5);
 
-                //   int d = count++;
-               // if( objetosismo == null ) {
-                //    Toast.makeText(getActivity(), d, Toast.LENGTH_LONG).show();
-                //}
-                //else {
-                 //   Toast.makeText(getActivity(), "se cargaron los datos", Toast.LENGTH_LONG).show();
-                //}
             }
 
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+            }
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+        //mFirebaseDatabase.keepSynced(true);
+        return objetoalertacenizas;
+    }
+
+
+
+
+
+*/
+
+
+
+
+
+    public ArrayList<volcanes> retreive() {
+        FirebaseDatabase.getInstance();
+        mFirebaseDatabase3.keepSynced(true);
+        mFirebaseDatabase3.orderByChild("orden").addChildEventListener(new ChildEventListener() {
+       // mFirebaseDatabase3.orderByKey().addChildEventListener(new ChildEventListener() {
+            //        mFirebaseDatabase4.orderByChild("orden").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                volcanes objetoalertaceniza = dataSnapshot.getValue(volcanes.class);
+                objetoalertacenizas.add(objetoalertaceniza);
+                //for (int i = 19, j = objetoalertacenizas.size() - 1; i == j; i++) {
+                //    objetoalertacenizas.add(i, objetoalertacenizas.remove(j));
+                //    Collections.reverse(objetoalertacenizas);
+                // }
+                int iSwapCount = objetoalertacenizas.size() - 1;
+                int iPosition = objetoalertacenizas.size()- 1;
+                for (int j = 0; j < iSwapCount; j++)
+                {
+                    Collections.swap(objetoalertacenizas, iPosition, iPosition - 1);
+                    iPosition = iPosition - 1;
+                }
+
+                losvolcanes.setAdapter(adapter3);
+
+
+            }
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                volcanes objetoalertaceniza = dataSnapshot.getValue(volcanes.class);
+                objetoalertacenizas.add(objetoalertaceniza);
+                //for (int i = 9, j = objetoalertacenizas.size() - 1; i == j; i++) {
+                //   objetoalertacenizas.add(i, objetoalertacenizas.remove(j));
+                //  Collections.reverse(objetoalertacenizas);
+                // }
+                int iSwapCount = objetoalertacenizas.size() - 1;
+                int iPosition = objetoalertacenizas.size()- 1;
+                for (int j = 0; j < iSwapCount; j++)
+                {
+                    Collections.swap(objetoalertacenizas, iPosition, iPosition - 1);
+                    iPosition = iPosition - 1;
+                }
+                losvolcanes.setAdapter(adapter3);
+            }
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
             }

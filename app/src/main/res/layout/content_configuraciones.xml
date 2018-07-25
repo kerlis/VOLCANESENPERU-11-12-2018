@@ -138,7 +138,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="28dp"
+        android:layout_height="wrap_content"
         android:id="@+id/nivel12"
         android:gravity="center_horizontal"
         android:background="@color/blanco"
@@ -148,13 +148,15 @@
         <RelativeLayout android:layout_width="wrap_content"
             android:gravity="center_horizontal"
             android:layout_height="wrap_content">
-            <TextView android:layout_width="wrap_content"
+            <TextView android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
                 android:id="@+id/versionnumero_label"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 style="@style/datossetlabel"
-                android:text="Código de Versión : developer 3.">
+                android:text="Código de Versión : 1">
             </TextView>
+            <!--
             <TextView android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -163,19 +165,60 @@
                 android:layout_toRightOf="@+id/versionnumero_label"
                 android:text="1">
             </TextView>
+            -->
         </RelativeLayout>
     </RelativeLayout>
 
-    <TextView
+   <!-- <TextView
         android:layout_below="@id/nivel12"
+        android:id="@+id/web"
         android:layout_width="match_parent"
         android:background="@color/blanco"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         style="@style/datosset"
+
         android:text="www.igp.gob.pe">
     </TextView>
+-->
+
+        <TextView
+            android:layout_below="@id/nivel12"
+            android:textSize="15dp"
+            android:textStyle="normal"
+            android:textColor="@color/negro"
+            android:id="@+id/igpdireccion"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:background="@color/blanco"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+        </TextView>
+
+
+        <TextView
+            android:layout_below="@id/igpdireccion"
+            android:id="@+id/ovsdireccion"
+
+            android:textColor="@color/negro"
+
+            android:textSize="15dp"
+            android:textStyle="normal"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:background="@color/blanco"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+        </TextView>
+
+
 </RelativeLayout>
 
 <RelativeLayout android:layout_width="230dp"
