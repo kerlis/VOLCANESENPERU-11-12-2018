@@ -126,6 +126,8 @@ public class Contenedorredsocial extends FragmentActivity implements ActivityCom
         valor = i.getExtras().getString("ACTIVIDAD_RECIENTE");
         valor2 = i.getExtras().getString("NOMBRE");
         nombreredsocial.setText(valor2);
+
+
         webView = (WebView)findViewById(R.id.contenedor);
         spinner = (ProgressBar)findViewById(R.id.progressBar1);
         webView.setWebViewClient(new CustomWebViewClient());
@@ -133,6 +135,7 @@ public class Contenedorredsocial extends FragmentActivity implements ActivityCom
         webView.getSettings().setDomStorageEnabled(true);
         webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
         webView.loadUrl(valor);
+
     }
     private class CustomWebViewClient extends WebViewClient {
         @Override

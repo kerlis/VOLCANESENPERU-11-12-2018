@@ -325,7 +325,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Niveles de Riesgo Volcánico Relativo"
+                android:text="Niveles de riesgo volcánico relativo"
                 style="@style/titulo_glosario" />
 
 
@@ -569,7 +569,7 @@
                             android:layout_marginBottom="0dp"
                             android:layout_below="@+id/metodologiatext"/>
                         <TextView android:layout_width="wrap_content"
-                            android:text="Leer más"
+                            android:text="@string/vermas"
                             android:id="@+id/clickaqui"
                             android:textStyle="italic|bold"
                             android:textColor="@color/azuligp"

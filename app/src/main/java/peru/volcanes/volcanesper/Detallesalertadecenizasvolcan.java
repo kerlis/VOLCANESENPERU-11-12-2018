@@ -390,7 +390,7 @@ public class Detallesalertadecenizasvolcan extends FragmentActivity  implements 
         proyeccionsenamhiurl = prefs.getString("proyeccionsenamhiurl", "");
 
         //titulo_trayectorias.setText("Alerta n°" + nombrereporte +"\n" + "Volcan " + nombre_d );
-        titulo_trayectorias.setText("Alerta de Cenizas" + "\n" + "Volcán " + nombre_d);
+        titulo_trayectorias.setText("Alerta de cenizas" + "\n" + "del volcán " + nombre_d);
         volcannombre.setText("Volcán " + nombre_d);
         trayectoria_cenizas_text222 = (TextView) findViewById(R.id.trayectoria_cenizas_text222);
        // trayectoria_cenizas_text222.setText("Pronóstico de dispersión");

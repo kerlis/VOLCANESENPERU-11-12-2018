@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             style="@style/informacion_titulo"
 
-            android:text="Caracteristicas">
+            android:text="Características">
         </TextView>
 
         <TextView

@@ -223,7 +223,7 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         descripcion34alertacenizas.setText(Html.fromHtml("<b align=right> Alerta de cenizas: </b> comunicado que advierte la ocurrencia de un evento explosivo o emisiones de ceniza en el volcán, además de señalar la dirección de dispersión de este material y las posibles áreas afectadas por dicho fenómeno."));
 
         descripcion34lahares = (TextView) findViewById(R.id.descripcion34lahares);
-        descripcion34lahares.setText(Html.fromHtml("<b align=right> Alerta de lahares: </b> comunicado que advierte el descenso de flujos compuestos por agua, piedras, ceniza y otros materiales volcánicos, además de señalar el flanco por el cual discurren y las áreas de posible afectación."));
+        descripcion34lahares.setText(Html.fromHtml("<b align=right> Alerta de Lahares: </b> comunicado que advierte el descenso de flujos compuestos por agua, piedras, ceniza y otros materiales volcánicos, además de señalar el flanco por el cual discurren y las áreas de posible afectación."));
 
         descripcion34reporteex = (TextView) findViewById(R.id.descripcion34reporteex);
         descripcion34reporteex.setText(Html.fromHtml("<b align=right> Reporte extraordinario: </b> informe excepcional que contiene información destacada sobre cambios repentinos en la actividad del volcán."));
@@ -232,10 +232,10 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         descripcion34volcanescudo.setText(Html.fromHtml("<b align=right> Volcanes escudo: </b> se forman por la emisión de lavas muy fluidas y se caracterizan por tener un cráter de gran diámetro y un cono de pendiente suave. Ej: volcán Kilauea en Hawái."));
 
         descripcion34volcanconoescoria = (TextView) findViewById(R.id.descripcion34volcanconoescoria);
-        descripcion34volcanconoescoria.setText(Html.fromHtml("<b align=right> Conos de escoria: </b> conos de escoria: estos volcanes están formados por material piroclástico que suele producir erupciones explosivas moderadas. Tienen laderas empinadas, son pequeños y, por lo general, permanecen activos por poco tiempo. Ej: valle de Andahua."));
+        descripcion34volcanconoescoria.setText(Html.fromHtml("<b align=right> Conos de escoria: </b> estos volcanes están formados por material piroclástico que suele producir erupciones explosivas moderadas. Tienen laderas empinadas, son pequeños y, por lo general, permanecen activos por poco tiempo. Ej: valle de Andahua."));
 
         descripcion34volcanestratovolcan = (TextView) findViewById(R.id.descripcion34volcanestratovolcan);
-        descripcion34volcanestratovolcan.setText(Html.fromHtml("<b align=right> Estratovolcán: </b> tienen un cono bien desarrollado constituido por la acumulación de lava y productos piroclásticos alrededor del cráter. Se forman por la repetición de numerosas erupciones. Ej: volcán Misti."));
+        descripcion34volcanestratovolcan.setText(Html.fromHtml("<b align=right> Estratovolcán: </b> tienen un cono bien desarrollado y constituido por la acumulación de lava y productos piroclásticos alrededor del cráter. Se forman por la repetición de numerosas erupciones. Ej: volcán Misti."));
 
         descripcion34volcancaldero = (TextView) findViewById(R.id.descripcion34volcancaldero);
         descripcion34volcancaldero.setText(Html.fromHtml("<b align=right> Caldera: </b> cuando el cráter de un volcán supera el kilómetro de diámetro, se denomina caldera volcánica. Tienen una forma circular y, en su gran mayoría, se  forman por el hundimiento producido después de una erupción explosiva. Ej. volcán Ubinas cuenta con una caldera."));
@@ -262,31 +262,31 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         pliniano.setText(Html.fromHtml("<b align=right> Pliniano: </b> son altamente explosivos y eyectan pómez, característico de magmas muy ricos en sílice. La columna puede alcanzar hasta unos 50 km de altura. A menudo son acompañadas por el colapso de la parte superior del edificio volcánico."));
 
         Ultrapliniano = (TextView) findViewById(R.id.Ultrapliniano);
-        Ultrapliniano.setText(Html.fromHtml("<b align=right> Ultrapliniano: </b> la columna eruptiva se eleva sobre los 40 km. Según estudios, la erupción de la Caldera Diamante, que alberga al volcán Maipo en Argentina, tuvo una erupción de este tipo hace 450.000 años. El volumen de piroclastos alcanzó hasta 500 km3."));
+        Ultrapliniano.setText(Html.fromHtml("<b align=right> Ultrapliniano: </b> la columna eruptiva se eleva sobre los 40 km. Según estudios, la erupción de la Caldera Diamante, que alberga al volcán Maipo en Argentina, tuvo una erupción de este tipo hace 450.000 años. El volumen de piroclastos alcanzó hasta 500 km."));
 
         Sísmico = (TextView) findViewById(R.id.Sísmico);
-        Sísmico.setText(Html.fromHtml("<b align=right> Sísmico: </b> estudia y analizala los eventos sísmicos generados por la actividad volcánica. Los instrumentos utilizados para captar y registrar las señales sísmicas son conocidos como sismómetros."));
+        Sísmico.setText(Html.fromHtml("<b align=right> Sísmico: </b> estudia y analiza los eventos sísmicos generados por la actividad volcánica. Los instrumentos utilizados para captar y registrar las señales sísmicas son conocidos como sismómetros."));
 
         Deformación = (TextView) findViewById(R.id.Deformación);
-        Deformación.setText(Html.fromHtml("<b align=right> Deformación: </b> estudia las deformaciones en la superficie del edificio volcánico debido a su actividad interna a través de equipos de alta precisión. Los instrumentos utilizados son, por ejemplo, GPS, inclinómetros, imágenes InSAR."));
+        Deformación.setText(Html.fromHtml("<b align=right> Deformación: </b> estudia las deformaciones en la superficie del edificio volcánico debido a su actividad interna. Para esto se utiliza datos obtenidos con equipos de alta precisión como Sistemas de Posicionamiento Global (GPS), inclinómetros e imágenes de satélite y de radar InSAR."));
 
         Geoquímico = (TextView) findViewById(R.id.Geoquímico);
         Geoquímico.setText(Html.fromHtml("<b align=right> Geoquímico: </b> realiza el muestreo de los gases, condensados, temperatura de las fumarolas y de las fuentes termales próximas a los volcanes. Los instrumentos utilizados son DOAS, sensores térmicos, termómetros, medidores de pH, etc."));
 
         Visual = (TextView) findViewById(R.id.Visual);
-        Visual.setText(Html.fromHtml("<b align=right> Visual: </b> consiste en la detección por medio visual y registros frecuentes de cambios apreciables \u200Ben un volcán y sus alrededores, tales como emanación de gases y cenizas, deformaciones, derrumbes y fracturas, etc. Los instrumentos utilizados son cámaras científicas, cámaras infrarrojas, imágenes satelitales, entre otros."));
+        Visual.setText(Html.fromHtml("<b align=right> Visual: </b> consiste en el seguimiento por medio visual sobre la evolución en los procesos de emanación de gases, cenizas, deformaciones, derrumbes y fracturas. Los instrumentos utilizados son cámaras científicas, cámaras infrarrojas, imágenes satelitales, entre otros."));
 
         electrico = (TextView) findViewById(R.id.electrico);
-        electrico.setText(Html.fromHtml("<b align=right> Eléctrico: </b> utilizado para detectar cambios subsuperficiales en los volcanes. Puede emplearse para delimitar la estructura interna del volcán o para monitorear cambios en acuíferos pocos profundos por la cercanía del magma. Los instrumentos utilizados son electrodos, multímetros, data loggers científicos, etc."));
+        electrico.setText(Html.fromHtml("<b align=right> Eléctrico: </b> consiste en el registro de señales eléctricas naturales medidas desde la superficie. Puede emplearse para delimitar la estructura interna del volcán o para monitorear cambios en acuíferos pocos profundos por la cercanía en la magma. Los instrumentos utilizados son electrodos, multímetros, data loggers científicos, etc."));
 
         indiceex = (TextView) findViewById(R.id.indiceex);
         indiceex.setText(Html.fromHtml("Es una escala logarítmica que va del 0 al 8 y que permite medir la explosividad relativa de las erupciones volcánicas. Para ello, toma en cuenta la cantidad del contenido eyectado, la altura del material lanzado a la atmósfera y la duración de la erupción."));
 
         altafrecuencia = (TextView) findViewById(R.id.altafrecuencia);
-        altafrecuencia.setText(Html.fromHtml("<b align=right> Sismos de alta frecuencia: </b>  están asociados a fractura de rocas. Se generan sobre fallas de cortes causadas por la acumulación de esfuerzos (presión de fluidos)."));
+        altafrecuencia.setText(Html.fromHtml("<b align=right> Sismos Volcano-Tectónicos (VT): </b> están relacionados a fractura de rocas. Se generan por esfuerzos asociados a la inyección y transporte de fluidos en el conducto y/o zonas próximas al edificio volcánico."));
 
         largoperiodo = (TextView) findViewById(R.id.largoperiodo);
-        largoperiodo.setText(Html.fromHtml("<b align=right> Sismos de largo periodo: </b>  asociados al movimiento de fluidos."));
+        largoperiodo.setText(Html.fromHtml("<b align=right> Sismos de Largo Periodo (LP): </b>  asociados al movimiento de fluidos."));
 
         tornillos = (TextView) findViewById(R.id.tornillos);
         tornillos.setText(Html.fromHtml("<b align=right> Tornillos: </b>  relacionados al paso de fluidos por una cavidad resonante."));
@@ -298,7 +298,7 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         armonico.setText(Html.fromHtml("<b align=right> Tremor armónico: </b> relacionado al ascenso del magma y/o al tránsito de fluidos por una cavidad resonante."));
 
         explosion = (TextView) findViewById(R.id.explosion);
-        explosion.setText(Html.fromHtml("<b align=right> Explosión: </b>  sismo de gran energia asociado a expulsion de materiales volcanicos."));
+        explosion.setText(Html.fromHtml("<b align=right> Explosión: </b>  sismo de gran energia asociado a expulsion de materiales volcánicos."));
 
         hibridos = (TextView) findViewById(R.id.hibridos);
         hibridos.setText(Html.fromHtml("<b align=right> Híbridos: </b>  generalmente se trata de eventos asociados al ascenso de magma en sus últimos tramos (pocos kilómetros) antes de llegar a la superficie."));
@@ -377,7 +377,21 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         mimageView16.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.deformacion, 90, 90));
         mimageView17.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.geoquimico, 90, 90));
         mimageView18.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.monitoreovisual, 90, 90));
-        mimageView19.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.iindice_explosividad, 90, 90));
+
+
+       // mimageView19.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.iindice_explosividad, 150, 150));
+        mimageView19.setImageResource(R.drawable.iindice_explosividad);
+
+
+        mimageView20.setImageResource(R.drawable.pronosticodispersion);
+        mimageView21.setImageResource(R.drawable.mapasismico3d);
+        mimageView22.setImageResource(R.drawable.glaciar);
+        mimageView23.setImageResource(R.drawable.fumarolas);
+        mimageView24.setImageResource(R.drawable.tornillo);
+        mimageView25.setImageResource(R.drawable.hibrido);
+        mimageView26.setImageResource(R.drawable.explosion);
+
+        /*
         mimageView20.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.pronosticodispersion, 90, 90));
         mimageView21.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.mapasismico3d, 90, 90));
         mimageView22.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.glaciar, 90, 90));
@@ -385,6 +399,8 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         mimageView24.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.tornillo, 90, 90));
         mimageView25.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.hibrido, 90, 90));
         mimageView26.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.explosion, 90, 90));
+        */
+
         mimageView27.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.largoperiodo, 90, 90));
         mimageView28.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.altafrecuencia, 90, 90));
         mimageView29.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.monitoreoelectrico, 90, 90));

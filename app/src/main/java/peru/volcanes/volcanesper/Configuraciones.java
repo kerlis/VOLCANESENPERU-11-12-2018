@@ -80,11 +80,11 @@ public class Configuraciones extends FragmentActivity implements NavigationView.
         ovsdireccion = (TextView) findViewById(R.id.ovsdireccion);
 
 
-        igpdireccion.setText("igp.gob.pe\n" +
+        igpdireccion.setText("igp.gob.pe" + "\n" +
                              "Calle Badajoz N° 169 Urb. Mayorazgo IV Etapa, Ate, Lima 15012 - Perú\n" +
                              "+51 1 3172300");
 
-        ovsdireccion.setText("ovs.igp.gob.pe\n" +
+        ovsdireccion.setText("ovs.igp.gob.pe" + "\n" +
                              "Urb. La Marina B-19, Cayma, Arequipa 04017 - Perú\n" +
                              "+51 54 251373");
 
@@ -168,6 +168,8 @@ public class Configuraciones extends FragmentActivity implements NavigationView.
             }
         });
 
+
+        /*
         RelativeLayout videoView = (RelativeLayout) findViewById(R.id.videoView1);
         Display display = ((WindowManager) this.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         mWidthScreen = display.getWidth();
@@ -198,6 +200,10 @@ public class Configuraciones extends FragmentActivity implements NavigationView.
         }
         videoView.getLayoutParams().height = tamano;
         videoView.requestLayout();
+        */
+
+
+
         final PackageManager pm = getApplicationContext().getPackageManager();
         ApplicationInfo ai;
         try {

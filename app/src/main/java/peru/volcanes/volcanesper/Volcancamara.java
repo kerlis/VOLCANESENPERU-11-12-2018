@@ -1,4 +1,5 @@
 package peru.volcanes.volcanesper;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -20,10 +21,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
@@ -95,6 +98,12 @@ public class Volcancamara extends Activity {
     private static final String CHROME_PACKAGE = "com.android.chrome";
     private CustomTabsServiceConnection ctConnection;
     private CustomTabsSession customTabsSession;
+
+
+    private ProgressBar spinner;
+    String ShowOrHideWebViewInitialUse = "show";
+    @SuppressLint({"WrongViewCast", "SetJavaScriptEnabled"})
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -153,6 +162,8 @@ public class Volcancamara extends Activity {
             }
         });
 
+
+        /*
         webView = (WebView)findViewById(R.id.activity_main_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         WebSettings webSettings = webView.getSettings();
@@ -160,6 +171,9 @@ public class Volcancamara extends Activity {
         webView.loadUrl(camaraurls);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
+        */
+
+
         titulopantalla = (RelativeLayout) findViewById(R.id.titulopantalla);
         estado_volcan = (ImageView) findViewById(R.id.estado_volcan);
         text_volcan = (TextView) findViewById(R.id.text_volcan);
@@ -717,7 +731,50 @@ public class Volcancamara extends Activity {
                 openTabMapa();
             }
         });
+
+
+
+/*
+        webView = (WebView)findViewById(R.id.activity_main_webview);
+        webView.getSettings().setJavaScriptEnabled(true);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webView.loadUrl(camaraurls);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
+
+        */
+        webView = (WebView)findViewById(R.id.activity_main_webview);
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        webView.setWebViewClient(new CustomWebViewClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
+        webView.loadUrl(camaraurls);
+
+
     }
+
+
+    private class CustomWebViewClient extends WebViewClient {
+        @Override
+        public void onPageStarted(WebView webview, String url, Bitmap favicon) {
+            if (ShowOrHideWebViewInitialUse.equals("show")) {
+                webview.setVisibility(webview.INVISIBLE);
+            }
+        }
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            ShowOrHideWebViewInitialUse = "hide";
+            spinner.setVisibility(View.GONE);
+            view.setVisibility(webView.VISIBLE);
+            super.onPageFinished(view, url);
+        }
+    }
+
+
+
+
 
     private void openDetailActivity(String...details)
     {

@@ -24,7 +24,7 @@ fab:context="peru.volcanes.volcanesper.Listadoredessociales">
         </RelativeLayout>
     </RelativeLayout>
     <TextView
-        android:text="Redes Sociales"
+        android:text="Redes sociales"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/encabezado2"

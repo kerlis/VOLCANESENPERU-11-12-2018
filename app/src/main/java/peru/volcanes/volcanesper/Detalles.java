@@ -776,7 +776,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         text_altura.setText(altura_text);
         text_diametro.setText(ultimaerupcion);
         text_glaciares.setText(glaciares_text);
-        text_localizacion.setText(latitud_text + " / "  + longitud_text);
+        text_localizacion.setText("lat: " + latitud_text + " / "  + "long: " + longitud_text);
         text_actividad_reciente.setText(reciente_text);
         text_tipo.setText(tipo_text);
 
@@ -1429,7 +1429,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
         MarkerOptions hy = null;
 
-        map2.addMarker(new MarkerOptions().position(latLng2).title("volcán : "+nombre_text).snippet("Tipo :"+tipo_text).icon(icon).anchor(0.5f, 0.5f)).showInfoWindow();
+        map2.addMarker(new MarkerOptions().position(latLng2).title("Volcán : "+nombre_text).snippet("Tipo :"+tipo_text).icon(icon).anchor(0.5f, 0.5f)).showInfoWindow();
             map2.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                 public void onInfoWindowClick(Marker marker2) {
                //     String de3 = marker2.getSnippet();

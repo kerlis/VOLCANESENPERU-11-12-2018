@@ -120,13 +120,26 @@
                     android:layout_marginBottom="50dp"
                     android:layout_height="wrap_content">
                 </TextView>
+
+
+
         </RelativeLayout>
 
 
 
 
-
         </RelativeLayout>
+
+
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true" />
+
     </RelativeLayout>
 
     <RelativeLayout android:layout_width="match_parent"

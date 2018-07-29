@@ -115,10 +115,10 @@
         * Notificaciones y/o alertas por reactivación de volcanes activos y cambios en las alertas de acuerdo a la evolución del riesgo volcánico.
     </string>
     <string name="caracteristicas_6">
-        * Notificaciones y alertas por emisión y caída de cenizas, así como lahares.
+        * Notificaciones y alertas por emisión y caída de cenizas, así como Lahares.
     </string>
     <string name="caracteristicas_7">
-       *  Situación de los pronósticos de dispersión de cenizas (Senamhi).
+       *  Situación de los pronósticos de dispersión de cenizas (SENAMHI).
     </string>
     <string name="caracteristicas_8">
        * Seguimiento de la actividad volcánica en tiempo real usando información proveniente de cámaras digitales.
@@ -227,4 +227,8 @@
     }
     ]
 </string>
+
+    <string name="vermas"><u>Leer más</u>.</string>
+
+
 </resources>

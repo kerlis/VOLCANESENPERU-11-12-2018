@@ -1,4 +1,5 @@
 package peru.volcanes.volcanesper;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -16,22 +17,26 @@ import android.support.customtabs.CustomTabsClient;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.customtabs.CustomTabsServiceConnection;
 import android.support.customtabs.CustomTabsSession;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
-public class Sismogramas extends FragmentActivity {
+public class Sismogramas extends FragmentActivity  implements ActivityCompat.OnRequestPermissionsResultCallback{
     String urlcamara;
     String nombre;
     String estadovolcan;
@@ -93,6 +98,9 @@ public class Sismogramas extends FragmentActivity {
     RelativeLayout bloque62;
     TextView trayectoria_cenizas_text222;
 */
+    private ProgressBar spinner;
+    String ShowOrHideWebViewInitialUse = "show";
+    @SuppressLint({"WrongViewCast", "SetJavaScriptEnabled"})
 
 
     String proyecionsenahmi;
@@ -110,7 +118,9 @@ public class Sismogramas extends FragmentActivity {
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_sismogramas);
+         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+
+         setContentView(R.layout.content_sismogramas);
         Intent i=this.getIntent();
          reciente_text = i.getExtras().getString("ACTIVIDAD_RECIENTE");
          estado_text = i.getExtras().getString("ESTADO");
@@ -680,6 +690,8 @@ public class Sismogramas extends FragmentActivity {
              }
          });
 
+
+         /*
          webView = (WebView)findViewById(R.id.activity_main_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         WebSettings webSettings = webView.getSettings();
@@ -687,6 +699,11 @@ public class Sismogramas extends FragmentActivity {
         webView.loadUrl(sismogramaurls);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
+*/
+
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
          titulopantalla = (RelativeLayout) findViewById(R.id.titulopantalla);
          estado_volcan = (ImageView) findViewById(R.id.estado_volcan);
@@ -764,7 +781,39 @@ public class Sismogramas extends FragmentActivity {
                  openTabMapa();
              }
          });
+
+
+         webView = (WebView)findViewById(R.id.activity_main_webview);
+         spinner = (ProgressBar)findViewById(R.id.progressBar1);
+         webView.setWebViewClient(new CustomWebViewClient());
+         webView.getSettings().setJavaScriptEnabled(true);
+         webView.getSettings().setDomStorageEnabled(true);
+         webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
+         webView.loadUrl(sismogramaurls);
+
+
+
+     }
+
+
+    private class CustomWebViewClient extends WebViewClient {
+        @Override
+        public void onPageStarted(WebView webview, String url, Bitmap favicon) {
+            if (ShowOrHideWebViewInitialUse.equals("show")) {
+                webview.setVisibility(webview.INVISIBLE);
+            }
+        }
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            ShowOrHideWebViewInitialUse = "hide";
+            spinner.setVisibility(View.GONE);
+            view.setVisibility(webView.VISIBLE);
+            super.onPageFinished(view, url);
+        }
     }
+
+
+
 
     private void openDetailActivity(String...details) {
         Intent i=new Intent(Sismogramas.this,Dispersioncenizas.class);
@@ -1030,4 +1079,7 @@ public class Sismogramas extends FragmentActivity {
             tv.setText(pi_string);
         }*/
     };
+
+
+
 }
