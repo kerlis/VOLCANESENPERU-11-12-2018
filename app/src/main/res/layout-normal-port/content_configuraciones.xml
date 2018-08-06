@@ -13,7 +13,6 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
-
         <RelativeLayout android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/encabezado2">
@@ -28,9 +27,8 @@
             </RelativeLayout>
         </RelativeLayout>
         <ScrollView android:layout_width="match_parent"
-            android:layout_height="match_parent"            android:layout_below="@+id/encabezado2"
-
-            >
+            android:layout_height="match_parent"
+            android:layout_below="@+id/encabezado2">
             <RelativeLayout android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
@@ -43,8 +41,6 @@
                     android:text="Ajustes de notificación"
                     android:id="@+id/titulo">
                 </TextView>
-
-
                 <RadioGroup
                     android:id="@+id/grupoopcion1"
                     android:layout_below="@+id/titulo"
@@ -70,7 +66,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/nonotificar" />
                 </RadioGroup>
-
                 <TextView
                     android:layout_below="@+id/grupoopcion1"
                     android:layout_marginTop="15dp"
@@ -83,7 +78,6 @@
                     android:text="Tipo de notificación"
                     android:id="@+id/titulotipo">
                 </TextView>
-
                 <RadioGroup
                     android:id="@+id/grupoopcion2"
                     android:layout_below="@+id/titulotipo"
@@ -109,7 +103,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/sonido" />
                 </RadioGroup>
-
                 <Button
                     android:text="GRABAR CONFIGURACIÓN"
                     android:paddingLeft="15dp"
@@ -123,17 +116,14 @@
                     android:id="@+id/button2"
                     style="@style/MyButton"
                     android:onClick="write_mesage"/>
-
                 <ImageView
                     android:padding="0dp"
                     android:id="@+id/imagen"
-
                     android:layout_below="@+id/button2"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/logoigp"
                     style="@style/logoigp_normal_port23"
                     android:layout_centerHorizontal="true"/>
-
                 <TextView android:layout_width="match_parent"
                     android:layout_below="@+id/imagen"
                     android:layout_marginTop="15dp"
@@ -141,49 +131,61 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     style="@style/datossetlabel"
-                    android:text="Código de versión : 1">
+                    android:text="Código de versión: Developer 0.2">
                 </TextView>
-
-
-
-                <TextView
-                    android:layout_below="@id/versionnumero_label"
-                    android:textSize="14sp"
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="igp.gob.pe"
+                    android:layout_marginTop="20dp"
                     android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:id="@+id/igpweb"
+                    android:layout_below="@+id/versionnumero_label"
+                    android:textColor="@color/azulOscuro">
+                </TextView>
+                <TextView
+                    android:layout_below="@id/igpweb"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
                     android:textColor="@color/negro"
                     android:id="@+id/igpdireccion"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"/>
+                <TextView android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:text="ovs.gob.pe"
+                    android:textSize="14sp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:id="@+id/ovsweb"
+                    android:layout_below="@+id/igpdireccion"
+                    android:textColor="@color/azulOscuro">
                 </TextView>
-
-
                 <TextView
-                    android:layout_below="@id/igpdireccion"
+                    android:layout_below="@id/ovsweb"
+                    android:visibility="gone"
                     android:id="@+id/ovsdireccion"
                     android:textColor="@color/negro"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="25dp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-
-                    android:layout_centerHorizontal="true">
-                </TextView>
+                    android:layout_centerHorizontal="true"/>
             </RelativeLayout>
-
         </ScrollView>
-
-
     </RelativeLayout>
-
     <RelativeLayout android:layout_width="230dp"
         android:id="@+id/mDrawerBlock"
         android:layout_gravity="start"

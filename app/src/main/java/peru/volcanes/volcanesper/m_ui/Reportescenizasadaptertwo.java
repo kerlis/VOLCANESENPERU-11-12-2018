@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import peru.volcanes.volcanesper.Detallesalertadecenizasvolcan;
-import peru.volcanes.volcanesper.Pdfvieweralertas;
 import peru.volcanes.volcanesper.R;
 import peru.volcanes.volcanesper.m_model.reportealertadecenizastwo;
 public class Reportescenizasadaptertwo  extends BaseAdapter {
@@ -92,19 +90,6 @@ public class Reportescenizasadaptertwo  extends BaseAdapter {
                         s.getSimulacro());
             }
         });
-
-        /*
-        descargarfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                descarga = (DownloadManager) c.getSystemService(Context.DOWNLOAD_SERVICE);
-                Uri uri =  Uri.parse(s.getPdfurl());
-                DownloadManager.Request request = new DownloadManager.Request(uri);
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                Long reference = descarga.enqueue(request);
-            }
-        });
-    */
         compartirfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +111,7 @@ public class Reportescenizasadaptertwo  extends BaseAdapter {
                         "\n\n" + "Pueblos: " + s.getPueblos() +
                         "\n\n" + "Tipo de evento: " + s.getTipodevento() +
                         "\n\n" + "Dirección: " + s.getDireccion() +
-                        "\n\n" + "Radio de dispersión: " + s.getRadio() +
+                        "\n\n" + "Radio de dispersión: " + s.getRadio() +  "km" +
                         "\n\n" + "Fecha: " + s.getFecha() +
                         "\n\n" + "Hora: " + s.getHora() + "/ Hora UTC: " + s.getHorautc() +
                         "\n\n" + "Simulacro: " + s.getSimulacro() +
@@ -141,7 +126,6 @@ public class Reportescenizasadaptertwo  extends BaseAdapter {
         });
         return convertView;
     }
-
     private void veralerta(String...details) {
         Intent i=new Intent(c,Detallesalertadecenizasvolcan.class);
         i.putExtra("CODIGOVOLCAN",details[0]);
@@ -157,5 +141,4 @@ public class Reportescenizasadaptertwo  extends BaseAdapter {
         i.putExtra("SIMULACRO",details[10]);
         c.startActivity(i);
     }
-
 }

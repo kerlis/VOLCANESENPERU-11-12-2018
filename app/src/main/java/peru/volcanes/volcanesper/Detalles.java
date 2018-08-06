@@ -78,7 +78,6 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
     private FirebaseDatabase database;
     Double alerta_double;
     RelativeLayout titulopantalla_detalles;
-   // String reciente_text, altura_text, codigo_text, diametro_text, estado_text, glaciares_text, imagen_text, latitud_text, longitud_text, monitoreo_text, nombre_text, tipo_text, tipica_erupcion_text, fecha_actualizacion_text, hora_actualizacion_text,alerta_text;
     TextView altura, codigo, latitud, longitud, monitoreo;
     Button satelite, terreno, localizacion;
     Double latitud_d, longitud_d;
@@ -97,9 +96,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
     TextView glaciares_icon;
     TextView text_glaciares;
     TextView text_localizacion;
-    //TextView time;
     TextView text_volcan;
-   // TextView text_status;
     RelativeLayout informacion;
     RelativeLayout ajustes;
     RelativeLayout compartir;
@@ -152,7 +149,6 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
     TextView camara;
     TextView mapa;
     TextView documento;
-  //  DocumentView documento;
     RelativeLayout bloque1;
     RelativeLayout bloque3a;
     RelativeLayout bloque4;
@@ -218,13 +214,20 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         proyeccionsenamhiurl = i.getExtras().getString("PROYECCIONSENAHMI");
 
         myView = (ScrollView) findViewById(R.id.myview);
+
+       /*
         totop = (RelativeLayout) findViewById(R.id.totop);
+
+
+
         totop.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {
                 myView.setScrollY(0);
             }
         });
+*/
+
 
        String tempStr = resena_text.substring(0, 1).toUpperCase() + resena_text.substring(1);
         int padding = 10; // in pixels
@@ -357,7 +360,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
             pronostico_menu2.setVisibility(View.GONE);
             pronostico_menu.setVisibility(View.GONE);
             sismogramas_menu.setVisibility(View.VISIBLE);
-            reportes_menu.setVisibility(View.GONE);
+            reportes_menu.setVisibility(View.VISIBLE);
             alertas_menu.setVisibility(View.GONE);
             camara_menu.setVisibility(View.GONE);
             mapasismic_menu.setVisibility(View.GONE);
@@ -547,7 +550,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
 
 
-        totop = (RelativeLayout) findViewById(R.id.totop);
+    //    totop = (RelativeLayout) findViewById(R.id.totop);
         slideup = (TextView) findViewById(R.id.openslide);
         options = (RelativeLayout) findViewById(R.id.options);
         options.setOnClickListener(new View.OnClickListener() {
@@ -717,9 +720,9 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
 
 
-        texttoup = (TextView) findViewById(R.id.texttoup);
+       // texttoup = (TextView) findViewById(R.id.texttoup);
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
-        texttoup.setTypeface(fontAwesomeFont);
+      //  texttoup.setTypeface(fontAwesomeFont);
         slideup = (TextView) findViewById(R.id.openslide);
         camara = (TextView) findViewById(R.id.camara);
         mapa = (TextView) findViewById(R.id.mapa);
@@ -776,7 +779,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         text_altura.setText(altura_text);
         text_diametro.setText(ultimaerupcion);
         text_glaciares.setText(glaciares_text);
-        text_localizacion.setText("lat: " + latitud_text + " / "  + "long: " + longitud_text);
+        text_localizacion.setText("lat: " + latitud_text + ""  + "\n" + "long: " + longitud_text);
         text_actividad_reciente.setText(reciente_text);
         text_tipo.setText(tipo_text);
 
@@ -795,7 +798,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         if (alerta_double   <= 1) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.verdeigp));
 
-            totop.setBackgroundColor(getResources().getColor(R.color.verdeigp));
+         //   totop.setBackgroundColor(getResources().getColor(R.color.verdeigp));
 
             // text_status.setText("inactivo");
             estado_volcan.setImageResource(R.drawable.volcano_verde);
@@ -803,7 +806,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else if (alerta_double  > 1 && alerta_double == 2) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.orangeyellow));
-            totop.setBackgroundColor(getResources().getColor(R.color.orangeyellow));
+        //    totop.setBackgroundColor(getResources().getColor(R.color.orangeyellow));
 
             //text_status.setText("minima actividad");
             estado_volcan.setImageResource(R.drawable.volcano_amarillo);
@@ -811,7 +814,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else if (alerta_double  > 2 && alerta_double == 3) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.naranjas));
-            totop.setBackgroundColor(getResources().getColor(R.color.naranjas));
+         //   totop.setBackgroundColor(getResources().getColor(R.color.naranjas));
 
             //    text_status.setText("minima actividad");
             estado_volcan.setImageResource(R.drawable.volcano_naranja);
@@ -819,7 +822,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else if (alerta_double  > 3 && alerta_double == 4) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.rojoigp));
-            totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
+       //     totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
 
             //  text_status.setText("mayor erupción");
             estado_volcan.setImageResource(R.drawable.volcano_rojo);
@@ -827,7 +830,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.rojoigp));
-            totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
+         //   totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
 
             //text_status.setText("Explosiva");
             estado_volcan.setImageResource(R.drawable.volcano_rojo);
@@ -847,7 +850,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         erupciones.setAdapter(adapter2);
 
        localizacion.setTypeface(fontAwesomeFont);
-        initMaps();
+        //initMaps();
         mk= (Button) findViewById(R.id.button);
 
         bloque3a = (RelativeLayout) findViewById(R.id.bloque3);
@@ -1101,6 +1104,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         bloquenombre = (RelativeLayout) findViewById(R.id.bloquenombre);
 
 
+        /*
 
         bloque62.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1115,6 +1119,41 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
                 openTabMapa();
             }
         });
+        */
+
+        bloque62.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(proyeccionsenamhiurl));
+                startActivity(intent);
+            }
+        });
+
+
+
+/*
+        bloque42.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTabMapa();
+            }
+        });
+
+*/
+
+
+        bloque42.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(mapasismico));
+                startActivity(intent);
+            }
+        });
+
 
 
     }
@@ -1366,7 +1405,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         Detalles.this.startActivity(i);
     }
 
-
+/*
     public void initMaps(){
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED
@@ -1379,6 +1418,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 60000, this);
         }
     }
+    */
 
     @Override
     public void onMapReady(final GoogleMap map2) {
@@ -1508,7 +1548,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 erupciones objetoerupcion = dataSnapshot.getValue(erupciones.class);
                 objetoerupciones.add(objetoerupcion);
-             int list_cell_size=162;
+                int list_cell_size=162;
                 ViewGroup.LayoutParams list;
                 list = erupciones.getLayoutParams();
                 list.height = list_cell_size*objetoerupciones.size();  // response is list items size
@@ -1572,7 +1612,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
     public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
 
     }
-
+  /*
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -1591,6 +1631,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
     }
 
+
     private void requestPermissions() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                 android.Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -1603,7 +1644,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
             ActivityCompat.requestPermissions(this,PERMISSIONS , REQUEST_PERMISSION);
         }
     }
-
+*/
 
     public void loadMarker(){
 //        final   DatabaseReference locais = database.getReference("volcanes").child(codigo).child("sismos");
@@ -1764,29 +1805,10 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         });
     }
 
-
-
-
-
-
-
-
-
-
     void setupDrawerToggle(){
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
         mDrawerToggle.syncState();
     }
-
-
-
-
-
-
-
-
-
-
 
     @Override
     protected void onDestroy() {
@@ -1808,16 +1830,14 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         return null;
     }
 
-
-
     public void openTab() {
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(customTabsSession);
         builder.setToolbarColor(ContextCompat.getColor(this, R.color.azulbackground));
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher5));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+       // builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+      //  builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher5);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
 
@@ -1833,28 +1853,19 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher5));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+     //   builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+     //   builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher5);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
-
         builder.setActionButton(icon, getString(R.string.action), createIntent(R.string.action, 3),
                 true);
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(this, Uri.parse(mapasismico));
     }
 
-
-
     private PendingIntent createIntent(int text, int number) {
         Intent intent = new Intent(this, CustomTabsBroadcastReceiver.class);
         intent.putExtra("text", getString(text));
         return PendingIntent.getBroadcast(this, number, intent, 0);
     }
-
-
-
-
-
-
 }

@@ -1,17 +1,13 @@
 package peru.volcanes.volcanesper.m_ui;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import peru.volcanes.volcanesper.R;
 import peru.volcanes.volcanesper.m_model.erupciones;
-
 import java.util.ArrayList;
-
 public class ErupcionesAdapter extends BaseAdapter {
     TextView year;
     TextView inicial_final;
@@ -43,28 +39,19 @@ public class ErupcionesAdapter extends BaseAdapter {
         }
         fuente = (TextView) convertView.findViewById(R.id.fuente);
         year = (TextView) convertView.findViewById(R.id.year);
-        //inicial_final = (TextView) convertView.findViewById(R.id.inicial_final);
         tipo_actividad = (TextView) convertView.findViewById(R.id.tipo_actividad);
         final erupciones s= (erupciones) this.getItem(position);
         year.setText(s.getYear());
         tipo_actividad.setText(s.getObservaciones());
-
         if (s.getFuente().length() > 3) {
             fuente.setText("Fuente: " + s.getFuente());
         }
         else{
             fuente.setText(" ");
-
         }
-
-        ViewGroup.LayoutParams params = convertView.getLayoutParams();
-      //  LayoutParams
-
-        // Set the height of the Item View
-        params.height = 160;
-        convertView.setLayoutParams(params);
-
-
+        //ViewGroup.LayoutParams params = convertView.getLayoutParams();
+      //  params.height = 160;
+       // convertView.setLayoutParams(params);
         return convertView;
     }
 }

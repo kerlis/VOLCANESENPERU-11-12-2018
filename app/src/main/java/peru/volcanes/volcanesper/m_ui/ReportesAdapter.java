@@ -1,5 +1,4 @@
 package peru.volcanes.volcanesper.m_ui;
-
 import android.annotation.SuppressLint;
 import android.app.DownloadManager;
 import android.content.Context;
@@ -13,13 +12,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import peru.volcanes.volcanesper.Pdfviewersismosvulcanotectonicos;
 import peru.volcanes.volcanesper.R;
-import peru.volcanes.volcanesper.m_model.reporte;
-
+import peru.volcanes.volcanesper.m_model.reporteactividad;
 import java.util.ArrayList;
-
 public class ReportesAdapter extends BaseAdapter {
     TextView fecha_hora;
     TextView evento;
@@ -27,15 +23,13 @@ public class ReportesAdapter extends BaseAdapter {
     public Context c;
     TextView descargar;
     DownloadManager descarga;
-    private ArrayList<reporte> objetoreportes;
+    private ArrayList<reporteactividad> objetoreportes;
     TextView compartir;
     TextView visualizar;
     RelativeLayout compartirfile;
-
     RelativeLayout visualizaerfile;
     RelativeLayout descargarfile;
-
-    public ReportesAdapter(Context c, ArrayList<reporte> objetoreportes) {
+    public ReportesAdapter(Context c, ArrayList<reporteactividad> objetoreportes) {
         this.c = c;
         this.objetoreportes = objetoreportes;
     } @Override
@@ -55,11 +49,7 @@ public class ReportesAdapter extends BaseAdapter {
     @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
-
-           convertView= LayoutInflater.from(c).inflate(R.layout.modelreportes,viewGroup,false);
-        //   convertView= LayoutInflater.from(c).inflate(R.layout.modelovolcanes,viewGroup,false);
-
-
+        convertView= LayoutInflater.from(c).inflate(R.layout.modelreportes,viewGroup,false);
         final int g = position;
 
         if (position % 2 == 0) {
@@ -71,10 +61,8 @@ public class ReportesAdapter extends BaseAdapter {
         compartirfile= (RelativeLayout) convertView.findViewById(R.id.b6);
         visualizaerfile= (RelativeLayout) convertView.findViewById(R.id.bb7);
         descargarfile= (RelativeLayout) convertView.findViewById(R.id.b5);
-
         compartir = (TextView) convertView.findViewById(R.id.compartir);
         visualizar = (TextView) convertView.findViewById(R.id.visualizar);
-
         descargar = (TextView) convertView.findViewById(R.id.descargar);
         fecha_hora = (TextView) convertView.findViewById(R.id.fecha_hora);
         evento = (TextView) convertView.findViewById(R.id.evento);
@@ -82,11 +70,9 @@ public class ReportesAdapter extends BaseAdapter {
         Typeface fontAwesomeFont = Typeface.createFromAsset(c.getAssets(),"fontawesome-webfont.ttf");
         alerta.setTypeface(fontAwesomeFont);
         descargar.setTypeface(fontAwesomeFont);
-
         compartir.setTypeface(fontAwesomeFont);
         visualizar.setTypeface(fontAwesomeFont);
-
-        final reporte s= (reporte) this.getItem(position);
+        final reporteactividad s= (reporteactividad) this.getItem(position);
         fecha_hora.setText("Fecha de emisión : " + s.getFecha());
         evento.setText("Reporte n.° " + s.getNombrereporte());
 
@@ -94,12 +80,11 @@ public class ReportesAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 veralerta(s.getFecha(),
-                        s.getNombrereporte(),
+                        s.getFecha(),
                         s.getPdfurl(),
                         s.getCodigovolcan());
             }
         });
-
         descargarfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +95,6 @@ public class ReportesAdapter extends BaseAdapter {
                 Long reference = descarga.enqueue(request);
             }
         });
-
         compartirfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,19 +108,6 @@ public class ReportesAdapter extends BaseAdapter {
                 c.startActivity(Intent.createChooser(sharingIntent, "Share using"));
             }
         });
-
-        /*
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                descarga = (DownloadManager) c.getSystemService(Context.DOWNLOAD_SERVICE);
-                Uri uri =  Uri.parse(s.getPdfurl());
-                DownloadManager.Request request = new DownloadManager.Request(uri);
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                Long reference = descarga.enqueue(request);
-            }
-        });
-        */
         return convertView;
     }
     private void veralerta(String...details) {

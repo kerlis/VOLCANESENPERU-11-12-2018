@@ -53,10 +53,8 @@ public class VolcanesAdapter extends BaseAdapter {
         {
             convertView= LayoutInflater.from(c).inflate(R.layout.modelovolcanes,viewGroup,false);
         }
-
         final volcanes s= (volcanes) this.getItem(position);
         estadovolcan =  s.getEstado();
-      //  titulo = (RelativeLayout) convertView.findViewById(R.id.titulo);
         double w;
         try {
             w = new Double(estadovolcan);
@@ -70,11 +68,9 @@ public class VolcanesAdapter extends BaseAdapter {
         {
             estadodelvolcan = estadovolcan;
         }
-
         asignacion = (TextView) convertView.findViewById(R.id.asignacion);
         volcan = (TextView) convertView.findViewById(R.id.volcan);
         contenedor = (RelativeLayout) convertView.findViewById(R.id.contenedor);
-       // imageView = (ImageView) convertView.findViewById(R.id.imageView);
         alerta_double =  Double.parseDouble(estadodelvolcan);
         if (alerta_double <= 1) {
          //   imageView.setImageResource(R.drawable.verde_volcanes);
@@ -115,7 +111,6 @@ public class VolcanesAdapter extends BaseAdapter {
             riesgo2 = s.getRiesgo();
            // asignacion.setText(s.getRiesgo());
         }
-
         Double val = Double.parseDouble(riesgo2);
         if (val == 4){
             asignacion.setText("Muy \n alto");
@@ -129,14 +124,13 @@ public class VolcanesAdapter extends BaseAdapter {
             asignacion.setText("Moderado");
             asignacion.setBackgroundResource(R.drawable.circuloazul);
         }
-
         else if (val == 1){
             asignacion.setText("Bajo");
             asignacion.setBackgroundResource(R.drawable.circuloverdes);
         }
-
         tipo =  (TextView) convertView.findViewById(R.id.tipo);
-        fotoimagen = (ImageView) convertView.findViewById(R.id.foto);
+
+      fotoimagen = (ImageView) convertView.findViewById(R.id.foto);
         tipo.setText("Región " +s.getRegion());
         nombre = s.getNombre();
         codigo =s.getCodigo();
@@ -149,6 +143,7 @@ public class VolcanesAdapter extends BaseAdapter {
                     .onlyScaleDown()
                     .into(fotoimagen);
         }
+
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

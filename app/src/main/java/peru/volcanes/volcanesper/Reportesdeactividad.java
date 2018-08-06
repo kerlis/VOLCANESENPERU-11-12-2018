@@ -29,6 +29,7 @@ import android.widget.SlidingDrawer;
 import android.widget.TextView;
 import peru.volcanes.volcanesper.m_model.erupciones;
 import peru.volcanes.volcanesper.m_model.reporte;
+import peru.volcanes.volcanesper.m_model.reporteactividad;
 import peru.volcanes.volcanesper.m_ui.ReportesAdapter;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -71,7 +72,11 @@ public class Reportesdeactividad extends FragmentActivity {
     ImageView sliderz;
     ArrayList<peru.volcanes.volcanesper.m_model.sismos> objetosismos = new ArrayList<peru.volcanes.volcanesper.m_model.sismos>();
     ArrayList<peru.volcanes.volcanesper.m_model.erupciones> objetoerupciones = new ArrayList<erupciones>();
-    ArrayList<peru.volcanes.volcanesper.m_model.reporte> objetoalertacenizas = new ArrayList<reporte>();
+
+ //   ArrayList<peru.volcanes.volcanesper.m_model.reporte> objetoalertacenizas = new ArrayList<reporte>();
+
+
+    ArrayList<peru.volcanes.volcanesper.m_model.reporteactividad> objetoalertacenizas = new ArrayList<reporteactividad>();
     Button mk, mk2;
     TextView time;
     TextView text_volcan;
@@ -231,7 +236,7 @@ public class Reportesdeactividad extends FragmentActivity {
             pronostico_menu2.setVisibility(View.GONE);
             pronostico_menu.setVisibility(View.GONE);
             sismogramas_menu.setVisibility(View.VISIBLE);
-            reportes_menu.setVisibility(View.GONE);
+            reportes_menu.setVisibility(View.VISIBLE);
             alertas_menu.setVisibility(View.GONE);
             camara_menu.setVisibility(View.GONE);
             mapasismic_menu.setVisibility(View.GONE);
@@ -725,6 +730,8 @@ public class Reportesdeactividad extends FragmentActivity {
         bloque62 = (RelativeLayout) findViewById(R.id.bloque62);
         bloque42 = (RelativeLayout) findViewById(R.id.bloque42);
 
+
+        /*
         bloque62.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -738,6 +745,43 @@ public class Reportesdeactividad extends FragmentActivity {
                 openTabMapa();
             }
         });
+
+        */
+
+        bloque62.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(proyeccionsenamhiurl));
+                startActivity(intent);
+            }
+        });
+
+
+
+/*
+        bloque42.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTabMapa();
+            }
+        });
+
+*/
+
+
+        bloque42.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(mapasismico));
+                startActivity(intent);
+            }
+        });
+
+
 
 
     }
@@ -948,7 +992,9 @@ public class Reportesdeactividad extends FragmentActivity {
         Reportesdeactividad.this.startActivity(i);
     }
 
-    public ArrayList<reporte> retreive() {
+//    public ArrayList<reporte> retreive() {
+
+        public ArrayList<reporteactividad> retreive() {
         FirebaseDatabase.getInstance();
         mFirebaseDatabase4.keepSynced(true);
 
@@ -957,7 +1003,9 @@ public class Reportesdeactividad extends FragmentActivity {
 //        mFirebaseDatabase4.orderByChild("orden").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                reporte objetoalertaceniza = dataSnapshot.getValue(reporte.class);
+                reporteactividad objetoalertaceniza = dataSnapshot.getValue(reporteactividad.class);
+
+               // reporte objetoalertaceniza = dataSnapshot.getValue(reporte.class);
                 objetoalertacenizas.add(objetoalertaceniza);
                 //for (int i = 19, j = objetoalertacenizas.size() - 1; i == j; i++) {
                 //    objetoalertacenizas.add(i, objetoalertacenizas.remove(j));
@@ -980,7 +1028,9 @@ public class Reportesdeactividad extends FragmentActivity {
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                reporte objetoalertaceniza = dataSnapshot.getValue(reporte.class);
+                reporteactividad objetoalertaceniza = dataSnapshot.getValue(reporteactividad.class);
+
+               // reporte objetoalertaceniza = dataSnapshot.getValue(reporte.class);
                 objetoalertacenizas.add(objetoalertaceniza);
                 //for (int i = 9, j = objetoalertacenizas.size() - 1; i == j; i++) {
                  //   objetoalertacenizas.add(i, objetoalertacenizas.remove(j));
@@ -1052,8 +1102,8 @@ public class Reportesdeactividad extends FragmentActivity {
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher5));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+      //  builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+      //  builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher5);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
 
@@ -1069,8 +1119,8 @@ public class Reportesdeactividad extends FragmentActivity {
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher5));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+     //   builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+       // builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher5);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
 

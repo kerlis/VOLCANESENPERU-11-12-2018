@@ -1,30 +1,34 @@
 package peru.volcanes.volcanesper;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+        import android.content.Context;
+        import android.content.Intent;
+        import android.graphics.Typeface;
+        import android.os.Bundle;
+        import android.support.v4.app.Fragment;
+        import android.support.v4.app.FragmentManager;
+        import android.support.v4.app.FragmentPagerAdapter;
+        import android.support.v4.view.GravityCompat;
+        import android.support.v4.view.ViewPager;
+        import android.support.v4.widget.DrawerLayout;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.Toolbar;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.FrameLayout;
+        import android.widget.ImageView;
+        import android.widget.ListView;
+        import android.widget.RelativeLayout;
+        import android.widget.TextView;
+
+      //  import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
+        import com.google.android.gms.maps.SupportMapFragment;
+        import com.google.firebase.database.DatabaseReference;
+        import com.google.firebase.database.FirebaseDatabase;
+
 public class pagedivisor extends AppCompatActivity {
+
     RelativeLayout titulopantalla_detalles;
     SupportMapFragment sMapFragment;
     Button mk;
@@ -33,7 +37,7 @@ public class pagedivisor extends AppCompatActivity {
     private static String[] PERMISSIONS = {android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION};
     FrameLayout contenedor;
     RelativeLayout tituloscolor;
-     private String[] mNavigationDrawerItemTitles;
+    private String[] mNavigationDrawerItemTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private RelativeLayout mDrawerBlock;
@@ -56,19 +60,27 @@ public class pagedivisor extends AppCompatActivity {
     RelativeLayout cell1;
     RelativeLayout cell2;
     Context mContext;
+
     RelativeLayout cell1border;
     RelativeLayout cell2border;
+
     private DatabaseReference mFirebaseDatabase;
     private DatabaseReference mFirebaseDatabasex;
     private DatabaseReference mFirebaseDatabase4;
     private FirebaseDatabase mFirebaseInstance;
     RelativeLayout blocke6a;
+
+
+
+
     private static Context context;
     FragmentPagerAdapter adapterViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pagedivisor);
+
+        /*
         FirebaseDatabase.getInstance();
         if (mFirebaseDatabase == null) {
             FirebaseDatabase.getInstance();
@@ -80,7 +92,10 @@ public class pagedivisor extends AppCompatActivity {
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             mFirebaseDatabase = database.getReference("actividadvolcanica").child("volcanes");
         }
+        */
+
         pagedivisor.context = getApplicationContext();
+
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         iconomapas = (TextView) findViewById(R.id.iconomapa);
         iconolistados = (TextView) findViewById(R.id.iconolistado);
@@ -90,12 +105,15 @@ public class pagedivisor extends AppCompatActivity {
         opcion2 = (TextView) findViewById(R.id.opcion2);
         celda1 = (RelativeLayout) findViewById(R.id.cell1);
         celda2 = (RelativeLayout) findViewById(R.id.cell2);
+
         final ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
-        vpPager.setPageTransformer(true, new RotateUpTransformer());
+
+     //   vpPager.setPageTransformer(true, new RotateUpTransformer());
         cell1border = (RelativeLayout) findViewById(R.id.cell1border);
         cell2border = (RelativeLayout) findViewById(R.id.cell2border);
+
         vpPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             public void onPageSelected(int pageNumber) {
@@ -103,11 +121,11 @@ public class pagedivisor extends AppCompatActivity {
                     cell1border.setBackgroundColor(getResources().getColor(R.color.celesteigp));
                     cell2border.setBackgroundColor(getResources().getColor(R.color.igp));
                 }
-                    else if(pageNumber == 1) {
+                else if(pageNumber == 1) {
                     cell2border.setBackgroundColor(getResources().getColor(R.color.celesteigp));
                     cell1border.setBackgroundColor(getResources().getColor(R.color.igp));
                 }
-                    else{
+                else{
                     cell2border.setBackgroundColor(getResources().getColor(R.color.celesteigp));
                     cell1border.setBackgroundColor(getResources().getColor(R.color.igp));
                 }
@@ -140,9 +158,10 @@ public class pagedivisor extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 vpPager.setCurrentItem(1, true);
-                FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
                 cell1border.setBackgroundColor(getResources().getColor(R.color.igp));
                 cell2border.setBackgroundColor(getResources().getColor(R.color.celesteigp));
+               // FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
+
             }
         });
 
@@ -152,7 +171,7 @@ public class pagedivisor extends AppCompatActivity {
                 vpPager.setCurrentItem(0, true);
                 cell2border.setBackgroundColor(getResources().getColor(R.color.igp));
                 cell1border.setBackgroundColor(getResources().getColor(R.color.celesteigp));
-                FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
+              //  FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
             }
         });
 
@@ -229,6 +248,8 @@ public class pagedivisor extends AppCompatActivity {
         });
     }
 
+
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -243,7 +264,7 @@ public class pagedivisor extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+*/
     public   class MyPagerAdapter extends FragmentPagerAdapter {
         private   int NUM_ITEMS = 2;
 
@@ -260,18 +281,15 @@ public class pagedivisor extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 1:
-                return FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
+                  //  return FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
+                return FragmentWithTwoImages.newInstance("",  R.drawable.volcan_amarillo_sm,  R.drawable.volcan_amarillo_sm);
 
-                //return FragmentWithTwoImages.newInstance("", R.drawable.android_3, R.drawable.android_4);
                 case 0:
+                    return FragmentWithOneImage.newInstance("",  R.drawable.volcan_amarillo_sm);
 
-                    return FragmentWithOneImage.newInstance("", R.drawable.volcan_amarillo_sm);
+                //  return FragmentWithTwoImages.newInstance("", R.drawable.volcan_amarillo_sm, R.drawable.volcan_amarillo_sm);
 
-
-
-                    //return FragmentWithOneImage.newInstance("", R.drawable.android_1);
-                default:
-                    return null;
+                default:return null;
             }
         }
         @Override

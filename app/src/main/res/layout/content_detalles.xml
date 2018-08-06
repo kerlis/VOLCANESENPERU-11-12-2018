@@ -876,7 +876,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="500dp"
                             android:id="@+id/bloque14">     </RelativeLayout>
-                        -->
+
                             <ListView
                                 android:layout_below="@+id/titulo_table2"
                                 android:layout_weight="0.1"
@@ -885,14 +885,32 @@
                                 android:layout_height="500dp"
                                 android:id="@+id/ultimas_erupciones">
                             </ListView>
+                        -->
 
+                        <RelativeLayout android:layout_width="match_parent"
+                            android:layout_below="@+id/titulo_table2"
+                            android:id="@+id/topbutton2"
+                            android:background="@color/azuligp"
+                            android:layout_height="50dp"/>
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/topbutton2"
+                            android:layout_above="@+id/topbutton"
 
-
+                        android:layout_height="match_parent"
+                            android:id="@+id/ultimas_erupciones">
+                        </ListView>
 
 
                         <RelativeLayout android:layout_width="match_parent"
+                            android:id="@+id/topbutton"
+                            android:background="@color/azuligp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_height="50dp"/>
+<!--
+                        <RelativeLayout android:layout_width="match_parent"
                             android:id="@+id/totop"
-                             android:layout_below="@+id/ultimas_erupciones"
+                            android:visibility="gone"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"
                             android:textAlignment="center"
@@ -919,7 +937,7 @@
                             </RelativeLayout>
                         </RelativeLayout>
 
-
+-->
                     </RelativeLayout>
                 </ScrollView>
 

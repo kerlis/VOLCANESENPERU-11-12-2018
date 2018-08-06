@@ -1,17 +1,9 @@
 package peru.volcanes.volcanesper;
 import android.content.Intent;
-//import android.graphics.Bitmap;
-//import android.graphics.BitmapShader;
-//import android.graphics.Canvas;
-//import android.graphics.Paint;
-//import android.graphics.RectF;
-//import android.graphics.Shader;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-//import android.graphics.drawable.BitmapDrawable;
-//import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -26,7 +18,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 public class Convenciones extends FragmentActivity implements NavigationView.OnNavigationItemSelectedListener {
     Button mk;
     RelativeLayout informacion;
@@ -202,10 +193,10 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         descripcion2.setText(Html.fromHtml("<b align=right> Alerta amarilla: </b> el volcán presenta signos de intranquilidad (fumarolas y mayor cantidad de sismos) o inició una nueva erupción, con pequeñas explosiones y emisiones de ceniza. Estar alerta a las recomendaciones de las autoridades y mantenerse alejado del volcán."));
 
         descripcion3 = (TextView) findViewById(R.id.descripcion3);
-        descripcion3.setText(Html.fromHtml("<b align=right> Alerta naranja: </b> el volcán registra una variación significativa en su actividad eruptiva (explosiones frecuentes, posibles lahares). Seguir las recomendaciones de las autoridades y mantenerse alejado del volcán."));
+        descripcion3.setText(Html.fromHtml("<b align=right> Alerta naranja: </b> el volcán registra una variación significativa en su actividad eruptiva (explosiones frecuentes, posibles Lahares). Seguir las recomendaciones de las autoridades y mantenerse alejado del volcán."));
 
         descripcion34 = (TextView) findViewById(R.id.descripcion34);
-        descripcion34.setText(Html.fromHtml("<b align=right> Alerta roja: </b> el volcán está en plena erupción y expulsando grandes volúmenes de productos volcánicos (ceniza, bloques balísticos, flujos piroclásticos y lahares). Posible evacuación."));
+        descripcion34.setText(Html.fromHtml("<b align=right> Alerta roja: </b> el volcán está en plena erupción y expulsando grandes volúmenes de productos volcánicos (ceniza, bloques balísticos, flujos piroclásticos y Lahares). Posible evacuación."));
 
         descripcion34muyalto = (TextView) findViewById(R.id.descripcion34muyalto);
         descripcion34muyalto.setText(Html.fromHtml("<b align=right> Muy alto: </b> después del análisis de factores de peligro y vulnerabilidad, se concluye que los volcanes Sabancaya, Misti, Ubinas y Coropuna representan un alto riesgo para las poblaciones cercanas. Los puntajes obtenidos por ellos fueron de 240.0 a190.8."));
@@ -298,7 +289,7 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         armonico.setText(Html.fromHtml("<b align=right> Tremor armónico: </b> relacionado al ascenso del magma y/o al tránsito de fluidos por una cavidad resonante."));
 
         explosion = (TextView) findViewById(R.id.explosion);
-        explosion.setText(Html.fromHtml("<b align=right> Explosión: </b>  sismo de gran energia asociado a expulsion de materiales volcánicos."));
+        explosion.setText(Html.fromHtml("<b align=right> Explosión: </b>  sismo de gran energía asociado a expulsion de materiales volcánicos."));
 
         hibridos = (TextView) findViewById(R.id.hibridos);
         hibridos.setText(Html.fromHtml("<b align=right> Híbridos: </b>  generalmente se trata de eventos asociados al ascenso de magma en sus últimos tramos (pocos kilómetros) antes de llegar a la superficie."));
@@ -354,18 +345,12 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         ImageView mimageView32 = (ImageView) findViewById(R.id.icono33armonico);
         mimageView.setImageResource(R.drawable.alertadecenizas);
         alertadelaharimage.setImageResource(R.drawable.alertadelahares);
-
-
-
-
-
         mimageView2.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.reporteextraordinario, 90, 90));
         mimageView3.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.volcanesescudo, 90, 90));
         mimageView4.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.conodeescoria, 90, 90));
         mimageView5.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.estratovolcan, 90, 90));
         mimageView6.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.caldera, 90, 90));
         mimageView7.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.domodelava, 90, 90));
-
         mimageView8.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.fisuras, 90, 90));
         mimageView9.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.hawaiano, 90, 90));
         mimageView10.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.estromboliano, 90, 90));
@@ -377,12 +362,8 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         mimageView16.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.deformacion, 90, 90));
         mimageView17.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.geoquimico, 90, 90));
         mimageView18.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.monitoreovisual, 90, 90));
-
-
        // mimageView19.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.iindice_explosividad, 150, 150));
         mimageView19.setImageResource(R.drawable.iindice_explosividad);
-
-
         mimageView20.setImageResource(R.drawable.pronosticodispersion);
         mimageView21.setImageResource(R.drawable.mapasismico3d);
         mimageView22.setImageResource(R.drawable.glaciar);
@@ -390,7 +371,6 @@ public class Convenciones extends FragmentActivity implements NavigationView.OnN
         mimageView24.setImageResource(R.drawable.tornillo);
         mimageView25.setImageResource(R.drawable.hibrido);
         mimageView26.setImageResource(R.drawable.explosion);
-
         /*
         mimageView20.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.pronosticodispersion, 90, 90));
         mimageView21.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.drawable.mapasismico3d, 90, 90));

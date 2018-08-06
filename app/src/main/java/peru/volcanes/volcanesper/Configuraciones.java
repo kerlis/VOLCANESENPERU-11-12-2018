@@ -1,9 +1,9 @@
 package peru.volcanes.volcanesper;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -23,7 +23,6 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,7 +30,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
 public class Configuraciones extends FragmentActivity implements NavigationView.OnNavigationItemSelectedListener {
     String Message;
     String v;
@@ -71,35 +69,49 @@ public class Configuraciones extends FragmentActivity implements NavigationView.
     ImageView sliderz;
     TextView igpdireccion,ovsdireccion;
 
+    TextView igpweb;
+    TextView ovsweb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_configuraciones);
-
         igpdireccion = (TextView) findViewById(R.id.igpdireccion);
         ovsdireccion = (TextView) findViewById(R.id.ovsdireccion);
-
-
-        igpdireccion.setText("igp.gob.pe" + "\n" +
-                             "Calle Badajoz N° 169 Urb. Mayorazgo IV Etapa, Ate, Lima 15012 - Perú\n" +
+        igpdireccion.setText("Calle Badajoz N° 169 Urb. Mayorazgo IV Etapa,Ate,\n Lima 15012 - Perú\n" +
                              "+51 1 3172300");
-
-        ovsdireccion.setText("ovs.igp.gob.pe" + "\n" +
-                             "Urb. La Marina B-19, Cayma, Arequipa 04017 - Perú\n" +
+        ovsdireccion.setText("Urb. La Marina B-19, Cayma, \n Arequipa 04017 - Perú\n" +
                              "+51 54 251373");
+        igpweb = (TextView) findViewById(R.id.igpweb);
+        ovsweb = (TextView) findViewById(R.id.ovsweb);
+        igpweb.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://portal.igp.gob.pe/"));
+                startActivity(intent);
+            }
+        });
+        ovsweb.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://ovs.igp.gob.pe/instituto-geofisico-peru"));
+                startActivity(intent);
+            }
+        });
 
         notificar = (RadioButton) findViewById(R.id.notificar);
         nonotificar = (RadioButton) findViewById(R.id.nonotificar);
-
         vibrar = (RadioButton) findViewById(R.id.vibrar);
         sonido = (RadioButton) findViewById(R.id.sonido);
-
         blocke1a = (RelativeLayout) findViewById(R.id.blocke1);
         blocke2a = (RelativeLayout) findViewById(R.id.blocke2);
         blocke4a = (RelativeLayout) findViewById(R.id.blocke4);
         blocke5a = (RelativeLayout) findViewById(R.id.blocke5);
         blocke6a = (RelativeLayout) findViewById(R.id.blocke6);
-
         blocke1a.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {

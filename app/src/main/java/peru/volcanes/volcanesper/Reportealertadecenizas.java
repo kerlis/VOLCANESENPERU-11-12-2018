@@ -229,7 +229,7 @@ public class Reportealertadecenizas extends AppCompatActivity {
             pronostico_menu2.setVisibility(View.GONE);
             pronostico_menu.setVisibility(View.GONE);
             sismogramas_menu.setVisibility(View.VISIBLE);
-            reportes_menu.setVisibility(View.GONE);
+            reportes_menu.setVisibility(View.VISIBLE);
             alertas_menu.setVisibility(View.GONE);
             camara_menu.setVisibility(View.GONE);
             mapasismic_menu.setVisibility(View.GONE);
@@ -741,6 +741,8 @@ public class Reportealertadecenizas extends AppCompatActivity {
         bloque62 = (RelativeLayout) findViewById(R.id.bloque62);
         bloque42 = (RelativeLayout) findViewById(R.id.bloque42);
 
+
+        /*
         bloque62.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -754,6 +756,43 @@ public class Reportealertadecenizas extends AppCompatActivity {
                 openTabMapa();
             }
         });
+        */
+
+        bloque62.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(proyeccionsenamhiurl));
+                startActivity(intent);
+            }
+        });
+
+
+
+/*
+        bloque42.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTabMapa();
+            }
+        });
+
+*/
+
+
+        bloque42.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(mapasismico));
+                startActivity(intent);
+            }
+        });
+
+
+
 
 
     }
@@ -1036,8 +1075,8 @@ public class Reportealertadecenizas extends AppCompatActivity {
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher5));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+      //  builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+      //  builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher5);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
 
@@ -1053,8 +1092,8 @@ public class Reportealertadecenizas extends AppCompatActivity {
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher5));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+      //  builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+       // builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher5);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
 

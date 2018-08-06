@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
@@ -19,22 +20,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-<!--
-        <ProgressBar
-            android:id="@+id/progressBar1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
-            android:layout_centerVertical="true" />
-        -->
+
 
         <RelativeLayout android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@color/plomo_clarito2"
             android:id="@+id/leyendacontainer">
             <RelativeLayout android:layout_width="match_parent"
-                android:layout_toStartOf="@+id/bloque2"
                 android:layout_centerVertical="true"
                 android:layout_height="wrap_content">
                 <TextView android:layout_width="match_parent"
@@ -78,14 +70,20 @@
             </RelativeLayout>
         </RelativeLayout>
 
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:layout_marginBottom="50dp"
+
+                    android:layout_below="@+id/titulopantalla_detalles"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/listado_cenizas">
+                </ListView>
+            </RelativeLayout>
 
 
-        <ListView
-            android:id="@+id/listado_volcanes"
-            android:layout_below="@+id/leyendacontainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ListView>
 
 
     </RelativeLayout>

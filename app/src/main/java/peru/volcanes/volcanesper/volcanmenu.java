@@ -70,7 +70,6 @@ public class volcanmenu extends AppCompatActivity {
     TextView trayectoria_cenizas_text2;
     TextView trayectoria_cenizas_text3;
     TextView trayectoria_cenizas_text222;
-
     String urlimagen;
     RelativeLayout bloque5;
     RelativeLayout bloque_titulo;
@@ -104,7 +103,6 @@ public class volcanmenu extends AppCompatActivity {
     String ultimaerupcion;
     String mapasismico;
     String proyeccionsenamhiurl;
-
     private String[] mNavigationDrawerItemTitles;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -132,20 +130,15 @@ public class volcanmenu extends AppCompatActivity {
     TextView regiontext;
     TextView nombrevolcanboton;
     ImageView estado_volcan;
-
     RelativeLayout bloquenombre;
     TextView descarga;
     DownloadManager descargar;
     RelativeLayout blocke6a;
     RelativeLayout bloque42;
-
-
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.model);
-
-
         slideup = (TextView) findViewById(R.id.openslide);
         options = (RelativeLayout) findViewById(R.id.options);
 
@@ -222,7 +215,6 @@ public class volcanmenu extends AppCompatActivity {
             }
         });
 
-
         blocke9 = (RelativeLayout) findViewById(R.id.blocke9);
         blocke9.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -231,9 +223,6 @@ public class volcanmenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
 
         blocke6a.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -463,7 +452,20 @@ public class volcanmenu extends AppCompatActivity {
         mapasismico = prefs.getString("mapasismico", "");
         proyeccionsenamhiurl = prefs.getString("proyeccionsenamhiurl", "");
 
-        nombrevolcan.setText("Volcán"+"\n"+nombre);
+
+
+         if (nombre.equals("Andahua")){
+             nombrevolcan.setText("Volcanes de "+"\n"+nombre);
+
+         }
+         else if(nombre.equals("Huambo")){
+             nombrevolcan.setText("Volcanes de "+"\n"+nombre);
+
+         }
+         else{
+             nombrevolcan.setText("Volcán"+"\n"+nombre);
+
+         }
 
        // nombrevolcanboton.setText(nombre);
       //  actividadactual.setText(actividad_reciente);
@@ -847,7 +849,7 @@ public class volcanmenu extends AppCompatActivity {
                 DownloadManager.Request request = new DownloadManager.Request(uri);
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                 Long reference = descargar.enqueue(request);
-                Toast.makeText(volcanmenu.this,"Empezo Descarga de imagen del  volcán  " + nombre, Toast.LENGTH_LONG).show();
+                Toast.makeText(volcanmenu.this,"Descargando imagen del  volcán  " + nombre, Toast.LENGTH_LONG).show();
 
             }
         });
@@ -875,15 +877,28 @@ public class volcanmenu extends AppCompatActivity {
         bloquenombre = (RelativeLayout) findViewById(R.id.bloquenombre);
 
 
-
+/*
         bloque62.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
               openTab();
             }
         });
+*/
+
+        bloque62.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(proyeccionsenamhiurl));
+                startActivity(intent);
+            }
+        });
 
 
+
+/*
         bloque42.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -891,9 +906,18 @@ public class volcanmenu extends AppCompatActivity {
             }
         });
 
+*/
 
 
-
+        bloque42.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(mapasismico));
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -1274,7 +1298,6 @@ public class volcanmenu extends AppCompatActivity {
         i.putExtra("RESENA",details[20]);
         i.putExtra("ULTIMAERUPCION",details[21]);
         i.putExtra("MAPASISMICO",details[22]);
-
         i.putExtra("PROYECCIONSENAHMI",details[23]);
         volcanmenu.this.startActivity(i);
     }
@@ -1427,14 +1450,28 @@ public class volcanmenu extends AppCompatActivity {
         return null;
     }
 
+/*
+    CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder().build();
+CustomTabActivityHelper.openCustomTab(this, customTabsIntent, uri,
+            new CustomTabActivityHelper.CustomTabFallback() {
+        @Override
+        public void openUri(Activity activity, Uri uri) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            activity.startActivity(intent);
+        }
+    });
+
+*/
+
     public void openTab() {
+        /*
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(customTabsSession);
         builder.setToolbarColor(ContextCompat.getColor(this, R.color.azulbackground));
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher6));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+      //  builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+     //   builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher6);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
 
@@ -1442,6 +1479,40 @@ public class volcanmenu extends AppCompatActivity {
                 true);
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(this, Uri.parse(proyeccionsenamhiurl));
+        */
+
+
+
+        Uri uri = Uri.parse(proyeccionsenamhiurl);
+
+// create an intent builder
+        CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder();
+
+// Begin customizing
+// set toolbar colors
+        intentBuilder.setToolbarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        intentBuilder.setSecondaryToolbarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+
+// set start and exit animations
+        intentBuilder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+        intentBuilder.setExitAnimations(this, android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right);
+
+// build custom tabs intent
+        CustomTabsIntent customTabsIntent = intentBuilder.build();
+
+// launch the url
+        customTabsIntent.launchUrl(this, uri);
+
+
+
+
+
+
+
+
+
+
     }
 
     public void openTabMapa() {
@@ -1450,8 +1521,8 @@ public class volcanmenu extends AppCompatActivity {
         builder.setShowTitle(true);
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(),
                 R.drawable.ic_launcher6));
-        builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
-        builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
+       // builder.addMenuItem(getString(R.string.menu1), createIntent(R.string.menu1, 1));
+       // builder.addMenuItem(getString(R.string.menu2), createIntent(R.string.menu2, 2));
         Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher6);
         //  ic_launcherigp  android.R.drawable.ic_menu_add
 

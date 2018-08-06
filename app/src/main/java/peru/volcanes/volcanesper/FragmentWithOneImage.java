@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+//import android.widget.ProgressBar;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -75,7 +76,6 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
     Double magnitude;
     String refe, magni;
     String volcanestado;
-   // private static String[] PERMISSIONS = {android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION};
     int mWidthScreen;
     int mHeightScreen;
     int tamano;
@@ -105,18 +105,10 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
     CameraPosition cameraPosition;
     String zoomex2;
     String zoomex3;
-    // View markerLayout = getActivity().getLayoutInflater().inflate(R.layout.marcador, null);
-    //  CameraPosition cameraPosition;
     BitmapDescriptor icon;
     String nombre;
     private ProgressBar spinner;
     String ShowOrHideWebViewInitialUse = "show";
-
-
-
-
-    ///private static final String TAG = FragmentWithOneImage.class.getSimpleName();
-
     private static final int SPINNER_WIDTH = 100;
     private static final int SPINNER_HEIGHT = 100;
 
@@ -498,11 +490,11 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
 
                // Toast.makeText(getActivity(), "Info window clicked : "+count,Toast.LENGTH_SHORT).show();
 
-                if(count >= dataSnapshot.getChildrenCount()) {
+               if(count >= dataSnapshot.getChildrenCount()) {
 
-                    spinner.setVisibility(View.GONE);
+                   spinner.setVisibility(View.GONE);
                     //stop progress bar here
-                }
+               }
             }
 
             @Override
@@ -613,6 +605,4 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
      private void selectItem2(){
          map.setMapType(map.MAP_TYPE_NORMAL);
     }
-
-
 }
