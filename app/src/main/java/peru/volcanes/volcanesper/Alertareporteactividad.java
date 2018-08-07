@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 public class Alertareporteactividad extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     TextView pueblos;
     TextView volcan;
@@ -69,6 +71,7 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
     RelativeLayout visualizaerfile;
     RelativeLayout descargarfile;
     DownloadManager descarga;
+    TextView titulo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +80,7 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
         compartirfile= (RelativeLayout) findViewById(R.id.b6);
         visualizaerfile= (RelativeLayout) findViewById(R.id.bb7);
         descargarfile= (RelativeLayout) findViewById(R.id.b5);
+        titulo = (TextView) findViewById(R.id.titulo);
 
         blocke1a = (RelativeLayout) findViewById(R.id.blocke1);
         blocke2a = (RelativeLayout) findViewById(R.id.blocke2);
@@ -252,6 +256,21 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
         else {
             nobrevolcan = "Volcán";
         }
+
+
+
+        if (tipodenotificacion_dat.equals("n02,")){
+            titulo.setText("Reporte Extraordinario de Actividad");
+        }
+        else if(tipodenotificacion_dat.equals("n04,")){
+            titulo.setText("Reporte Ordinario de Actividad ");
+        }
+        else{
+
+        }
+
+        // Toast.makeText(Alertareporteactividad.this,"tiponotofocacion :   " + tipodenotificacion_dat, Toast.LENGTH_LONG).show();
+
 
         String reportesubscrosubs2 = reporteactividad_dat.substring(1);
         String horautc2 = horautc_dat.substring(0, horautc_dat.length() - 1);

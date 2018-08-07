@@ -49,9 +49,9 @@ public class ErupcionesAdapter extends BaseAdapter {
         else{
             fuente.setText(" ");
         }
-        //ViewGroup.LayoutParams params = convertView.getLayoutParams();
-      //  params.height = 160;
-       // convertView.setLayoutParams(params);
+        ViewGroup.LayoutParams params = convertView.getLayoutParams();
+       params.height = 160;
+        convertView.setLayoutParams(params);
         return convertView;
     }
 }

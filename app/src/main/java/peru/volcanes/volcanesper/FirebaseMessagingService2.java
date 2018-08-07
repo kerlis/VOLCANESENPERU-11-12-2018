@@ -150,6 +150,18 @@ public void onMessageReceived(RemoteMessage remoteMessage) {
 
                 }
             }
+            else if(tipo.equals("n04,") && r == 1){
+                if (s == 1) {
+                    sendNotificationreporteordinariosinsonido(remoteMessage.getData().get("message"));
+
+                }
+                else{
+                    sendNotificationreporteordinario(remoteMessage.getData().get("message"));
+
+                }
+            }
+
+
             else{
                 String retornar = "return";
             }
@@ -292,7 +304,132 @@ private void sendNotificationlahar(String messageBody) {
 
 
 
-private void sendNotificationreporteactividad(String messageBody) {
+
+    private void sendNotificationreporteordinario(String messageBody) {
+        Intent intent = new Intent(this, Alertareporteactividad.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        String tiponotificacion = messageBody.split("&")[0];
+        String volcan = messageBody.split("&")[1];
+        String tipodevento = messageBody.split("&")[2];
+        String fecha = messageBody.split("&")[3];
+        String hora = messageBody.split("&")[4];
+        String simulacro = messageBody.split("&")[5];
+
+        String horautc = messageBody.split("&")[6];
+        String reportepdf = messageBody.split("&")[7];
+
+
+
+        Intent intentreportedeactividad = new Intent(getApplicationContext(), Alertareporteactividad.class);
+        intentreportedeactividad.putExtra("TIPODENOTIFICACION", tiponotificacion);
+        intentreportedeactividad.putExtra("VOLCAN", volcan);
+        intentreportedeactividad.putExtra("TIPODEEVENTO", tipodevento);
+        intentreportedeactividad.putExtra("FECHA", fecha);
+        intentreportedeactividad.putExtra("HORA", hora);
+        intentreportedeactividad.putExtra("SIMULACRO", simulacro);
+
+        intentreportedeactividad.putExtra("HORAUTC", horautc);
+        intentreportedeactividad.putExtra("REPORTEACTIVIDAD", reportepdf);
+
+        // String fechasubs =  fecha.substring(1);
+        String fecha_subs3 = fecha.substring(1);
+
+        String fecha_subs = fecha_subs3.substring(0, 10);
+
+
+        // String hora_subs = hora.substring(0, 1);
+
+        String hora_subs = hora.substring(0, hora.length() - 1);
+        String hora_subs3 = hora_subs.substring(1);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intentreportedeactividad, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
+        //   Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("Reporte Ordinario de Actividad")
+                .setContentText(nobrevolcan_r1  + " " + fecha_subs + " " + " " + hora_subs3 +" " )
+                //.setContentTitle(tiponotificacion)
+
+                // .setContentText(messageBody)
+                .setAutoCancel(true)
+                .setSound(defaultSoundUri)
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    private void sendNotificationreporteordinariosinsonido(String messageBody) {
+        Intent intent = new Intent(this, Alertareporteactividad.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        String tiponotificacion = messageBody.split("&")[0];
+        String volcan = messageBody.split("&")[1];
+        String tipodevento = messageBody.split("&")[2];
+        String fecha = messageBody.split("&")[3];
+        String hora = messageBody.split("&")[4];
+        String simulacro = messageBody.split("&")[5];
+
+        String horautc = messageBody.split("&")[6];
+        String reportepdf = messageBody.split("&")[7];
+
+        Intent intentreportedeactividad = new Intent(getApplicationContext(), Alertareporteactividad.class);
+        intentreportedeactividad.putExtra("TIPODENOTIFICACION", tiponotificacion);
+        intentreportedeactividad.putExtra("VOLCAN", volcan);
+        intentreportedeactividad.putExtra("TIPODEEVENTO", tipodevento);
+        intentreportedeactividad.putExtra("FECHA", fecha);
+        intentreportedeactividad.putExtra("HORA", hora);
+        intentreportedeactividad.putExtra("SIMULACRO", simulacro);
+
+        intentreportedeactividad.putExtra("HORAUTC", horautc);
+        intentreportedeactividad.putExtra("REPORTEACTIVIDAD", reportepdf);
+
+        //  String fecha_subs = fecha.substring(0, 10);
+        // String fecha_subs3 = fecha_subs.substring(1);
+
+        String fecha_subs3 = fecha.substring(1);
+
+        String fecha_subs = fecha_subs3.substring(0, 10);
+
+        // String hora_subs = hora.substring(0, 1);
+
+        String hora_subs = hora.substring(0, hora.length() - 1);
+        String hora_subs3 = hora_subs.substring(1);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intentreportedeactividad, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
+        //   Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("Reporte Ordinario de Actividad")
+                //.setContentText(nobrevolcan_r1  + " "  + fecha_subs3 + " " + hora_subs )
+                // .setContentText(nobrevolcan_r1  + "*" + fecha_subs + "*" + "*" + hora_subs3 +"*" )
+                .setContentText(nobrevolcan_r1  + " " + fecha_subs + " " + " " + hora_subs3 +" " )
+
+                //   .setContentTitle("Reporte Extraordinario de Actividad"  + "/"  + "Simulacro en curso")
+                //  .setContentText(tipodevento + "" + "" + fecha + "" + hora )
+
+                //.setContentTitle(tiponotificacion)
+
+                // .setContentText(messageBody)
+                .setAutoCancel(true)
+                //.setSound(defaultSoundUri)
+                .setVibrate(new long[] { 1000, 1000})
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+
+
+    private void sendNotificationreporteactividad(String messageBody) {
     Intent intent = new Intent(this, Alertareporteactividad.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 

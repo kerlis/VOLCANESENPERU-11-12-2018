@@ -80,7 +80,7 @@ public class ReportesAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 veralerta(s.getFecha(),
-                        s.getFecha(),
+                        s.getNombrereporte(),
                         s.getPdfurl(),
                         s.getCodigovolcan());
             }

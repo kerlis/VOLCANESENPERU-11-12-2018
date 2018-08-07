@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:id="@+id/totop"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_alignParentBottom="true"
+
+        android:padding="0dp"
+        android:layout_height="100dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/bloque0_p55"
+            android:padding="0dp"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="@string/toup"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="@color/blanco"
+                android:id="@+id/texttoup"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

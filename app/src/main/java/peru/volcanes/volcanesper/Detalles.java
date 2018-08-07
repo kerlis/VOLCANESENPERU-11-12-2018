@@ -215,7 +215,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
         myView = (ScrollView) findViewById(R.id.myview);
 
-       /*
+
         totop = (RelativeLayout) findViewById(R.id.totop);
 
 
@@ -226,7 +226,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
                 myView.setScrollY(0);
             }
         });
-*/
+
 
 
        String tempStr = resena_text.substring(0, 1).toUpperCase() + resena_text.substring(1);
@@ -550,7 +550,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
 
 
-    //    totop = (RelativeLayout) findViewById(R.id.totop);
+        totop = (RelativeLayout) findViewById(R.id.totop);
         slideup = (TextView) findViewById(R.id.openslide);
         options = (RelativeLayout) findViewById(R.id.options);
         options.setOnClickListener(new View.OnClickListener() {
@@ -720,9 +720,9 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
 
 
-       // texttoup = (TextView) findViewById(R.id.texttoup);
+        texttoup = (TextView) findViewById(R.id.texttoup);
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
-      //  texttoup.setTypeface(fontAwesomeFont);
+        texttoup.setTypeface(fontAwesomeFont);
         slideup = (TextView) findViewById(R.id.openslide);
         camara = (TextView) findViewById(R.id.camara);
         mapa = (TextView) findViewById(R.id.mapa);
@@ -798,7 +798,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         if (alerta_double   <= 1) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.verdeigp));
 
-         //   totop.setBackgroundColor(getResources().getColor(R.color.verdeigp));
+            totop.setBackgroundColor(getResources().getColor(R.color.verdeigp));
 
             // text_status.setText("inactivo");
             estado_volcan.setImageResource(R.drawable.volcano_verde);
@@ -806,7 +806,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else if (alerta_double  > 1 && alerta_double == 2) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.orangeyellow));
-        //    totop.setBackgroundColor(getResources().getColor(R.color.orangeyellow));
+            totop.setBackgroundColor(getResources().getColor(R.color.orangeyellow));
 
             //text_status.setText("minima actividad");
             estado_volcan.setImageResource(R.drawable.volcano_amarillo);
@@ -814,7 +814,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else if (alerta_double  > 2 && alerta_double == 3) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.naranjas));
-         //   totop.setBackgroundColor(getResources().getColor(R.color.naranjas));
+           totop.setBackgroundColor(getResources().getColor(R.color.naranjas));
 
             //    text_status.setText("minima actividad");
             estado_volcan.setImageResource(R.drawable.volcano_naranja);
@@ -822,7 +822,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else if (alerta_double  > 3 && alerta_double == 4) {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.rojoigp));
-       //     totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
+            totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
 
             //  text_status.setText("mayor erupción");
             estado_volcan.setImageResource(R.drawable.volcano_rojo);
@@ -830,7 +830,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         }
         else {
             titulopantalla_detalles.setBackgroundColor(getResources().getColor(R.color.rojoigp));
-         //   totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
+            totop.setBackgroundColor(getResources().getColor(R.color.rojoigp));
 
             //text_status.setText("Explosiva");
             estado_volcan.setImageResource(R.drawable.volcano_rojo);
