@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <shape>
+            <!--8C8C8C
+            <solid android:color="#BABABA" />
+    -->
+            <solid android:color="@color/celesteigptext" />
+            <corners android:radius="2dp" />
+
+        </shape>
+    </item>
+
+    <item
+        android:left="2dp"
+
+        android:right="2dp"
+
+        android:top="2dp"
+        android:bottom="2dp">
+
+        <shape>
+            <solid android:color="#FFFFFF" />
+        </shape>
+
+    </item>
+
+</layer-list>

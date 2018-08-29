@@ -542,7 +542,7 @@ public class volcanmenu extends AppCompatActivity {
             pronostico_menu2.setVisibility(View.GONE);
             pronostico_menu.setVisibility(View.GONE);
             sismogramas_menu.setVisibility(View.VISIBLE);
-            reportes_menu.setVisibility(View.GONE);
+            reportes_menu.setVisibility(View.VISIBLE);
             alertas_menu.setVisibility(View.GONE);
             camara_menu.setVisibility(View.GONE);
             mapasismic_menu.setVisibility(View.GONE);

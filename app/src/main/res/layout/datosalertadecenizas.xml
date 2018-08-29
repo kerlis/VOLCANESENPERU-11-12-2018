@@ -97,18 +97,18 @@
             android:layout_height="110dp"
             android:layout_alignParentTop="true"
             android:gravity="center_horizontal">
-
+            <!--android:background="@drawable/fondovolcan2"-->
             <RelativeLayout
                 android:id="@+id/b2"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_centerHorizontal="true"
                  android:layout_centerVertical="true"
-                android:background="@drawable/fondovolcan2">
+                 >
                 <ImageView
                     android:id="@+id/estado_volcan"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical"
@@ -301,7 +301,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/alertadecnizasfotter"
                  android:layout_centerHorizontal="true"
-                android:layout_marginBottom="137dp"
+                android:layout_marginBottom="5dp"
                 android:text="ALERTA DE CENIZAS"
                 android:textAlignment="center"
                 android:textColor="@color/blanco"
@@ -317,7 +317,7 @@
             <!--opciones en enlaces-->
             <RelativeLayout android:layout_width="match_parent"
                 android:layout_below="@+id/alertadecnizasfotter"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
 
                 android:layout_height="wrap_content"
                 android:textAlignment="center">
@@ -328,7 +328,7 @@
                     android:padding="0dp" >
                     <RelativeLayout
                         android:layout_width="50dp"
-                        android:background="@drawable/volcan_amarillo_sm"
+                        android:background="@drawable/fondoiconoreportes3"
                         android:id="@+id/b6"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"

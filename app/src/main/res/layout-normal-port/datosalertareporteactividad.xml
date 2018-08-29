@@ -72,6 +72,7 @@
                                 android:textAlignment="center"
                                 android:textStyle="bold"
                                 android:textSize="20sp"
+                                android:id="@+id/titulo"
                                 android:textColor="@color/blanco"
                                 android:text="Reporte de Actividad"/>
 
@@ -103,15 +104,15 @@
 
                         <RelativeLayout
                             android:id="@+id/b2"
-                            android:layout_width="75dp"
-                            android:layout_height="75dp"
+                            android:layout_width="85dp"
+                            android:layout_height="85dp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
-                            android:background="@drawable/fondovolcan2">
+                             >
                             <ImageView
                                 android:id="@+id/estado_volcan"
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
+                                android:layout_width="85dp"
+                                android:layout_height="85dp"
                                 android:layout_centerHorizontal="true"
                                 android:layout_centerVertical="true"
                                 android:gravity="center_vertical"
@@ -137,18 +138,66 @@
                             android:layout_marginLeft="7dp"
                             android:layout_marginRight="7dp">
 
+
+
+
                             <TextView
-                                android:textAlignment="center"
+                                 android:textAlignment="center"
                                 android:id="@+id/volcan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="5dp"
                                 android:textSize="15dp"
+                                android:layout_marginBottom="10dp"
                                 android:textStyle="bold"
                                 android:paddingRight="5dp"
                                 android:textColor="@color/azulbackground"
                                 android:layout_alignParentStart="true"/>
 
+
+                            <TextView android:layout_width="match_parent"
+                                android:layout_below="@+id/volcan"
+                                android:id="@+id/analisis"
+                                android:textSize="12dp"
+                                android:textColor="@color/azulbackground"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView android:layout_width="match_parent"
+                                android:layout_below="@+id/analisis"
+                                android:id="@+id/conclusionlabel"
+                                android:text="Conclusión:"
+                                android:textSize="12dp"
+                                android:textColor="@color/azulbackground"
+                                android:layout_height="wrap_content"/>
+
+
+
+                        <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/containeranalisis"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:padding="9dp"
+                            android:layout_below="@+id/conclusionlabel"
+                            android:background="@drawable/backgroundceleste"
+                            >
+                            <TextView android:layout_width="match_parent"
+                                 android:id="@+id/conclusiones"
+                                android:textSize="12dp"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:textColor="@color/negro"
+                                android:layout_height="wrap_content"/>
+                        </RelativeLayout>
+
+                            <TextView android:layout_width="match_parent"
+                                android:layout_below="@+id/containeranalisis"
+                                android:id="@+id/niveldealerta"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content"/>
+
+
+                             <!--
 
                             <TextView
                                 android:id="@+id/tipodeevento"
@@ -158,8 +207,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/azulbackground"
-                                android:layout_below="@+id/volcan" />
-
+                                android:layout_below="@+id/niveldealerta" />
+-->
 
                             <TextView
                                 android:id="@+id/fecha"
@@ -169,7 +218,7 @@
                                 android:layout_width="match_parent"
                                 android:textColor="@color/azulbackground"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/tipodeevento" />
+                                android:layout_below="@+id/niveldealerta" />
 
                             <TextView
                                 android:id="@+id/hora"
@@ -208,11 +257,10 @@
 
 
 
-
                             <!--opciones en enlaces-->
                             <RelativeLayout android:layout_width="match_parent"
                                 android:layout_below="@+id/tituloreporte"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginTop="8dp"
                                 android:layout_height="wrap_content"
                                 android:textAlignment="center">
 

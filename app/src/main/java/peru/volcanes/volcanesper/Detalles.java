@@ -27,6 +27,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -34,6 +37,7 @@ import android.text.Spanned;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TextAppearanceSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +53,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import peru.volcanes.volcanesper.m_model.erupciones;
 import peru.volcanes.volcanesper.m_ui.ErupcionesAdapter;
+import peru.volcanes.volcanesper.m_ui.RecyclerAdapter;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -69,6 +75,7 @@ import com.squareup.picasso.Picasso;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Detalles extends FragmentActivity implements  OnMapReadyCallback,LocationListener {
     SupportMapFragment sMapFragment;
@@ -177,6 +184,14 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
     RelativeLayout bloque42;
     TextView camara2;
 
+
+
+
+    FirebaseDatabase databaseerupciones;
+    DatabaseReference myRef ;
+    List<erupciones> list;
+    RecyclerView recycle;
+    Button view;
 
     private static final String CHROME_PACKAGE = "com.android.chrome";
     private CustomTabsServiceConnection ctConnection;
@@ -837,6 +852,11 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
 
         }
 
+
+        recycle = (RecyclerView) findViewById(R.id.recycle);
+        databaseerupciones = FirebaseDatabase.getInstance();
+
+
         mFirebaseDatabase = database.getReference("actividadvolcanica").child("volcanes").child("messages");
         mFirebaseDatabase2 = database.getReference("actividadvolcanica").child("volcanes").child(codigo_text).child("erupciones");
         mFirebaseDatabase3 = database.getReference("actividadvolcanica").child("volcanes").child("messages");
@@ -845,11 +865,59 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         mFirebaseDatabase.keepSynced(true);
         mFirebaseDatabase2.keepSynced(true);
         mFirebaseDatabase4.keepSynced(true);
-        erupciones = (ListView) findViewById(R.id.ultimas_erupciones);
-        adapter2=new ErupcionesAdapter(Detalles.this,erupcionesx());
-        erupciones.setAdapter(adapter2);
+       // erupciones = (ListView) findViewById(R.id.ultimas_erupciones);
+      //  adapter2=new ErupcionesAdapter(Detalles.this,erupcionesx());
+       // erupciones.setAdapter(adapter2);
 
-       localizacion.setTypeface(fontAwesomeFont);
+        recycle = (RecyclerView) findViewById(R.id.recycle);
+        databaseerupciones = FirebaseDatabase.getInstance();
+        // myRef = database.getReference("message");
+
+
+        myRef = databaseerupciones.getReference("actividadvolcanica").child("volcanes").child(codigo_text).child("erupciones");
+
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                list = new ArrayList<erupciones>();
+                for(DataSnapshot dataSnapshot1 :dataSnapshot.getChildren()){
+
+                    erupciones value = dataSnapshot1.getValue(erupciones.class);
+                    erupciones fire = new erupciones();
+                    String name = value.getFuente();
+                    String address = value.getObservaciones();
+                    String email = value.getYear();
+                    fire.setFuente(name);
+                    fire.setObservaciones(email);
+                    fire.setYear(address);
+                    list.add(fire);
+
+
+                    RecyclerAdapter recyclerAdapter = new RecyclerAdapter(list, Detalles.this);
+                    RecyclerView.LayoutManager recyce = new GridLayoutManager(Detalles.this, 1);
+                    /// RecyclerView.LayoutManager recyce = new LinearLayoutManager(MainActivity.this);
+                    // recycle.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+                    recycle.setLayoutManager(recyce);
+                    recycle.setItemAnimator(new DefaultItemAnimator());
+                    recycle.setAdapter(recyclerAdapter);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("Hello", "Failed to read value.", error.toException());
+            }
+        });
+
+
+
+        localizacion.setTypeface(fontAwesomeFont);
         //initMaps();
         mk= (Button) findViewById(R.id.button);
 
@@ -1539,6 +1607,10 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         loadMarker();
     }
 
+
+
+
+  /*
     public ArrayList<erupciones> erupcionesx() {
         FirebaseDatabase.getInstance();
         mFirebaseDatabase2.keepSynced(true);
@@ -1585,7 +1657,7 @@ public class Detalles extends FragmentActivity implements  OnMapReadyCallback,Lo
         return objetoerupciones;
     }
 
-
+*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

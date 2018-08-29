@@ -86,4 +86,17 @@
     <color name="igp2">#17408F</color>
     <color name="negrodos">#2B2B2B</color>
     <color name="blancobase">#858585</color>
+
+    <color name="grisclaro55">#E8E8E8</color>
+
+
+    <color name="amarilloigptext">#F3BD32</color>
+    <color name="verdeigptext">#00A400</color>
+    <color name="naranjaigptext">#FF5B2D </color>
+    <color name="rojoigptext2">#FF1D2D</color>
+
+    <color name="celesteigptext">#26B4E9</color>
+
+
+
 </resources>

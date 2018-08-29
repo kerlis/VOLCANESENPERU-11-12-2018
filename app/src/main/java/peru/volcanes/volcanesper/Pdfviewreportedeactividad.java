@@ -18,6 +18,7 @@ package peru.volcanes.volcanesper;
         import android.widget.ImageView;
         import android.widget.LinearLayout;
         import android.widget.ListView;
+        import android.widget.ProgressBar;
         import android.widget.RelativeLayout;
         import android.widget.SlidingDrawer;
         import android.widget.TextView;
@@ -108,12 +109,16 @@ public class Pdfviewreportedeactividad extends FragmentActivity implements Navig
     private static final String TAG = Pdfviewersismosvulcanotectonicos.class.getSimpleName();
     PDFView pdfView;
     RelativeLayout blocke6a;
+    //private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_pdfreportedeactividadalerta);
         titulo_trayectorias = (TextView) findViewById(R.id.titulo_trayectorias);
+
+       // spinner = (ProgressBar)findViewById(R.id.progressBar1);
+
 
         blocke1a = (RelativeLayout) findViewById(R.id.blocke1);
         blocke2a = (RelativeLayout) findViewById(R.id.blocke2);
@@ -190,11 +195,16 @@ public class Pdfviewreportedeactividad extends FragmentActivity implements Navig
 
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         Intent i=this.getIntent();
-        pdfurl = i.getExtras().getString("PDFREPORTE");
+      pdfurl = i.getExtras().getString("PDFREPORTE");
+        //    pdfurl = "http://ovs.igp.gob.pe/sites/ovs.igp.gob.pe/files/pdf/Ubinas/2015/reporte_ubinas_201515.pdf";
 
-        String simulacrosubs2 = pdfurl.substring(1);
+
+        Toast.makeText(Pdfviewreportedeactividad.this,pdfurl , Toast.LENGTH_LONG).show();
+
+
+       // String simulacrosubs2 = pdfurl.substring(1);
         pdfView = (PDFView) findViewById(R.id.pdfView);
-        new RetrevePDFStream().execute(simulacrosubs2);
+        new RetrevePDFStream().execute(pdfurl);
     }
 
     /*-------------ver datos de volcan------------------------------------------------------*/
@@ -212,12 +222,24 @@ public class Pdfviewreportedeactividad extends FragmentActivity implements Navig
             catch(IOException e){
                 return null;
             }
+
             return  inputStream;
         }
+
         @Override
         protected void onPostExecute(InputStream inputStream) {
             pdfView.fromStream(inputStream).load();
+            //spinner.setVisibility(View.GONE);
+
         }
+
+
+     /*   @Override
+        protected void onProgressUpdate(Void... values) {
+            spinner.setVisibility(View.VISIBLE);
+             super.onProgressUpdate(values);
+        }
+*/
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

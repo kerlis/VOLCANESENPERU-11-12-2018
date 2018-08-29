@@ -74,9 +74,14 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
     TextView titulo;
     ImageView estado_volcan;
     String coloralerta_dat,analisis_dat,conclusiones_dat;
+
     TextView analisis,conclusiones,niveldealerta;
+
+
     String reportesubscrosubs2,reportesubscrosubs3;
+
     String dato;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -174,6 +179,21 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
         Intent i=this.getIntent();
         dato = i.getExtras().getString("NOTIFICACIONDATA");
 
+        /*
+        String tiponotificacion = dato.split("&")[0];
+        String volcan = dato.split("&")[1];
+        //String tipodevento = messageBody.split("&")[2];
+        String fecha = dato.split("&")[2];
+        String hora = dato.split("&")[3];
+        String simulacro = dato.split("&")[4];
+        String horautc = dato.split("&")[5];
+        String reportepdf = dato.split("&")[6];
+        String coloralerta = dato.split("&")[7];
+        String analisis = dato.split("&")[8];
+        String conclusiones = dato.split("&")[9];
+
+        Intent i=this.getIntent();
+        */
         tipodenotificacion_dat = dato.split("&")[0];
         volcan_dat = dato.split("&")[1];
         //tipodeevento_dat = i.getExtras().getString("TIPODEEVENTO");
@@ -183,12 +203,45 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
         horautc_dat = dato.split("&")[5];
         reporteactividad_dat = dato.split("&")[6];
 
+
         coloralerta_dat = dato.split("&")[7];
         analisis_dat = dato.split("&")[8];
         conclusiones_dat = dato.split("&")[9];
 
+
+
+       /*
+       Intent i=this.getIntent();
+        tipodenotificacion_dat = i.getExtras().getString("TIPODENOTIFICACION");
+        volcan_dat = i.getExtras().getString("VOLCAN");
+        //tipodeevento_dat = i.getExtras().getString("TIPODEEVENTO");
+        fecha_dat = i.getExtras().getString("FECHA");
+        hora_dat = i.getExtras().getString("HORA");
+        simulacro_dat = i.getExtras().getString("SIMULACRO");
+        horautc_dat = i.getExtras().getString("HORAUTC");
+        reporteactividad_dat = i.getExtras().getString("REPORTEACTIVIDAD");
+
+
+        coloralerta_dat = i.getExtras().getString("COLORALERTA");
+        analisis_dat = i.getExtras().getString("ANALISIS");
+        conclusiones_dat = i.getExtras().getString("CONCLUSIONES");
+
+        */
+
+
+
+
+       // String analisiss = analisis_dat.substring(0, analisis_dat.length() - 1);
+       // String analisiss2 = analisiss.substring(1);
         analisis.setText("Periodo de análisis: " + analisis_dat);
+
+        //String conclusioness = conclusiones_dat.substring(0, conclusiones_dat.length() - 1);
+        //String conclusioness = conclusiones_dat.substring(1);
         conclusiones.setText(conclusiones_dat);
+
+
+     //   String niveldealertas = coloralerta_dat.substring(0, coloralerta_dat.length() - 1);
+     //   String niveldealertas2 = niveldealertas.substring(1);
 
         if (coloralerta_dat.equals("verde")){
             niveldealerta.setText(" Nivel de alerta: VERDE");
@@ -215,6 +268,23 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
 
         }
 
+
+
+/*
+
+
+        tipodenotificacion_dat = "n02";
+        volcan_dat = ",1506455259128,";
+        tipodeevento_dat = "asfasf";
+        fecha_dat = "01/02/2018";
+        hora_dat = "20:20";
+        simulacro_dat = "SI";
+        horautc_dat = "24:00";
+        reporteactividad_dat = "PRUEBA";
+
+*/
+
+
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         visualizar = (TextView) findViewById(R.id.visualizar);
         compartirte = (TextView) findViewById(R.id.compartir);
@@ -225,7 +295,24 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
         String hora_subs = hora_dat.substring(0, hora_dat.length() - 1);
         String hora_subs2 = hora_subs.substring(1);
 
+
+     //   String tipodeevento_subs = tipodeevento_dat.substring(0, tipodeevento_dat.length() - 1);
+      //  String tipodeevento_subs2 = tipodeevento_subs.substring(1);
+
+
         String fecha_subs = fecha_dat.substring(0, 10);
+      //  String fecha_subs2 = fecha_subs.substring(0, fecha_subs.length() - 1);
+       // String fecha_subs3 = fecha_subs.substring(1);
+
+
+     //   String fecha_subs3 = fecha_dat.substring(1);
+      //  String fecha_subs = fecha_subs3.substring(0, 10);
+
+         //String fecha_subs = fecha_dat;
+
+
+       // String simulacro_subs1 = simulacro_dat.substring(0, simulacro_dat.length() - 1);
+       // String simulacro_subs2 = simulacro_subs1.substring(1);
         String va =  String.valueOf(volcan_dat);
 
         estado_volcan  = (ImageView) findViewById(R.id.estado_volcan);
@@ -233,79 +320,86 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
         if(va.equals("1493157379002")){
             nobrevolcan = "Volcán Ubinas";
             volcan.setText("Volcán Ubinas");
+
             estado_volcan.setImageResource(R.drawable.ubinas_circle);
+
+
         }
         else if(va.equals("1493157381161")) {
             nobrevolcan = "Volcán Sabancaya";
             volcan.setText("Volcán Sabancaya");
             estado_volcan.setImageResource(R.drawable.sabancaya_circle);
-        }
 
+        }
         else if(va.equals("1506454510537")) {
             nobrevolcan = "Volcán Sara Sara";
             volcan.setText("Volcán Sara Sara");
+
             estado_volcan.setImageResource(R.drawable.sarasara_circle);
+
         }
         else if(va.equals("1506455245814")) {
             nobrevolcan = "Volcán Cerro Auquihuato";
             volcan.setText("Volcán Cerro Auquihuato");
             estado_volcan.setImageResource(R.drawable.cerro_auquihuato_circle);
+
+
         }
         else if(va.equals("1506455248101")) {
             volcan.setText("Volcán Andahua");
             nobrevolcan = "Volcán Andahua";
             estado_volcan.setImageResource(R.drawable.andahua_circle);
-        }
 
+        }
         else if(va.equals("1506455249661")) {
             nobrevolcan = "Volcán Coropuna";
             volcan.setText("Volcán Coropuna");
             estado_volcan.setImageResource(R.drawable.coropuna_circle);
-        }
 
+        }
         else if(va.equals("1506455251429")) {
             nobrevolcan = "Volcán Huambo";
             volcan.setText("Volcán Huambo");
             estado_volcan.setImageResource(R.drawable.huambo_circle);
-        }
 
+        }
         else if(va.equals("1506455253382")) {
             nobrevolcan = "Volcán Chachani";
             volcan.setText("Volcán Chachani");
             estado_volcan.setImageResource(R.drawable.chachani_circle);
-        }
 
+        }
         else if(va.equals("1506455254838")) {
             nobrevolcan = "Volcán Tutupaca";
             volcan.setText("Volcán Tutupaca");
             estado_volcan.setImageResource(R.drawable.tutupaca_circle);
-        }
 
+        }
         else if(va.equals("1506455256229")) {
             nobrevolcan = "Volcán Huaynaputina";
             volcan.setText("Volcán Huaynaputina");
             estado_volcan.setImageResource(R.drawable.huaynaputina_circle);
-        }
 
+        }
         else if(va.equals("1506455257749")) {
             nobrevolcan = "Volcán Ticsani";
             volcan.setText("Volcán Ticsani");
             estado_volcan.setImageResource(R.drawable.ticsani_circle);
-        }
 
+        }
         else if(va.equals("1506455257753")) {
             nobrevolcan = "Volcán Casiri";
             volcan.setText("Volcán Casiri");
             estado_volcan.setImageResource(R.drawable.casiri_circle);
-        }
 
+
+        }
         else if(va.equals("1506455257755")) {
             nobrevolcan = "Volcán Cerros Purupuruni";
             volcan.setText("Volcán Cerros Purupuruni");
             estado_volcan.setImageResource(R.drawable.cerros_purupuruni_circle);
 
         }
-
         else if(va.equals("1506455257757")) {
             nobrevolcan = "Volcán Quimsachata";
             volcan.setText("Volcán Quimsachata");
@@ -346,6 +440,21 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
         }
 
 
+
+      //  reportesubscrosubs2  = reporteactividad_dat.substring(0, reporteactividad_dat.length() - 1);
+      //  reportesubscrosubs3= reportesubscrosubs2.substring(1);
+
+       // reportesubscrosubs2 = reporteactividad_dat.substring(1);
+
+
+
+
+
+      //  String horautc2 = horautc_dat.substring(0, horautc_dat.length() - 1);
+     //   String horautc3 = horautc2.substring(1);
+        //String horautc2 = horautc_dat.substring(1);
+        //tipodeevento.setText("Tipo de Evento: " + tipodeevento_subs2);
+        //fecha.setText("Fecha: " + fecha_subs3);
         fecha.setText("Fecha: " + fecha_subs);
         hora.setText("Hora: " + hora_dat + "/ Hora UTC:" + horautc_dat);
         volcan.setText(nobrevolcan);
@@ -387,11 +496,31 @@ public class Alertareporteactividad extends AppCompatActivity implements Navigat
 
 
 
+
+
         compartirfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+              //  String urlpdf = reporteactividad_dat.substring(1);
+            //    String tipodeevento_subs = tipodeevento_dat.substring(0, tipodeevento_dat.length() - 1);
+             //   String tipodeevento_subs2 = tipodeevento_subs.substring(1);
+                //
+                // String shareBody = "Reporte de actividad volcanica " + " - " + tipodeevento_subs2;
+                //  String shareSub = urlpdf;
+
+
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
+              //  String fecha_subs3 = fecha_dat.substring(1);
+               // String fecha_subs = fecha_subs3.substring(0, 10);
+
+              //  String simulacro_subs1 = simulacro_dat.substring(0, simulacro_dat.length() - 1);
+               // String simulacro_subs2 = simulacro_subs1.substring(1);
+
+               // String hora_subs = hora_dat.substring(0, hora_dat.length() - 1);
+             //   String hora_subs2 = hora_subs.substring(1);
+             //   String horautc2 = horautc_dat.substring(0, horautc_dat.length() - 1);
+              //  String horautc3 = horautc2.substring(1);
 
                 String shareBody =   "Reporte de actividad volcanica - "   + nobrevolcan + "\n" +
                        // "Tipo de evento: " + tipodeevento_subs2 + "\n" +

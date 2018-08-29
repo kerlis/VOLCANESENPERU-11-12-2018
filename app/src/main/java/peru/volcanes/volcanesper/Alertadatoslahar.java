@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 public class Alertadatoslahar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     TextView volcan;
     TextView tipodeevento;
@@ -45,6 +47,9 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
     RelativeLayout blocke6a;
     TextView compartir;
     RelativeLayout compartirfile;
+    ImageView estado_volcan;
+    String dato;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,12 +111,25 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
             }
         });
 
+        estado_volcan = (ImageView) findViewById(R.id.estado_volcan);
+
         volcan = (TextView) findViewById(R.id.volcan);
         tipodeevento = (TextView) findViewById(R.id.tipodeevento);
         fecha = (TextView) findViewById(R.id.fecha);
         hora = (TextView) findViewById(R.id.hora);
         observacicones = (TextView) findViewById(R.id.observacicones);
         simulacro = (TextView) findViewById(R.id.simulacro);
+
+
+        Intent i=this.getIntent();
+        dato = i.getExtras().getString("NOTIFICACIONDATA");
+
+
+        observacicones.setText(dato);
+
+
+
+        /*
         Intent i=this.getIntent();
         tipodenotificacion_dat = i.getExtras().getString("TIPODENOTIFICACION");
         tipodeevento_dat = i.getExtras().getString("TIPODEEVENTO");
@@ -121,101 +139,130 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
         volcan_dat = i.getExtras().getString("VOLCAN");
         simulacro_dat = i.getExtras().getString("SIMULACRO");
         horautc_dat = i.getExtras().getString("HORAUTC");
+*/
+
+        tipodenotificacion_dat = dato.split("&")[0];
+        volcan_dat = dato.split("&")[1];
+        tipodeevento_dat = dato.split("&")[2];
+        fecha_dat = dato.split("&")[3];
+        hora_dat = dato.split("&")[4];
+        horautc_dat = dato.split("&")[5];
+        observacicones_dat = dato.split("&")[6];
+        simulacro_dat = dato.split("&")[7];
+
+
+
+     //   Toast.makeText(Alertadatoslahar.this,"Descargando imagen del  volcán  " + dato, Toast.LENGTH_LONG).show();
+
+
+
+
         compartir = (TextView) findViewById(R.id.compartir);
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         compartir.setTypeface(fontAwesomeFont);
-        String hora_subs = hora_dat.substring(0, hora_dat.length() - 1);
-        String hora_subs2 = hora_subs.substring(1);
-        String tipodeevento_subs = tipodeevento_dat.substring(0, tipodeevento_dat.length() - 1);
-        String tipodeevento_subs2 = tipodeevento_subs.substring(1);
-        String fecha_subs = fecha_dat.substring(0, fecha_dat.length() - 1);
-        String fecha_subs2 = fecha_subs.substring(1);
-        String simulacro_subs2 = simulacro_dat.substring(1);
-        String observaciones_subs = observacicones_dat.substring(0, observacicones_dat.length() - 1);
-        String observaciones_subs2 = observaciones_subs.substring(1);
+
+
         String va =  String.valueOf(volcan_dat);
 
         String horautc_subs =  horautc_dat.substring(1);
 
-        if(va.equals(",1493157379002,")){
+        if(va.equals("1493157379002")){
             nobrevolcan = "Volcán Ubinas";
             volcan.setText("Volcán Ubinas");
+            estado_volcan.setImageResource(R.drawable.ubinas_circle);
+
 
         }
-        else if(va.equals(",1493157381161,")) {
+        else if(va.equals("1493157381161")) {
             nobrevolcan = "Volcán Sabancaya";
             volcan.setText("Volcán Sabancaya");
+            estado_volcan.setImageResource(R.drawable.sabancaya_circle);
 
         }
-        else if(va.equals(",1506454510537,")) {
+        else if(va.equals("1506454510537")) {
             nobrevolcan = "Volcán Sara Sara";
             volcan.setText("Volcán Sara Sara");
+            estado_volcan.setImageResource(R.drawable.sarasara_circle);
 
         }
-        else if(va.equals(",1506455245814,")) {
+        else if(va.equals("1506455245814")) {
             nobrevolcan = "Volcán Cerro Auquihuato";
             volcan.setText("Volcán Cerro Auquihuato");
+            estado_volcan.setImageResource(R.drawable.cerro_auquihuato_circle);
 
         }
-        else if(volcan_dat.equals(",1506455248101,")) {
+        else if(volcan_dat.equals("1506455248101")) {
             volcan.setText("Volcán Andahua");
-
             nobrevolcan = "Volcán Andahua";
+            estado_volcan.setImageResource(R.drawable.andahua_circle);
+
         }
-        else if(va.equals(",1506455249661,")) {
+        else if(va.equals("1506455249661")) {
             nobrevolcan = "Volcán Coropuna";
             volcan.setText("Volcán Coropuna");
+            estado_volcan.setImageResource(R.drawable.coropuna_circle);
+
 
         }
-        else if(va.equals(",1506455251429,")) {
+        else if(va.equals("1506455251429")) {
             nobrevolcan = "Volcán Huambo";
             volcan.setText("Volcán Huambo");
+            estado_volcan.setImageResource(R.drawable.huambo_circle);
 
         }
-        else if(va.equals(",1506455253382,")) {
+        else if(va.equals("1506455253382")) {
             nobrevolcan = "Volcán Chachani";
             volcan.setText("Volcán Chachani");
+            estado_volcan.setImageResource(R.drawable.chachani_circle);
 
         }
-        else if(va.equals(",1506455254838,")) {
+        else if(va.equals("1506455254838")) {
             nobrevolcan = "Volcán Tutupaca";
             volcan.setText("Volcán Tutupaca");
+            estado_volcan.setImageResource(R.drawable.tutupaca_circle);
 
         }
-        else if(va.equals(",1506455256229,")) {
+        else if(va.equals("1506455256229")) {
             nobrevolcan = "Volcán Huaynaputina";
             volcan.setText("Volcán Huaynaputina");
+            estado_volcan.setImageResource(R.drawable.huaynaputina_circle);
 
         }
-        else if(va.equals(",1506455257749,")) {
+        else if(va.equals("1506455257749")) {
             nobrevolcan = "Volcán Ticsani";
             volcan.setText("Volcán Ticsani");
+            estado_volcan.setImageResource(R.drawable.ticsani_circle);
 
         }
-        else if(va.equals(",1506455257753,")) {
+        else if(va.equals("1506455257753")) {
             nobrevolcan = "Volcán Casiri";
             volcan.setText("Volcán Casiri");
+            estado_volcan.setImageResource(R.drawable.casiri_circle);
 
 
         }
-        else if(volcan_dat.equals(",1506455257755,")) {
+        else if(volcan_dat.equals("1506455257755")) {
             nobrevolcan = "Volcán Cerros Purupuruni";
             volcan.setText("Volcán Cerros Purupuruni");
+            estado_volcan.setImageResource(R.drawable.cerros_purupuruni_circle);
 
         }
-        else if(volcan_dat.equals(",1506455257757,")) {
+        else if(volcan_dat.equals("1506455257757")) {
             nobrevolcan = "Volcán Quimsachata";
             volcan.setText("Volcán Quimsachata");
+            estado_volcan.setImageResource(R.drawable.quimsachata_circle);
 
         }
-        else if(volcan_dat.equals(",1506455259126,")) {
+        else if(volcan_dat.equals("1506455259126")) {
             nobrevolcan = "Volcán Yucamane";
             volcan.setText("Volcán Yucamane");
+            estado_volcan.setImageResource(R.drawable.yucamane_circle);
 
         }
-        else if(volcan_dat.equals(",1506455259128,")) {
+        else if(volcan_dat.equals("1506455259128")) {
             nobrevolcan = "Volcán Misti";
             volcan.setText("Volcán Misti");
+            estado_volcan.setImageResource(R.drawable.misti_circle);
 
         }
         else {
@@ -223,16 +270,13 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
         }
 
 
-        String asubstring = fecha_subs2.substring(0, 10);
-
-        tipodeevento.setText("Tipo de Evento: " + tipodeevento_subs2);
+        String asubstring = fecha_dat.substring(0, 10);
+        tipodeevento.setText("Tipo de Evento: " + tipodeevento_dat);
         fecha.setText("Fecha: " + asubstring);
-        hora.setText("Hora: " + hora_subs2 + " / Hora UTC:" + horautc_subs);
-        observacicones.setText(observaciones_subs2);
+        hora.setText("Hora: " + hora_dat + " / Hora UTC:" + horautc_dat);
+        observacicones.setText(observacicones_dat);
         volcan.setText(nobrevolcan);
-
-        String simulacrosubs2 = simulacro_subs2.substring(0, simulacro_subs2.length() - 1);
-        simulacro.setText("Simulacro: " + simulacrosubs2);
+        simulacro.setText("Simulacro: " + simulacro_dat);
 
         sliderz = (ImageView) findViewById(R.id.sliderz);
         mTitle = mDrawerTitle = getTitle();
@@ -249,39 +293,36 @@ public class Alertadatoslahar extends AppCompatActivity implements NavigationVie
             }
         });
 
+
+
         compartirfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String hora_subs = hora_dat.substring(0, hora_dat.length() - 1);
-                String hora_subs2 = hora_subs.substring(1);
-                String tipodeevento_subs = tipodeevento_dat.substring(0, tipodeevento_dat.length() - 1);
-                String tipodeevento_subs2 = tipodeevento_subs.substring(1);
-                String fecha_subs = fecha_dat.substring(0, fecha_dat.length() - 1);
-                String fecha_subs2 = fecha_subs.substring(1);
-                String simulacro_subs2 = simulacro_dat.substring(1);
-                String observaciones_subs = observacicones_dat.substring(0, observacicones_dat.length() - 1);
-                String observaciones_subs2 = observaciones_subs.substring(1);
-                String horautc_subs =  horautc_dat.substring(1);
-                String asubstring = fecha_subs2.substring(0, 10);
+
+                String asubstring = fecha_dat.substring(0, 10);
+
+
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 String shareBody = "Alerta de Lahar - "  + nobrevolcan + "\n" +
-                        "Tipo de evento: " + tipodeevento_subs2 + "\n" +
+                        "Tipo de evento: " + tipodeevento_dat + "\n" +
                         "Fecha: " +  asubstring + "\n" +
-                        "Hora: " + hora_subs2 + " / Hora UTC: " + horautc_subs + "\n" +
-                        "Observaciones: " + observaciones_subs2 + "\n" +
-                        "Simulacro: " + simulacro_subs2 + "\n";
+                        "Hora: " + hora_dat + " / Hora UTC: " + horautc_dat + "\n" +
+                        "Observaciones: " + observacicones_dat + "\n" +
+                        "Simulacro: " + simulacro_dat + "\n";
                 String shareSub = "Alerta de Lahar - "   + nobrevolcan + "\n" +
-                        "Tipo de evento: " + tipodeevento_subs2 + "\n" +
+                        "Tipo de evento: " + tipodeevento_dat + "\n" +
                         "Fecha: " +  asubstring + "\n" +
-                        "Hora: " + hora_subs2 + " / Hora UTC: " + horautc_subs + "\n" +
-                        "Observaciones: " + observaciones_subs2 + "\n" +
-                        "Simulacro: " + simulacro_subs2 + "\n";
+                        "Hora: " + hora_dat + " / Hora UTC: " + horautc_dat + "\n" +
+                        "Observaciones: " + observacicones_dat + "\n" +
+                        "Simulacro: " + simulacro_dat + "\n";
                 //sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareBody);
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareSub);
                 startActivity(Intent.createChooser(sharingIntent, "Share using"));
             }
         });
+
+
     }
     void setupDrawerToggle(){
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
