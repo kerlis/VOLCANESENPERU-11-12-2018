@@ -29,6 +29,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -110,6 +111,7 @@ public class Sismogramas extends FragmentActivity  implements ActivityCompat.OnR
     String proyeccionsenamhiurl;
     RelativeLayout bloque42;
     TextView camara2;
+    FrameLayout listado;
 
     private static final String CHROME_PACKAGE = "com.android.chrome";
     private CustomTabsServiceConnection ctConnection;
@@ -146,7 +148,8 @@ public class Sismogramas extends FragmentActivity  implements ActivityCompat.OnR
 
        ///  proyecionsenahmi = i.getExtras().getString("PROYECCIONSENAHMI");
 
-
+       //  listado = (FrameLayout) findViewById(R.id.listado);
+        // listado.bringToFront();
 
          texto = (TextView) findViewById(R.id.texto);
          texto.setText("Registro sísmico del volcán " +  nombre_text + ", el cual muestra los eventos registrados en tiempo real por las estaciones de vigilancia permanente del IGP.");

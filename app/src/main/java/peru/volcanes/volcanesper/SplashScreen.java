@@ -37,7 +37,9 @@ public class SplashScreen extends Activity {
                 }finally{
 //                  Intent intent7 = new Intent(SplashScreen.this,pagedivisor.class);
 
-                    Intent intent7 = new Intent(SplashScreen.this,pagedivisor.class);
+//                    Intent intent7 = new Intent(SplashScreen.this,pagedivisor.class);
+
+                    Intent intent7 = new Intent(SplashScreen.this,Youtubevideos.class);
 
                     //  Intent intent7 = new Intent(SplashScreen.this,Alertando.class);
                     startActivity(intent7);
