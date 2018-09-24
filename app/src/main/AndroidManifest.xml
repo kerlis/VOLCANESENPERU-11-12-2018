@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="peru.volcanes.volcanesper">
-    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
-<!--
-    <uses-feature android:glEsVersion="0x00030001" android:required="true" />
-    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
-    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />-->
+       <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26" />
+ <!--
+        <uses-feature android:glEsVersion="0x00030001" android:required="true" />
+        <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+        <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />-->
 
 
 
@@ -54,6 +54,7 @@
 
     <!--for ZUK-->
     <uses-permission android:name="android.permission.READ_APP_BADGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <!--for OPPO-->
     <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
@@ -289,7 +290,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAZl7IHIE_foyuSmAGoC0zthU7V7zXknDY" />
+            android:value="AIzaSyChRE4B12A8MFwNc4ftdxivF5hXi-e7b3o" />
 
         <activity android:name=".Alertando"></activity>
 

@@ -133,7 +133,7 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
         mapasismico = "valoresdevariable";
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
 

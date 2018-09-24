@@ -73,6 +73,8 @@
                     android:id="@+id/pdfView">
                 </com.github.barteksc.pdfviewer.PDFView>
 
+
+
 <!--
                 <ProgressBar
                     android:id="@+id/progressBar1"

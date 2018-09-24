@@ -215,7 +215,7 @@ public class Pdfviewreportedeactividad extends FragmentActivity implements Navig
             try{
                 URL url = new URL(strings[0]);
                 HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-                if (urlConnection.getResponseCode() == 200){
+                if (urlConnection.getResponseCode() == 8000){
                     inputStream =  new BufferedInputStream(urlConnection.getInputStream());
                 }
             }

@@ -54,7 +54,7 @@ public class Sismosengeneral extends Activity  {
     RelativeLayout blocke2a;
     RelativeLayout blocke4a;
     RelativeLayout blocke5a;
-    Toolbar toolbar;
+   // Toolbar toolbar;
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     android.support.v7.app.ActionBarDrawerToggle mDrawerToggle;
@@ -673,7 +673,7 @@ public class Sismosengeneral extends Activity  {
 
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         titulopantalla = (RelativeLayout) findViewById(R.id.titulopantalla);
         estado_volcan = (ImageView) findViewById(R.id.estado_volcan);
         text_volcan = (TextView) findViewById(R.id.text_volcan);
@@ -900,7 +900,7 @@ public class Sismosengeneral extends Activity  {
         Sismosengeneral.this.startActivity(i);
     }
     void setupDrawerToggle(){
-        mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
+        mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,R.string.app_name, R.string.app_name);
         mDrawerToggle.syncState();
     }
     private Handler handler = new Handler() {
