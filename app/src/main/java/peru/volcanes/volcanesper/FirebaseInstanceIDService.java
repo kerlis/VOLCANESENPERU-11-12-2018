@@ -11,7 +11,6 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.RemoteMessage;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,16 +20,18 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.StringTokenizer;
-
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import static android.content.ContentValues.TAG;
+
 public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
     String elvalor = "a";
     String elvalor2 = "bb";
     String json;
+
+
     @Override
     public void onTokenRefresh() {
         String token = FirebaseInstanceId.getInstance().getToken();
@@ -44,12 +45,12 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
                 .add("Token",token)
                 .build();
         Request request = new Request.Builder()
-                //.url("http://test.igp.gob.pe/volcanes_alertas_cenizas/register.php")
-                // .url("http:www.arteypixel.com/envio_notificaciones/register.php")
-                 .url("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token)
+                .url("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token)
                 .post(body)
                 .build();
-                 consulta("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token);
+
+              consulta("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token);
+
                 // FirebaseMessaging.getInstance().subscribeToTopic("VOLCANESD");
                 //http://intranet.igp.gob.pe/eLdZpqDtLN
         try {
@@ -82,7 +83,11 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
         try {
             FileOutputStream fileOutputStream = openFileOutput(file_namex, MODE_PRIVATE);
             fileOutputStream.write(Message5.getBytes());
-            FirebaseMessaging.getInstance().subscribeToTopic(Message5);
+            //  FirebaseMessaging.getInstance().subscribeToTopic(Message5);
+
+            FirebaseMessaging.getInstance().subscribeToTopic("SISMOSANDROIDDOS");
+
+
             //  fileOutputStream.write(Message7.getBytes());
             fileOutputStream.close();
             //  Toast.makeText(getApplicationContext(), "Configurado", Toast.LENGTH_LONG).show();

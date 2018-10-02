@@ -1,11 +1,15 @@
 package peru.volcanes.volcanesper;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import com.google.firebase.messaging.RemoteMessage;
+
+import java.util.Random;
 
 public class FirebaseMessagingService3  extends com.google.firebase.messaging.FirebaseMessagingService {
     String nobrevolcan_r2;
@@ -23,6 +27,58 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         String observaciones = valor.split("&")[5];
         String simulacro = valor.split("&")[6];
         String horautc = valor.split("&")[7];
+
+
+
+
+        String channelId = "some_channel_id";
+        CharSequence channelName = "Some Channel";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //void showNotification(String title, String content) {
+            NotificationManager mNotificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel(channelId,
+                        channelName,
+                        NotificationManager.IMPORTANCE_DEFAULT);
+                channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DISCRIPTION");
+                mNotificationManager.createNotificationChannel(channel);
+            }
+
+            Intent intent = new Intent(this, Alertando.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            String tiponotificacion2 = valor;
+            Intent intentlahar = new Intent(getApplicationContext(), Alertando.class);
+            intentlahar.putExtra("NOTIFICACIONDATA", tiponotificacion2);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentlahar, PendingIntent.FLAG_UPDATE_CURRENT);
+            Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
+
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "default")
+                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
+                    .setContentTitle("Alerta de Cenizas") // title for notification
+                    .setContentText(nobrevolcan_r2 + " " + tipodevento + " " + " " + hora + " ")// message for notification
+                    .setAutoCancel(true)
+                    .setSound(defaultSoundUri)
+                    .setContentIntent(pendingIntent)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+            //  Intent intent = new Intent(getApplicationContext(), MainActivity_.class);
+            //    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            //  mBuilder.setContentIntent(pi);
+            // mNotificationManager.notify(0, mBuilder.build());
+            // }        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            //notificationManager.notify(0 , notificationBuilder.build());
+            //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            Random notification_id = new Random();
+            // notificationManager.notify(0 , notificationBuilder.build());
+            notificationManager.notify(notification_id.nextInt(100), mBuilder.build());
+
+            //  }
+        }
+
+
 
 
 
@@ -84,7 +140,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
 
 
 
-
+/*
         if (tiponotificacion.equals("n01")){
             enviarnotificaciondatosalertalahar(remoteMessage.getData().get("body"));
         }
@@ -104,8 +160,32 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         else{
             enviarnotificaciondatoalertadecenizas(remoteMessage.getData().get("body"));
         }
+*/
+
+
+
+
+
+
 
     }
+
+
+/*
+    public NotificationCompat.Builder initChannels(Context context) {
+        if (Build.VERSION.SDK_INT < 26) {
+            return new NotificationCompat.Builder(context);
+        }
+        NotificationManager notificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationChannel channel = new NotificationChannel("default",
+                "Channel name",
+                NotificationManager.IMPORTANCE_DEFAULT);
+        channel.setDescription("Channel description");
+        notificationManager.createNotificationChannel(channel);
+        return new NotificationCompat.Builder(context, "default");
+    }
+    */
 
     private void enviarnotificaciondatoalertadecenizas(String messageBody) {
 
@@ -140,7 +220,8 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
                 .setContentText(nobrevolcan_r2  + " " + asubstring + " " + " " + hora +" " )
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0 , notificationBuilder.build());
         //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
@@ -175,7 +256,9 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
                 .setContentText(nobrevolcan_r2  + " " + asubstring + " " + " " + hora +" " )
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0 , notificationBuilder.build());
@@ -211,10 +294,23 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
                 .setContentText(nobrevolcan_r2  + " " + fecha_subs + " " + " " + hora +" " )
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0 , notificationBuilder.build());
+
+        Random notification_id = new Random();
+
+        //  notificationManager.notify(0 , notificationBuilder.build());
+
+      notificationManager.notify(notification_id.nextInt(100), notificationBuilder.build());
+
+
+
+
+
+
         //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
@@ -249,7 +345,9 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
                 .setContentText(nobrevolcan_r2  + " " + fecha_subs + " " + " " + hora +" " )
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
+                .setContentIntent(pendingIntent)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0 , notificationBuilder.build());

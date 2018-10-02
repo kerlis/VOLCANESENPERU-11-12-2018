@@ -45,6 +45,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -128,6 +129,17 @@ public class FragmentWithOneImage extends Fragment implements OnMapReadyCallback
         title = getArguments().getString("title");
         //   map.setOnCameraMoveListener(getCameraChangeListener2());
         //   getCameraChangeListener3();
+
+
+
+
+/*
+        FirebaseOptions options = new FirebaseOptions.Builder()
+                .setApplicationId("1:27992087142:android:ce3b6448250083d1") // Required for Analytics.
+                .setApiKey("AIzaSyADUe90ULnQDuGShD9W23RDP0xmeDc6Mvw") // Required for Auth.
+                .setDatabaseUrl("https://myproject.firebaseio.com") // Required for RTDB.
+                .build();
+*/
     }
 
     @Override
