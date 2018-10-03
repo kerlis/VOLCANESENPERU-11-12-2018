@@ -32,6 +32,8 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
     String json;
 
 
+
+
     @Override
     public void onTokenRefresh() {
         String token = FirebaseInstanceId.getInstance().getToken();
@@ -45,13 +47,17 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
                 .add("Token",token)
                 .build();
         Request request = new Request.Builder()
-                .url("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token)
+                .url("http://arteypixel.com/envio_notificaciones/register.php?Token="+token)
                 .post(body)
                 .build();
+               //  vale .url("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token)
 
-              consulta("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token);
+        //   vale   consulta("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token);
 
-                // FirebaseMessaging.getInstance().subscribeToTopic("VOLCANESD");
+         consulta("http://arteypixel.com/envio_notificaciones/register.php?Token="+token);
+
+
+        // FirebaseMessaging.getInstance().subscribeToTopic("VOLCANESD");
                 //http://intranet.igp.gob.pe/eLdZpqDtLN
         try {
             client.newCall(request).execute();

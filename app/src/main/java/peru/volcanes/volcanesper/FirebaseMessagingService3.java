@@ -19,6 +19,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
     public void onMessageReceived(RemoteMessage remoteMessage) {
         String valor = remoteMessage.getData().get("body");
         //enviarnotificaciondatosreporteordinario(remoteMessage.getData().get("body"));
+
         String tiponotificacion = valor.split("&")[0];
         String volcan = valor.split("&")[1];
         String tipodevento = valor.split("&")[2];
@@ -57,7 +58,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "default")
                     .setSmallIcon(R.mipmap.ic_launcher) // notification icon
                     .setContentTitle("Alerta de Cenizas") // title for notification
-                    .setContentText(nobrevolcan_r2 + " " + tipodevento + " " + " " + hora + " ")// message for notification
+                    .setContentText(valor + " " + valor + " " + " " + valor + " ")// message for notification
                     .setAutoCancel(true)
                     .setSound(defaultSoundUri)
                     .setContentIntent(pendingIntent)
@@ -78,6 +79,40 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
             //  }
         }
 
+        else{
+
+
+            Intent intent = new Intent(this, Alertando.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            String tiponotificacion2 = valor;
+            Intent intentlahar = new Intent(getApplicationContext(), Alertando.class);
+            intentlahar.putExtra("NOTIFICACIONDATA", tiponotificacion2);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentlahar, PendingIntent.FLAG_UPDATE_CURRENT);
+            Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
+
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "default")
+                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
+                    .setContentTitle("Alerta de Cenizas") // title for notification
+                    .setContentText(valor + " " + valor + " " + " " + valor + " ")// message for notification
+                    .setAutoCancel(true)
+                    .setSound(defaultSoundUri)
+                    .setContentIntent(pendingIntent)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+            //  Intent intent = new Intent(getApplicationContext(), MainActivity_.class);
+            //    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            //  mBuilder.setContentIntent(pi);
+            // mNotificationManager.notify(0, mBuilder.build());
+            // }        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            //notificationManager.notify(0 , notificationBuilder.build());
+            //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            Random notification_id = new Random();
+            // notificationManager.notify(0 , notificationBuilder.build());
+            notificationManager.notify(notification_id.nextInt(100), mBuilder.build());
+
+
+        }
 
 
 
@@ -139,29 +174,25 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         }
 
 
-
 /*
+
         if (tiponotificacion.equals("n01")){
             enviarnotificaciondatosalertalahar(remoteMessage.getData().get("body"));
         }
-
         else if(tiponotificacion.equals("n02")){
             enviarnotificaciondatosreporteextraordinario(remoteMessage.getData().get("body"));
         }
-
         else if(tiponotificacion.equals("n03")){
             enviarnotificaciondatoalertadecenizas(remoteMessage.getData().get("body"));
         }
-
         else if(tiponotificacion.equals("n04")){
             enviarnotificaciondatosreporteordinario(remoteMessage.getData().get("body"));
         }
-
         else{
             enviarnotificaciondatoalertadecenizas(remoteMessage.getData().get("body"));
         }
-*/
 
+*/
 
 
 
@@ -207,6 +238,8 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
 
         String asubstring = fecha.substring(0, 10);
 
+
+        /*
         Intent intent = new Intent(this, Alertando.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         String tiponotificacion = messageBody;
@@ -225,6 +258,106 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0 , notificationBuilder.build());
         //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+
+*/
+
+
+
+
+
+        String channelId = "some_channel_id";
+        CharSequence channelName = "Some Channel";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //void showNotification(String title, String content) {
+            NotificationManager mNotificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel(channelId,
+                        channelName,
+                        NotificationManager.IMPORTANCE_DEFAULT);
+                channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DISCRIPTION");
+                mNotificationManager.createNotificationChannel(channel);
+            }
+
+            Intent intent = new Intent(this, Alertando.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            String tiponotificacion3 = tiponotificacion2;
+            Intent intentlahar = new Intent(getApplicationContext(), Alertando.class);
+            intentlahar.putExtra("NOTIFICACIONDATA", tiponotificacion3);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentlahar, PendingIntent.FLAG_UPDATE_CURRENT);
+            Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
+
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "default")
+                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
+                    .setContentTitle("Alerta de Cenizas") // title for notification
+                    .setContentText(volcan + " " + volcan + " " + " " + volcan + " ")// message for notification
+                    .setAutoCancel(true)
+                    .setSound(defaultSoundUri)
+                    .setContentIntent(pendingIntent)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+            //  Intent intent = new Intent(getApplicationContext(), MainActivity_.class);
+            //    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            //  mBuilder.setContentIntent(pi);
+            // mNotificationManager.notify(0, mBuilder.build());
+            // }        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            //notificationManager.notify(0 , notificationBuilder.build());
+            //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            Random notification_id = new Random();
+            // notificationManager.notify(0 , notificationBuilder.build());
+            notificationManager.notify(notification_id.nextInt(100), mBuilder.build());
+
+            //  }
+        }
+
+        else{
+
+
+            Intent intent = new Intent(this, Alertando.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            String tiponotificacion3 = tiponotificacion2;
+            Intent intentlahar = new Intent(getApplicationContext(), Alertando.class);
+            intentlahar.putExtra("NOTIFICACIONDATA", tiponotificacion3);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentlahar, PendingIntent.FLAG_UPDATE_CURRENT);
+            Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
+
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "default")
+                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
+                    .setContentTitle("Alerta de Cenizas") // title for notification
+                    .setContentText(volcan + " " + volcan + " " + " " + volcan + " ")// message for notification
+                    .setAutoCancel(true)
+                    .setSound(defaultSoundUri)
+                    .setContentIntent(pendingIntent)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+            //  Intent intent = new Intent(getApplicationContext(), MainActivity_.class);
+            //    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            //  mBuilder.setContentIntent(pi);
+            // mNotificationManager.notify(0, mBuilder.build());
+            // }        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            //notificationManager.notify(0 , notificationBuilder.build());
+            //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            Random notification_id = new Random();
+            // notificationManager.notify(0 , notificationBuilder.build());
+            notificationManager.notify(notification_id.nextInt(100), mBuilder.build());
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
@@ -304,7 +437,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
 
         //  notificationManager.notify(0 , notificationBuilder.build());
 
-      notificationManager.notify(notification_id.nextInt(100), notificationBuilder.build());
+        notificationManager.notify(notification_id.nextInt(100), notificationBuilder.build());
 
 
 
