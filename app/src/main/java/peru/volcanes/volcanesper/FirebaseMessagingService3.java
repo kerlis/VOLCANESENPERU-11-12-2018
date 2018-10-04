@@ -15,6 +15,8 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
     String nobrevolcan_r2;
 
 
+    /*
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         String valor = remoteMessage.getData().get("body");
@@ -30,89 +32,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         String horautc = valor.split("&")[7];
 
 
-
-
-        String channelId = "some_channel_id";
-        CharSequence channelName = "Some Channel";
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            //void showNotification(String title, String content) {
-            NotificationManager mNotificationManager =
-                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                NotificationChannel channel = new NotificationChannel(channelId,
-                        channelName,
-                        NotificationManager.IMPORTANCE_DEFAULT);
-                channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DISCRIPTION");
-                mNotificationManager.createNotificationChannel(channel);
-            }
-
-            Intent intent = new Intent(this, Alertando.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            String tiponotificacion2 = valor;
-            Intent intentlahar = new Intent(getApplicationContext(), Alertando.class);
-            intentlahar.putExtra("NOTIFICACIONDATA", tiponotificacion2);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentlahar, PendingIntent.FLAG_UPDATE_CURRENT);
-            Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
-
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "default")
-                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
-                    .setContentTitle("Alerta de Cenizas") // title for notification
-                    .setContentText(valor + " " + valor + " " + " " + valor + " ")// message for notification
-                    .setAutoCancel(true)
-                    .setSound(defaultSoundUri)
-                    .setContentIntent(pendingIntent)
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-            //  Intent intent = new Intent(getApplicationContext(), MainActivity_.class);
-            //    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            //  mBuilder.setContentIntent(pi);
-            // mNotificationManager.notify(0, mBuilder.build());
-            // }        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            //notificationManager.notify(0 , notificationBuilder.build());
-            //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-            Random notification_id = new Random();
-            // notificationManager.notify(0 , notificationBuilder.build());
-            notificationManager.notify(notification_id.nextInt(100), mBuilder.build());
-
-            //  }
-        }
-
-        else{
-
-
-            Intent intent = new Intent(this, Alertando.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            String tiponotificacion2 = valor;
-            Intent intentlahar = new Intent(getApplicationContext(), Alertando.class);
-            intentlahar.putExtra("NOTIFICACIONDATA", tiponotificacion2);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intentlahar, PendingIntent.FLAG_UPDATE_CURRENT);
-            Uri defaultSoundUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.beep2);
-
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "default")
-                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
-                    .setContentTitle("Alerta de Cenizas") // title for notification
-                    .setContentText(valor + " " + valor + " " + " " + valor + " ")// message for notification
-                    .setAutoCancel(true)
-                    .setSound(defaultSoundUri)
-                    .setContentIntent(pendingIntent)
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-            //  Intent intent = new Intent(getApplicationContext(), MainActivity_.class);
-            //    PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            //  mBuilder.setContentIntent(pi);
-            // mNotificationManager.notify(0, mBuilder.build());
-            // }        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            //notificationManager.notify(0 , notificationBuilder.build());
-            //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-            Random notification_id = new Random();
-            // notificationManager.notify(0 , notificationBuilder.build());
-            notificationManager.notify(notification_id.nextInt(100), mBuilder.build());
-
-
-        }
+        createNotificationChannel();
 
 
 
@@ -174,7 +94,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         }
 
 
-/*
+
 
         if (tiponotificacion.equals("n01")){
             enviarnotificaciondatosalertalahar(remoteMessage.getData().get("body"));
@@ -192,7 +112,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
             enviarnotificaciondatoalertadecenizas(remoteMessage.getData().get("body"));
         }
 
-*/
+
 
 
 
@@ -202,21 +122,30 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
     }
 
 
-/*
-    public NotificationCompat.Builder initChannels(Context context) {
-        if (Build.VERSION.SDK_INT < 26) {
-            return new NotificationCompat.Builder(context);
+
+
+
+    private void createNotificationChannel() {
+
+        String channelId = "some_channel_id";
+        CharSequence channelName = "Some Channel";
+
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(channelId, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
         }
-        NotificationManager notificationManager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationChannel channel = new NotificationChannel("default",
-                "Channel name",
-                NotificationManager.IMPORTANCE_DEFAULT);
-        channel.setDescription("Channel description");
-        notificationManager.createNotificationChannel(channel);
-        return new NotificationCompat.Builder(context, "default");
     }
-    */
+
+
 
     private void enviarnotificaciondatoalertadecenizas(String messageBody) {
 
@@ -239,7 +168,7 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         String asubstring = fecha.substring(0, 10);
 
 
-        /*
+
         Intent intent = new Intent(this, Alertando.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         String tiponotificacion = messageBody;
@@ -258,8 +187,6 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0 , notificationBuilder.build());
         //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-
-*/
 
 
 
@@ -486,4 +413,58 @@ public class FirebaseMessagingService3  extends com.google.firebase.messaging.Fi
         notificationManager.notify(0 , notificationBuilder.build());
         //mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
+
+
+    */
 }
+
+
+
+
+
+
+
+/*
+    public NotificationCompat.Builder initChannels(Context context) {
+        if (Build.VERSION.SDK_INT < 26) {
+            return new NotificationCompat.Builder(context);
+        }
+        NotificationManager notificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationChannel channel = new NotificationChannel("default",
+                "Channel name",
+                NotificationManager.IMPORTANCE_DEFAULT);
+        channel.setDescription("Channel description");
+        notificationManager.createNotificationChannel(channel);
+        return new NotificationCompat.Builder(context, "default");
+    }
+    */
+
+
+/*
+    private void sendNotification(remoteMessage: RemoteMessage?) {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
+
+        val channelId = getString(R.string.default_notification_channel_id)
+        val channelName = getString(R.string.default_notification_channel_name)
+        val notificationBuilder = NotificationCompat.Builder(this, channelId)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(remoteMessage?.notification?.title)
+                .setContentText(remoteMessage?.notification?.body)
+                .setAutoCancel(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setContentIntent(pendingIntent)
+
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH)
+            notificationManager.createNotificationChannel(channel)
+        }
+        notificationManager.notify(0, notificationBuilder.build())
+
+    }
+
+  */
+

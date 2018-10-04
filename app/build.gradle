@@ -1,14 +1,20 @@
 apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.3'
+     buildToolsVersion '26.0.0'
     compileOptions.encoding "UTF-8"
     defaultConfig {
         applicationId "peru.volcanes.volcanesper"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 25
-        versionName "3.0"
+        versionCode 27
+        versionName "4.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -36,13 +42,15 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-  //  compile 'com.android.support:appcompat-v7:26.0.1'
-   // compile 'com.android.support:support-v4:26.1.0'
-   //  compile 'com.google.android.gms:play-services:12.0.1'
-    compile 'com.android.support:design:26.0.2'
-    compile 'com.google.firebase:firebase-messaging:11.8.0'
-    compile 'com.google.firebase:firebase-database:11.8.0'
-   // compile 'com.android.support:support-v4:26.0.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //  compile 'com.android.support:appcompat-v7:26.0.1'
+    // compile 'com.android.support:support-v4:26.1.0'
+    //  compile 'com.google.android.gms:play-services:12.0.1'
+    compile 'com.android.support:design:26.1.0'
+    //compile 'com.google.firebase:firebase-messaging:11.8.0'
+    compile 'com.google.firebase:firebase-database:15.0.1'
+    // compile 'com.android.support:support-v4:26.0.3'
     compile 'com.firebaseui:firebase-ui:1.1.1'
     compile 'com.firebase:firebase-client-android:2.5.2+'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
@@ -51,16 +59,21 @@ dependencies {
     compile 'com.github.barteksc:android-pdf-viewer:2.8.2'
     compile 'com.gjiazhe:PanoramaImageView:1.0'
     compile 'com.google.maps.android:android-maps-utils:0.4.4'
-  //  compile 'com.android.support:customtabs:26.2.1'
-    implementation 'com.android.support:recyclerview-v7:26.0.2'
+    //  compile 'com.android.support:customtabs:26.2.1'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
 
-    implementation 'com.android.support:appcompat-v7:26.0.2'
-    implementation 'com.google.android.gms:play-services-maps:11.8.0'
-    implementation 'com.google.android.gms:play-services-location:11.8.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
 
-    implementation 'com.google.firebase:firebase-core:11.8.0'
-    implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    //implementation 'com.google.firebase:firebase-messaging:11.8.0'
+
+    implementation "com.google.firebase:firebase-core:${rootProject.ext.firebaseCore}"
+
+    implementation "com.google.firebase:firebase-messaging:${rootProject.ext.firebaseMessaging}"
+
 }
 apply plugin: 'com.google.gms.google-services'

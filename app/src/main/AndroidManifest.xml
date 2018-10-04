@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="peru.volcanes.volcanesper">
-       <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26" />
- <!--
+    package="peru.volcanes.volcanesper"
+    tools:node="replace"
+    >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="26" />
+    <!--
         <uses-feature android:glEsVersion="0x00030001" android:required="true" />
         <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
-        <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />-->
-
-
-
+        <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
+    -->
 
 
     <!--
@@ -29,40 +32,37 @@
     <supports-screens android:smallScreens="true" />
     -->
 
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
 
-    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
-    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <!-- for htc -->
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
 
-    <!--for htc-->
-    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+    <!-- for sony -->
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
 
-    <!--for sony-->
-    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
-    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"/>
+    <!-- for apex -->
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" />
 
-    <!--for apex-->
-    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    <!-- for solid -->
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" />
 
-    <!--for solid-->
-    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+    <!-- for huawei -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
 
-    <!--for huawei-->
-    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
-    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <!-- for ZUK -->
+    <uses-permission android:name="android.permission.READ_APP_BADGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!--for ZUK-->
-    <uses-permission android:name="android.permission.READ_APP_BADGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
-    <!--for OPPO-->
-    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
-
-    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ"/>
-    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE"/>
-
+    <!-- for OPPO -->
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -78,45 +78,40 @@
     <supports-screens android:normalScreens="true" />
     <supports-screens android:smallScreens="true" />
 
-
-
-
-
-
-
-
-
-
     <permission
         android:name="sistemasfireg.igp.org.detectasismo.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="sistemasfireg.igp.org.detectasismo.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:largeHeap="true"
-        android:hardwareAccelerated="false"
         tools:replace="android:supportsRtl">
-
-        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
+
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-
-        <meta-data        android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="@string/default_notification_channel_id"/>
-
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
 
         <activity
             android:name=".Pdfmetodologia"
@@ -225,53 +220,37 @@
             android:name=".Listadoredessociales"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
-
-
-
         <activity
             android:name=".Erupcionesrecyclerview"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Youtubevideo"
             android:label="@string/app_name" />
-
-
         <activity
             android:name=".Youtubevideos"
             android:label="@string/app_name" />
-
-
         <activity
             android:name=".Datosnotificacion"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="Datosnotificacion" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
-
-
-
-
-
 
         <receiver
             android:name=".CustomTabsBroadcastReceiver"
-            android:enabled="true">
-        </receiver>
+            android:enabled="true"></receiver>
 
-   <!--
+        <!--
         <service android:name=".FirebaseMessagingService2">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
--->
 
 
         <service android:name=".FirebaseMessagingService3">
@@ -279,6 +258,14 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        -->
+
+        <service android:name=".Mesaggingservicetwo">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
 
 
 
@@ -291,16 +278,14 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyChRE4B12A8MFwNc4ftdxivF5hXi-e7b3o" />
 
-        <activity android:name=".Alertando"></activity>
-
-        <activity android:name=".Alertadatoslahar"></activity>
-
-        <activity android:name=".Alertareporteactividad"></activity>
-
+        <activity android:name=".Alertando" />
+        <activity android:name=".Alertadatoslahar" />
+        <activity android:name=".Alertareporteactividad" />
+        <activity android:name=".LosdatosMainActivity"></activity>
     </application>
+
 </manifest>
