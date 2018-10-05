@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="peru.volcanes.volcanesper"
@@ -83,7 +82,6 @@
         android:protectionLevel="signature" />
 
     <uses-permission android:name="sistemasfireg.igp.org.detectasismo.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name="android.support.multidex.MultiDexApplication"

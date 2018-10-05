@@ -195,19 +195,20 @@ public class Pdfviewreportedeactividad extends FragmentActivity implements Navig
 
         Typeface fontAwesomeFont = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
         Intent i=this.getIntent();
-      pdfurl = i.getExtras().getString("PDFREPORTE");
-        //    pdfurl = "http://ovs.igp.gob.pe/sites/ovs.igp.gob.pe/files/pdf/Ubinas/2015/reporte_ubinas_201515.pdf";
-
-
-        Toast.makeText(Pdfviewreportedeactividad.this,pdfurl , Toast.LENGTH_LONG).show();
-
-
-       // String simulacrosubs2 = pdfurl.substring(1);
+        pdfurl = i.getExtras().getString("PDFREPORTE");
         pdfView = (PDFView) findViewById(R.id.pdfView);
         new RetrevePDFStream().execute(pdfurl);
+       Toast.makeText(Pdfviewreportedeactividad.this,pdfurl , Toast.LENGTH_LONG).show();
+
+
     }
 
-    /*-------------ver datos de volcan------------------------------------------------------*/
+
+
+
+
+
+
     class RetrevePDFStream extends AsyncTask<String, Void, InputStream> {
         @Override
         protected InputStream doInBackground(String... strings) {
@@ -215,32 +216,23 @@ public class Pdfviewreportedeactividad extends FragmentActivity implements Navig
             try{
                 URL url = new URL(strings[0]);
                 HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-                if (urlConnection.getResponseCode() == 8000){
+                if (urlConnection.getResponseCode() == 200){
                     inputStream =  new BufferedInputStream(urlConnection.getInputStream());
                 }
             }
             catch(IOException e){
                 return null;
             }
-
             return  inputStream;
         }
-
         @Override
         protected void onPostExecute(InputStream inputStream) {
             pdfView.fromStream(inputStream).load();
-            //spinner.setVisibility(View.GONE);
-
         }
-
-
-     /*   @Override
-        protected void onProgressUpdate(Void... values) {
-            spinner.setVisibility(View.VISIBLE);
-             super.onProgressUpdate(values);
-        }
-*/
     }
+
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;

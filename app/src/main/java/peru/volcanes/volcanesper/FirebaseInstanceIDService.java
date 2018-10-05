@@ -43,6 +43,8 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
         registerToken(token);
         ver();
         createNotificationChannel();
+        createNotificationChannellahar();
+
     }
 
 
@@ -68,20 +70,45 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
 
 
 
+    private void createNotificationChannellahar() {
+
+        String channelId = "some_channel_id_lahar";
+        CharSequence channelName = "Some Channel";
+
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.default_notification_channel_name_lahar);
+            String description = getString(R.string.channel_description_lahar);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(channelId, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+
+
+
+
     private void registerToken(String token) {
         OkHttpClient client = new OkHttpClient();
         RequestBody body = new FormBody.Builder()
                 .add("Token",token)
                 .build();
         Request request = new Request.Builder()
-                .url("http://arteypixel.com/envio_notificaciones/register.php?Token="+token)
+                .url("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token)
                 .post(body)
                 .build();
                //  vale .url("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token)
+              //  .url("http://arteypixel.com/envio_notificaciones/register.php?Token="+token)
 
-        //   vale   consulta("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token);
+           consulta("http://intranet.igp.gob.pe/eLdZpqDtLN/index.php?Token="+token);
 
-         consulta("http://arteypixel.com/envio_notificaciones/register.php?Token="+token);
+        //   vale  consulta("http://arteypixel.com/envio_notificaciones/register.php?Token="+token);
 
 
         // FirebaseMessaging.getInstance().subscribeToTopic("VOLCANESD");
@@ -116,9 +143,9 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
         try {
             FileOutputStream fileOutputStream = openFileOutput(file_namex, MODE_PRIVATE);
             fileOutputStream.write(Message5.getBytes());
-            //  FirebaseMessaging.getInstance().subscribeToTopic(Message5);
+            FirebaseMessaging.getInstance().subscribeToTopic(Message5);
 
-            FirebaseMessaging.getInstance().subscribeToTopic("SISMOSANDROIDDOS");
+            //   FirebaseMessaging.getInstance().subscribeToTopic("SISMOSANDROIDDOS");
 
 
             //  fileOutputStream.write(Message7.getBytes());
