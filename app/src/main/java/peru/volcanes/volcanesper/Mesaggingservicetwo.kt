@@ -19,12 +19,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
         private val TAG = Mesaggingservicetwo::class.java.simpleName
     }
 
-  //  override fun onNewToken(token: String?) {
-     //   Log.e(TAG, "$token")
-        // ePdJaJrFVcU:APA91bGrT-1vAM-7aDI1FFB5psMYJhmLwEXz2ZJ_zbi3d3WDKuKJtvRYnR723zqAapWyQBHaUcq9koYVkl4WiPrwEu1yhlgdNXrKruFOLczmJHKLu_Kq_JquXUqFv6ONK-kvXvX6VWpY
-       // FirebaseMessaging.getInstance().subscribeToTopic("SISMOSANDROIDDOS")
-  //  }
-
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {
         val valor3: String? = remoteMessage!!.getData().get("cuerpo")
         val valorextraido: String = valor3!!.split("&")[0]
@@ -51,10 +45,7 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
         else{
             enviarnotificaciondatosalertalahar(remoteMessage.getData().get("cuerpo"));
         }
-
     }
-
-
 
     private fun sendNotification(remoteMessage: String?) {
         val valor: String = remoteMessage!!.split("&")[0];
@@ -79,20 +70,8 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
         notificationManager.notify(0, notificationBuilder.build())
     }
 
-
-
-
-
-
-
-
-
-
-
-
     private fun enviarnotificaciondatosalertalahar(remoteMessage: String?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
             val tiponotificacion2: String = remoteMessage!!.split("&")[0]
             val volcan: String = remoteMessage!!.split("&")[1]
             val tipodevento: String = remoteMessage!!.split("&")[2]
@@ -101,8 +80,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val horautc: String = remoteMessage!!.split("&")[5]
             val observaciones: String = remoteMessage!!.split("&")[6]
             val simulacro: String = remoteMessage!!.split("&")[7]
-
-
             val asubstring = fecha.substring(0, 10)
             var nobrevolcan_r2: String
 
@@ -163,9 +140,7 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val random = Random()
             notificationManager.notify(random.nextInt(100), notificationBuilder.build())
         }
-
         else {
-
             val tiponotificacion2: String = remoteMessage!!.split("&")[0]
             val volcan: String = remoteMessage!!.split("&")[1]
             val tipodevento: String = remoteMessage!!.split("&")[2]
@@ -174,8 +149,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val horautc: String = remoteMessage!!.split("&")[5]
             val observaciones: String = remoteMessage!!.split("&")[6]
             val simulacro: String = remoteMessage!!.split("&")[7]
-
-
 
             val asubstring = fecha.substring(0, 10)
             var nobrevolcan_r2: String
@@ -231,14 +204,8 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             val random = Random()
             notificationManager.notify(random.nextInt(100), notificationBuilder.build())
-
         }
-
     }
-
-
-
-
 
     private fun sendNotificationalertadecenizas(remoteMessage: String?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -387,21 +354,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private fun enviarnotificaciondatosreporteextraordinario(remoteMessage: String?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
@@ -415,22 +367,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val coloralerta: String = remoteMessage!!.split("&")[7]
             val analisis: String = remoteMessage!!.split("&")[8]
             val conclusiones: String = remoteMessage!!.split("&")[9]
-
-            /*
-            val tiponotificacion2: String = remoteMessage!!.split("&")[0]
-            val volcan: String = remoteMessage!!.split("&")[1]
-            val pueblos: String = remoteMessage!!.split("&")[2]
-            val tipodevento: String = remoteMessage!!.split("&")[3]
-            val direccion: String = remoteMessage!!.split("&")[4]
-            val radio:String = remoteMessage!!.split("&")[5]
-            val fecha: String = remoteMessage!!.split("&")[6]
-            val hora: String = remoteMessage!!.split("&")[7]
-            val recomendaciones: String = remoteMessage!!.split("&")[8]
-            val observaciones: String = remoteMessage!!.split("&")[9]
-            val simulacro: String = remoteMessage!!.split("&")[10]
-            val horautc: String = remoteMessage!!.split("&")[11]
-            */
-
 
             val asubstring = fecha.substring(0, 10)
             var nobrevolcan_r2: String
@@ -494,21 +430,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
         }
 
         else {
-            /*
-            val tiponotificacion2: String = remoteMessage!!.split("&")[0]
-            val volcan: String = remoteMessage!!.split("&")[1]
-            val pueblos: String = remoteMessage!!.split("&")[2]
-            val tipodevento: String = remoteMessage!!.split("&")[3]
-            val direccion: String = remoteMessage!!.split("&")[4]
-            val radio:String = remoteMessage!!.split("&")[5]
-            val fecha: String = remoteMessage!!.split("&")[6]
-            val hora: String = remoteMessage!!.split("&")[7]
-            val recomendaciones: String = remoteMessage!!.split("&")[8]
-            val observaciones: String = remoteMessage!!.split("&")[9]
-            val simulacro: String = remoteMessage!!.split("&")[10]
-            val horautc: String = remoteMessage!!.split("&")[11]
-            */
-
             val tiponotificacion2: String = remoteMessage!!.split("&")[0]
             val volcan: String = remoteMessage!!.split("&")[1]
             val fecha: String = remoteMessage!!.split("&")[2]
@@ -519,8 +440,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val coloralerta: String = remoteMessage!!.split("&")[7]
             val analisis: String = remoteMessage!!.split("&")[8]
             val conclusiones: String = remoteMessage!!.split("&")[9]
-
-
 
             val asubstring = fecha.substring(0, 10)
             var nobrevolcan_r2: String
@@ -586,20 +505,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
 
     private fun enviarnotificaciondatosreporteordinario(remoteMessage: String?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            /*
-            val tiponotificacion2: String = remoteMessage!!.split("&")[0]
-            val volcan: String = remoteMessage!!.split("&")[1]
-            val pueblos: String = remoteMessage!!.split("&")[2]
-            val tipodevento: String = remoteMessage!!.split("&")[3]
-            val direccion: String = remoteMessage!!.split("&")[4]
-            val radio:String = remoteMessage!!.split("&")[5]
-            val fecha: String = remoteMessage!!.split("&")[6]
-            val hora: String = remoteMessage!!.split("&")[7]
-            val recomendaciones: String = remoteMessage!!.split("&")[8]
-            val observaciones: String = remoteMessage!!.split("&")[9]
-            val simulacro: String = remoteMessage!!.split("&")[10]
-            val horautc: String = remoteMessage!!.split("&")[11]
-*/
 
             val tiponotificacion2: String = remoteMessage!!.split("&")[0]
             val volcan: String = remoteMessage!!.split("&")[1]
@@ -614,14 +519,7 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
 
            // val fecha_subs = fecha.substring(0, 10)
 
-
-
-
             val asubstring = fecha.substring(0, 10)
-
-
-
-
             var nobrevolcan_r2: String
 
             if (volcan == "1493157379002") {
@@ -697,23 +595,6 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val analisis: String = remoteMessage!!.split("&")[8]
             val conclusiones: String = remoteMessage!!.split("&")[9]
 
-            /*
-            val tiponotificacion2: String = remoteMessage!!.split("&")[0]
-            val volcan: String = remoteMessage!!.split("&")[1]
-            val pueblos: String = remoteMessage!!.split("&")[2]
-            val tipodevento: String = remoteMessage!!.split("&")[3]
-            val direccion: String = remoteMessage!!.split("&")[4]
-            val radio:String = remoteMessage!!.split("&")[5]
-            val fecha: String = remoteMessage!!.split("&")[6]
-            val hora: String = remoteMessage!!.split("&")[7]
-            val recomendaciones: String = remoteMessage!!.split("&")[8]
-            val observaciones: String = remoteMessage!!.split("&")[9]
-            val simulacro: String = remoteMessage!!.split("&")[10]
-            val horautc: String = remoteMessage!!.split("&")[11]
-            */
-
-
-
             val asubstring = fecha.substring(0, 10)
             var nobrevolcan_r2: String
             if (volcan == "1493157379002") {
@@ -752,6 +633,9 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
                 nobrevolcan_r2 = "Volcán"
             }
 
+
+
+
             val intent = Intent(this, Alertareporteactividad::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             intent.putExtra("NOTIFICACIONDATA", remoteMessage);
@@ -768,13 +652,7 @@ class Mesaggingservicetwo : FirebaseMessagingService() {
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             val random = Random()
             notificationManager.notify(random.nextInt(100), notificationBuilder.build())
-
         }
-
     }
-
-
-
-
 }
 

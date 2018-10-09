@@ -1,31 +1,4 @@
-/**package peru.volcanes.volcanesper
-
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import android.media.RingtoneManager
-import android.os.Build
-import android.support.v4.app.NotificationCompat
-import android.util.Log
-import com.google.firebase.messaging.FirebaseMessaging
-import com.google.firebase.messaging.FirebaseMessagingService
-import com.google.firebase.messaging.RemoteMessage
-
-
- * Created by usuario on 04/10/2018.
- */
-
-
-
-// Firebasemessaggingoreo
-
 package peru.volcanes.volcanesper
-
-
-//package com.example.android.firebasemessage
-
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -38,7 +11,6 @@ import android.util.Log
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-
 class Firebasemessaggingoreo : FirebaseMessagingService() {
     companion object {
         private val TAG = Firebasemessaggingoreo::class.java.simpleName
@@ -48,7 +20,6 @@ class Firebasemessaggingoreo : FirebaseMessagingService() {
         Log.e(TAG, "$token")
         // ePdJaJrFVcU:APA91bGrT-1vAM-7aDI1FFB5psMYJhmLwEXz2ZJ_zbi3d3WDKuKJtvRYnR723zqAapWyQBHaUcq9koYVkl4WiPrwEu1yhlgdNXrKruFOLczmJHKLu_Kq_JquXUqFv6ONK-kvXvX6VWpY
         FirebaseMessaging.getInstance().subscribeToTopic("SISMOSANDROIDDOS")
-
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {
@@ -56,9 +27,7 @@ class Firebasemessaggingoreo : FirebaseMessagingService() {
     }
 
     private fun sendNotification(remoteMessage: RemoteMessage?) {
-
         //  val valor = remoteMessage!!.getData()["body"]
-
         val intent = Intent(this, LosdatosMainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
