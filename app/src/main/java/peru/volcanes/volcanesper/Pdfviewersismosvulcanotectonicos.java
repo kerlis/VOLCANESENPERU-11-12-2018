@@ -520,7 +520,7 @@ public class Pdfviewersismosvulcanotectonicos extends FragmentActivity implement
             opciones72.setVisibility(View.GONE);
             pronostico_menu2.setVisibility(View.GONE);
             pronostico_menu.setVisibility(View.GONE);
-            sismogramas_menu.setVisibility(View.GONE);
+            sismogramas_menu.setVisibility(View.VISIBLE);
             reportes_menu.setVisibility(View.VISIBLE);
             alertas_menu.setVisibility(View.GONE);
             camara_menu.setVisibility(View.GONE);

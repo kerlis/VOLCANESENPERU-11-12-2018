@@ -30,6 +30,9 @@
     <supports-screens android:normalScreens="true" />
     <supports-screens android:smallScreens="true" />
     -->
+    <uses-permission android:name="com.htc.launcher.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="com.htc.launcher.permission.MODIFY_AUDIO_SETTINGS"/>
+
 
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
     <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />

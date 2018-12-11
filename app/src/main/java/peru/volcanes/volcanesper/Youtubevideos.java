@@ -34,7 +34,10 @@ import com.google.android.youtube.player.YouTubePlayer.PlaybackEventListener;
 import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
-public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+
+public class Youtubevideos extends YouTubeBaseActivity{
+
+//public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
     public static final String API_KEY = "AIzaSyAZl7IHIE_foyuSmAGoC0zthU7V7zXknDY";
     public static final String VIDEO_ID = "XAKh4xJzeQE";
 
@@ -77,35 +80,11 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_video);
+
+
+        /*
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
         youTubePlayerView.initialize(API_KEY, this);
-
-       // mm = (RelativeLayout) findViewById(R.id.mm);
-      //  mm.bringToFront();
-        /*
-        Intent i=this.getIntent();
-        reciente_text = i.getExtras().getString("ACTIVIDAD_RECIENTE");
-        estado_text = i.getExtras().getString("ESTADO");
-        nombre_text = i.getExtras().getString("NOMBRES");
-        ubicacion = i.getExtras().getString("UBICACION");
-        urlimagenes = i.getExtras().getString("URLIMAGEN");
-        altura_text = i.getExtras().getString("ALTURA");
-        codigo_text = i.getExtras().getString("CODIGO");
-        diametro_text = i.getExtras().getString("DIAMETRO");
-        glaciares_text = i.getExtras().getString("GLACIARES");
-        imagen_text = i.getExtras().getString("IMAGEN");
-        latitud_text = i.getExtras().getString("LATITUD");
-        longitud_text = i.getExtras().getString("LONGITUD");
-        monitoreo_text = i.getExtras().getString("MONITOREO");
-        tipo_text = i.getExtras().getString("TIPO");
-        tipica_erupcion_text = i.getExtras().getString("TIPICA_ERUPCION");
-        fecha_actualizacion_text = i.getExtras().getString("FECHAACTUALIZACION");
-        hora_actualizacion_text = i.getExtras().getString("HORAACTUALIZACION");
-        alerta_text = i.getExtras().getString("ALERTA");
-        camaraurls = i.getExtras().getString("CAMARAURL");
-        sismogramaurls = i.getExtras().getString("SISMOGRAMA");
-        mapasismico = i.getExtras().getString("MAPASISMICO");
-*/
 
 
 
@@ -132,8 +111,6 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
         sismogramaurls = "valoresdevariable";
         mapasismico = "valoresdevariable";
 
-
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
 
@@ -332,23 +309,7 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
 
 
         TextView darclick = (TextView) findViewById(R.id.openslide);
-        /*
-        darclick.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(Youtubevideos.this,pagedivisor.class);
-                startActivity(intent);
-            }
-        });
 
-
-        darclick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDrawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
-*/
 
         darclick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -494,18 +455,7 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
         bloque6 = (RelativeLayout) findViewById(R.id.bloque6);
         bloque7 = (RelativeLayout) findViewById(R.id.bloque7);
         slideup = (TextView) findViewById(R.id.openslide);
-     //   camara = (TextView) findViewById(R.id.camara);
-     //   mapa = (TextView) findViewById(R.id.mapa);
-     //   alertacenizas_text = (TextView) findViewById(R.id.alertacenizas_text);
-     //   camara_text = (TextView) findViewById(R.id.camara_text);
-     //   mapa_text = (TextView) findViewById(R.id.mapa_text);
-     //   trayectoria_cenizas_text = (TextView) findViewById(R.id.trayectoria_cenizas_text);
-     //   trayectoria_cenizas_text2 = (TextView) findViewById(R.id.trayectoria_cenizas_text2);
-     //   trayectoria_cenizas_text3 = (TextView) findViewById(R.id.trayectoria_cenizas_text3);
 
-      //  camara.setTypeface(fontAwesomeFont);
-       // mapa.setTypeface(fontAwesomeFont);
-       // slideup.setTypeface(fontAwesomeFont);
 
         bloque5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -724,7 +674,7 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
         });
 
 
-
+*/
 
 
     }
@@ -741,7 +691,7 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
 
 
 
-
+/*
 
 
 
@@ -995,6 +945,8 @@ public class Youtubevideos extends YouTubeBaseActivity implements YouTubePlayer.
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this,mDrawerLayout,toolbar,R.string.app_name, R.string.app_name);
         mDrawerToggle.syncState();
     }
+
+    */
 
 
 }

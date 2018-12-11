@@ -224,7 +224,7 @@ public class sismosengeneralgoogle extends FragmentActivity implements OnMapRead
         }
         else if(val.equals("1506455254838")){
             pronostico_menu.setVisibility(View.GONE);
-            sismogramas_menu.setVisibility(View.GONE);
+            sismogramas_menu.setVisibility(View.VISIBLE);
             reportes_menu.setVisibility(View.VISIBLE);
             alertas_menu.setVisibility(View.GONE);
             camara_menu.setVisibility(View.GONE);

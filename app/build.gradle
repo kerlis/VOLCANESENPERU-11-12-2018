@@ -13,8 +13,8 @@ android {
         applicationId "peru.volcanes.volcanesper"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 28
-        versionName "4.1.0"
+        versionCode 32
+        versionName "4.3.2"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -31,8 +31,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            debuggable false
-            jniDebuggable false
+            debuggable true
+            jniDebuggable true
         }
     }
 }
@@ -61,7 +61,7 @@ dependencies {
     compile 'com.google.maps.android:android-maps-utils:0.4.4'
     //  compile 'com.android.support:customtabs:26.2.1'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
-    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    //implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     implementation 'com.android.support:appcompat-v7:26.1.0'

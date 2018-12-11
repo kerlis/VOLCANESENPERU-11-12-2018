@@ -143,9 +143,9 @@ public class FirebaseInstanceIDService extends FirebaseInstanceIdService {
         try {
             FileOutputStream fileOutputStream = openFileOutput(file_namex, MODE_PRIVATE);
             fileOutputStream.write(Message5.getBytes());
-            FirebaseMessaging.getInstance().subscribeToTopic(Message5);
+           // FirebaseMessaging.getInstance().subscribeToTopic(Message5);
 
-            //   FirebaseMessaging.getInstance().subscribeToTopic("SISMOSANDROIDDOS");
+             FirebaseMessaging.getInstance().subscribeToTopic("VOLCANESPERU3001");
 
 
             //  fileOutputStream.write(Message7.getBytes());

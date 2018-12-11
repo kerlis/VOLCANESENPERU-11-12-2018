@@ -131,11 +131,17 @@ public class VolcanesAdapter extends BaseAdapter {
         tipo =  (TextView) convertView.findViewById(R.id.tipo);
 
       fotoimagen = (ImageView) convertView.findViewById(R.id.foto);
+
+      fotoimagen.setImageResource(R.drawable.misti_circle);
+
+
         tipo.setText("Región " +s.getRegion());
         nombre = s.getNombre();
         codigo =s.getCodigo();
         imagen = s.getImagen();
         volcan.setText(s.getNombre());
+
+
         if(imagen != null && !imagen.isEmpty())
         {
             Picasso.with(c).load(imagen)

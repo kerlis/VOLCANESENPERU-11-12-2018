@@ -41,8 +41,12 @@ import android.widget.Toast;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+public class Youtubevideo extends FragmentActivity {
 
-public class Youtubevideo extends FragmentActivity  implements ActivityCompat.OnRequestPermissionsResultCallback,  YouTubePlayer.OnInitializedListener{
+//public class Youtubevideo extends FragmentActivity  implements ActivityCompat.OnRequestPermissionsResultCallback,  YouTubePlayer.OnInitializedListener{
+
+  /*
+
     String urlcamara;
     String nombre;
     String estadovolcan;
@@ -98,12 +102,7 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
 
     TextView texto;
 
-    /*
-    String proyecionsenahmi;
-    RelativeLayout bloquenombre;
-    RelativeLayout bloque62;
-    TextView trayectoria_cenizas_text222;
-*/
+
     private ProgressBar spinner;
     String ShowOrHideWebViewInitialUse = "show";
     @SuppressLint({"WrongViewCast", "SetJavaScriptEnabled"})
@@ -124,13 +123,15 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
     public static final String API_KEY = "AIzaSyAZl7IHIE_foyuSmAGoC0zthU7V7zXknDY";
     public static final String VIDEO_ID = "XAKh4xJzeQE";
 
-
+*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_video);
+
+       /*
         YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
         youTubePlayerView.initialize(API_KEY, this);
         Intent i=this.getIntent();
@@ -156,7 +157,6 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
         sismogramaurls = i.getExtras().getString("SISMOGRAMA");
         mapasismico = i.getExtras().getString("MAPASISMICO");
 
-        ///  proyecionsenahmi = i.getExtras().getString("PROYECCIONSENAHMI");
 
         texto = (TextView) findViewById(R.id.texto);
         texto.setText("Registro sísmico del volcán " +  nombre_text + ", el cual muestra los eventos registrados en tiempo real por las estaciones de vigilancia permanente del IGP.");
@@ -166,7 +166,6 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
         trayectoria_cenizas_text222 = (TextView) findViewById(R.id.trayectoria_cenizas_text222);
         //trayectoria_cenizas_text222.setText("Pronóstico de dispersión");
 
-            /*--------VISUALIZACION DE MENU----------*/
 
         LinearLayout pronostico_menu2 = (LinearLayout) findViewById(R.id.opciones2);
         LinearLayout opciones72 = (LinearLayout) findViewById(R.id.opciones72);
@@ -351,7 +350,6 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
             mapasismic_menu.setVisibility(View.GONE);
         }
 
-     /*--------VISUALIZACION DE MENU----------*/
 
         blocke1a = (RelativeLayout) findViewById(R.id.blocke1);
         blocke2a = (RelativeLayout) findViewById(R.id.blocke2);
@@ -699,23 +697,7 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
         });
 
 
-         /*
-         webView = (WebView)findViewById(R.id.activity_main_webview);
-        webView.getSettings().setJavaScriptEnabled(true);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl(sismogramaurls);
-        webView.getSettings().setBuiltInZoomControls(true);
-        webView.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
-*/
 
-
-
-
-      //  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-       // titulopantalla = (RelativeLayout) findViewById(R.id.titulopantalla);
-      //  estado_volcan = (ImageView) findViewById(R.id.estado_volcan);
-      //  text_volcan = (TextView) findViewById(R.id.text_volcan);
         mk= (Button) findViewById(R.id.button);
         double w;
         try {
@@ -777,22 +759,7 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
         bloque42 = (RelativeLayout) findViewById(R.id.bloque42);
 
 
-         /*
-         bloque62.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 openTab();
-             }
-         });
 
-         bloque42.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 openTabMapa();
-             }
-         });
-
-         */
 
         bloque62.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -806,15 +773,7 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
 
 
 
-/*
-        bloque42.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openTabMapa();
-            }
-        });
 
-*/
 
 
         bloque42.setOnClickListener(new View.OnClickListener() {
@@ -828,16 +787,8 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
         });
 
 
-/*
-        webView = (WebView)findViewById(R.id.activity_main_webview);
-        spinner = (ProgressBar)findViewById(R.id.progressBar1);
-        webView.setWebViewClient(new CustomWebViewClient());
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
-        webView.loadUrl(sismogramaurls);
-*/
 
+*/
 
     }
 
@@ -845,7 +796,7 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
 
 
 
-
+/*
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult result) {
         Toast.makeText(this, "Failured to Initialize!", Toast.LENGTH_LONG).show();
@@ -902,18 +853,6 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
 
 
 
-
-/*
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-
-    }
-
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-
-    }
-*/
 
     private class CustomWebViewClient extends WebViewClient {
         @Override
@@ -1137,10 +1076,7 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
     private CustomTabsSession getSession(CustomTabsClient customTabsClient) {
         if (customTabsClient != null) {
             return customTabsClient.newSession(new CustomTabsCallback() {
-        /*@Override
-        public void onNavigationEvent(int navigationEvent, Bundle extras) {
-          super.onNavigationEvent(navigationEvent, extras);
-        }*/
+
             });
         }
         return null;
@@ -1160,89 +1096,10 @@ public class Youtubevideo extends FragmentActivity  implements ActivityCompat.On
         mDrawerToggle.syncState();
     }
     private Handler handler = new Handler() {
-         /*
-        public void handleMessage(Message msg) {
-            pd.dismiss();
-            tv.setText(pi_string);
-        }*/
+
     };
 
-
-
-}
-
-
-
-/*
-package peru.volcanes.volcanesper;
-import android.os.Bundle;
-import android.widget.Toast;
-import com.google.android.youtube.player.YouTubeBaseActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayer.ErrorReason;
-import com.google.android.youtube.player.YouTubePlayer.PlaybackEventListener;
-import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener;
-import com.google.android.youtube.player.YouTubePlayer.Provider;
-import com.google.android.youtube.player.YouTubePlayerView;
-public class Youtubevideo extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
-    public static final String API_KEY = "AIzaSyAZl7IHIE_foyuSmAGoC0zthU7V7zXknDY";
-    public static final String VIDEO_ID = "XAKh4xJzeQE";
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_video);
-        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
-        youTubePlayerView.initialize(API_KEY, this);
-    }
-    @Override
-    public void onInitializationFailure(Provider provider, YouTubeInitializationResult result) {
-        Toast.makeText(this, "Failured to Initialize!", Toast.LENGTH_LONG).show();
-    }
-    @Override
-    public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
-        player.setPlayerStateChangeListener(playerStateChangeListener);
-        player.setPlaybackEventListener(playbackEventListener);
-        if (!wasRestored) {
-            player.cueVideo(VIDEO_ID);
-        }
-    }
-    private PlaybackEventListener playbackEventListener = new PlaybackEventListener() {
-        @Override
-        public void onBuffering(boolean arg0) {
-        }
-        @Override
-        public void onPaused() {
-        }
-        @Override
-        public void onPlaying() {
-        }
-        @Override
-        public void onSeekTo(int arg0) {
-        }
-        @Override
-        public void onStopped() {
-        }
-    };
-    private PlayerStateChangeListener playerStateChangeListener = new PlayerStateChangeListener() {
-        @Override
-        public void onAdStarted() {
-        }
-        @Override
-        public void onError(ErrorReason arg0) {
-        }
-        @Override
-        public void onLoaded(String arg0) {
-        }
-        @Override
-        public void onLoading() {
-        }
-        @Override
-        public void onVideoEnded() {
-        }
-        @Override
-        public void onVideoStarted() {
-        }
-    };
-}
 */
+
+}
+
